@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Suite" parallel="false">
+    <test name="Web Tests">
+        <parameter name="platformName" value="web" />
+            <parameter name="browser" value="Chrome"></parameter>        
+          <parameter name="URL" value="ODED"></parameter>
+        <classes>
+            
+          
+          <class name="sanity.ODEbuldaypassTest"/> 
+     <!--    <class name="sanity.SelectAllAccessWrkspaceTest"/>
+          <class name="sanity.SelectDayPassTest"/>
+          <class name="sanity.SelectEnterpriseSolutionsTest"/>
+          <class name="sanity.SelectEventsAndWorkspacesTest"/>   
+          <class name="sanity.WeWorkWebAppTest"/>
+          <class name="sanity.SelectHotDeskTest"/>
+          <class name="sanity.SelectPrivateOfficeTest"/>
+          <class name="sanity.SelectSubscriptionTest"/>
+          <class name="sanity.SelectVirtualOfficeTest"/> 
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>-->
+            
+        </classes>
+    </test>
+</suite>
