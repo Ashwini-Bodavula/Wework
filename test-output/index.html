@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Web_Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.ODEbuldaypassTest" hash-for-method="Test01_OD_daypassbulpune(Pune, Futura,Magarpatta Road)">Test01_OD_daypassbulpune(Pune, Futura,Magarpatta Road)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.ODEbuldaypassTest" hash-for-method="Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road)">Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Web_Suite -->
@@ -127,36 +127,33 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Test01_OD_daypassbulpune(Pune, Futura,Magarpatta Road)">
-                  </a> <!-- Test01_OD_daypassbulpune(Pune, Futura,Magarpatta Road) -->
+                  <a name="Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road)">
+                  </a> <!-- Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road) -->
                   <span class="method-name">Test01_OD_daypassbulpune</span>
-                  <span class="parameters">(Pune, Futura,Magarpatta Road)</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(@class, &apos;MuiTypography-alignCenter&apos;)]&quot;}
+                  <span class="parameters">(Pune, Futura, Magarpatta Road)</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
   (Session info: chrome=104.0.5112.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;Ashwini-BodavulaB598-MacBook-Air.local&apos;, ip: &apos;192.168.29.9&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;1.8.0_202&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:62424}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 028e89f9530e94111af9657f987855f8
-*** Element info: {Using=xpath, value=//p[contains(@class, &apos;MuiTypography-alignCenter&apos;)]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:60808}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e4da495890456c752c0c845eb224530a
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy14.getText(Unknown Source)
-	at workflows.ODEflows.selectDate(ODEflows.java:104)
-	at sanity.ODEbuldaypassTest.Test01_OD_daypassbulpune(ODEbuldaypassTest.java:34)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy14.click(Unknown Source)
+	at extensions.UIActions.click(UIActions.java:23)
+	at workflows.ODEflows.Daypass_submission(ODEflows.java:97)
+	at sanity.ODEbuldaypassTest.Test01_OD_daypassbulpune(ODEbuldaypassTest.java:35)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames
+... Removed 35 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Test01 - Verify admin is able to book a daypass from building page)                  </em>
@@ -223,12 +220,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Test01_OD_daypassbulpune')
 data.setCell(0, 2, 'sanity.ODEbuldaypassTest')
-data.setCell(0, 3, 81205);
+data.setCell(0, 3, 57770);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 57 seconds</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -262,16 +259,16 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">Test01_OD_daypassbulpune(Pune, Futura,Magarpatta Road)</span>
-                <span class="method-start">11583 ms</span>
+                <span class="method-name">Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road)</span>
+                <span class="method-start">10895 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">92829 ms</span>
+                <span class="method-start">68702 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">93065 ms</span>
+                <span class="method-start">68883 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

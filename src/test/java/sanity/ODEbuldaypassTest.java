@@ -109,7 +109,7 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		{
 			return new Object[][] {
 		//		{"Pune","WTC Tower 5"},
-				{"Pune","Futura,Magarpatta Road"}
+				{"Pune","Futura, Magarpatta Road"}
 				};
 
 		}

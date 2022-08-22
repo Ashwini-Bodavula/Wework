@@ -80,11 +80,11 @@ public class SelectConferenceRoomTest extends CommonOps
 
 
 
-/*	@Test(description = "Test02 - Verify User is able to select conference room in Hyderabad",dataProvider= "HyderabadConferenceRoomWorkspaces",groups= {"CO"})
+	@Test(description = "Test02 - Verify User is able to select conference room in Hyderabad",dataProvider= "HyderabadConferenceRoomWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to select conference room in Hyderabad")
     public void test02_SelectConferenceRoomInHyderabad(String city , String location, String buildingName) throws InterruptedException
 	{
-		WebFlows.loadWebsite();
+		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
@@ -144,7 +144,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Delhi")
     public void test03_SelectConferenceRoomInDelhi(String city , String location, String buildingName) throws InterruptedException
 	{
-		WebFlows.loadWebsite();
+		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
@@ -204,7 +204,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Bengaluru")
     public void test04_SelectConferenceRoomInBengaluru(String city , String location, String buildingName) throws InterruptedException
 	{
-		WebFlows.loadWebsite();
+		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
@@ -264,7 +264,7 @@ public class SelectConferenceRoomTest extends CommonOps
     @Description("This test verifies that User is able to select conference room in Mumbai")
     public void test05_SelectConferenceRoomInMumbai(String city , String location, String buildingName) throws InterruptedException
 	{
-		WebFlows.loadWebsite();
+		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
@@ -320,7 +320,7 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.logoutOfApplication();
      }
 
-	*/
+	
 
 
 	@DataProvider(name="PuneConferenceRoomWorkspaces")

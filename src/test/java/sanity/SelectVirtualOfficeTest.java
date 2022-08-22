@@ -7,6 +7,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import extensions.UIActions;
+import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
 import workflows.WebFlows;
@@ -47,7 +48,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.logoutOfApplication();
     }
 
-/*	@Test(description = "Test02 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces",groups= {"CO"})
+	@Test(description = "Test02 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Hyderabad")
     public void test02_VerifySelectVirtualOfficeInHyderabad(String city , String location, String buildingName, String workspaceLocation) throws InterruptedException
     {
@@ -79,7 +80,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.logoutOfApplication();
     }
 
-/*	@Test(description = "Test03 - Verify User is able to Select virtual office in Delhi", dataProvider = "DelhiNCRVirtualOfficeWorkspaces", groups= {"CO"})
+	@Test(description = "Test03 - Verify User is able to Select virtual office in Delhi", dataProvider = "DelhiNCRVirtualOfficeWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Delhi")
     public void test03_VerifySelectVirtualOfficeInDelhi(String city , String location, String buildingName, String workspaceLocation) throws InterruptedException
     {
@@ -109,9 +110,9 @@ public class SelectVirtualOfficeTest extends CommonOps
 			mouseHover(WebLoading.closeIcon);
 		}
 		WebFlows.logoutOfApplication();
-    }*/
+    }
 
-/*	@Test(description = "Test04 - Verify User is able to Select virtual office in Bengaluru", dataProvider = "BengaluruVirtualOfficeWorkspaces", groups= {"CO"})
+	@Test(description = "Test04 - Verify User is able to Select virtual office in Bengaluru", dataProvider = "BengaluruVirtualOfficeWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Bengaluru")
     public void test04_VerifySelectVirtualOfficeInBengaluru(String city , String location, String buildingName, String workspaceLocation) throws InterruptedException
     {
@@ -141,9 +142,9 @@ public class SelectVirtualOfficeTest extends CommonOps
 			mouseHover(WebLoading.closeIcon);
 		}
 		WebFlows.logoutOfApplication();
-    }*/
+    }
 
-/*	@Test(description = "Test05 - Verify User is able to Select virtual office in Mumbai", dataProvider = "MumbaiVirtualOfficeWorkspaces", groups= {"CO"})
+	@Test(description = "Test05 - Verify User is able to Select virtual office in Mumbai", dataProvider = "MumbaiVirtualOfficeWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Mumbai")
     public void test05_VerifySelectVirtualOfficeInMumbai(String city , String location, String buildingName, String workspaceLocation) throws InterruptedException
 	{
@@ -202,9 +203,9 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        click(WebLoading.virtualOffice);
 	        click(WebLoading.bookNowBtn);
 	        switchToLoginWindow(currentWindow);
-	        updateText(webLogin.emailTestField, getData("Username"));
-	        updateText(webLogin.passwordTestField, getData("Password"));
-	        click(webLogin.submitButton);
+	        updateText(WebLogin.emailTestField, getData("Username"));
+	        updateText(WebLogin.passwordTestField, getData("Password"));
+	        click(WebLogin.submitButton);
 	        switchToParentWindow(currentWindow);
 	        mouseHover(WebLoading.bookNowBtn);
 	        String VirtualOfficeWindow = getWindowHandels();
@@ -212,16 +213,16 @@ public class SelectVirtualOfficeTest extends CommonOps
 			click(WebLoading.select("Select Building"));
 			scrollToElement(WebLoading.select("Salarpuria Magnificia, Old Madras Rd"));
 			click(WebLoading.select("Salarpuria Magnificia, Old Madras Rd"));
-			mouseHover(virtualOffice.nextBtn);
+			mouseHover(VirtualOffice.nextBtn);
 	        Verifications.elementIsVisible(WebLoading.select("24 Months"));
-	        if(virtualOffice.checkoutBtn.isEnabled())
+	        if(VirtualOffice.checkoutBtn.isEnabled())
 	        {
 	        		click(WebLoading.select("Checkout"));
 	        }
 	        else
 	        {
 	        	click(WebLoading.select("24 Months"));
-	        	mouseHover(virtualOffice.checkoutBtn);
+	        	mouseHover(VirtualOffice.checkoutBtn);
 	        }
 
 	        Verifications.elementIsVisible(WebLoading.select("Proceed to Payment"));
@@ -234,7 +235,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 			String paymentPageTitle = "Payment - WeWork India Management Private Limited - Checkout";
 			if (pageTitle.contains(paymentPageTitle))
 			{
-				click(payment.changeBtn1);
+				click(Payment.changeBtn1);
 			}
 
 	        WebFlows.proceedWithPayment();
@@ -246,7 +247,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        click(WebLoading.closeIcon);
 	        WebFlows.logoutOfApplication();
 		}
-    }*/
+    }
 
 	@DataProvider(name="PuneVirtualOfficeWorkspaces")
 	public Object[][] puneVirtualOfficeWorkspaces()

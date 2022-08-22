@@ -23,7 +23,7 @@ public class SelectDayPassTest extends CommonOps
 {
 
 
-/*	@Test(description = "Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
+	@Test(description = "Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
 	@Step("Test steps")
     public void test01_SelectDayPassInPune(String city , String location, String buildingName) throws InterruptedException
@@ -83,7 +83,7 @@ public class SelectDayPassTest extends CommonOps
     }
 
 
-/*	@Test(description = "Test02 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces",groups= {"CO"})
+	@Test(description = "Test02 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)")
     public void test02_SelectDayPassInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {
@@ -322,7 +322,7 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.logoutOfApplication();
     }
 
-*/
+
 	@Test(description = "Test07 - Verify User is able to select day pass and Conference room for Team. (In  home page navigate to workspaces and select day pass)",dataProvider = "MumbaiWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to select day pass and Conference room for Team (In  home page navigate to workspaces and select day pass)")
     public void test07_SelectDayPassAndConferenceRoomForTeam(String city , String location, String buildingName) throws InterruptedException

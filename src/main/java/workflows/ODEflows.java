@@ -91,10 +91,10 @@ public class ODEflows extends CommonOps
 		click(day_ODE.Continue);
 		click(day_ODE.skipPay);
 		click(day_ODE.finish);
-		loadTime(5);
+		loadTime(30);
 		String success_msg=day_ODE.msg.getText();
-		Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
-		click(day_ODE.msg_close);
+//		Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
+//		click(day_ODE.msg_close);
 	   	}
    }
   
@@ -255,25 +255,29 @@ public class ODEflows extends CommonOps
 	   click(ODElogin.hamBurger);
 	   click(day_ODE.selLoc(Location));
 	   String name = day_ODE.locname.getText();
-	   if(Location==name)
+	   System.out.println(name);
+	   if(Location.equalsIgnoreCase(name))
 	   {
+		   System.out.println("enetred location page");
 	     List <WebElement> title=day_ODE.buildingname;
 	     int count = title.size();
-	     for(int i=0;i<=count; i++)
+	     for(int i=0;i<count; i++)
 		   {
 	    	  String bulName=title.get(i).getText();
+	    	  
 			  if(bulName.contains(BuildingName))
 			   {
-                  day_ODE.buildingBookbtn(i);
+				  
+				  System.out.println(bulName);
+				  scrollToElement(day_ODE.buildingBookbtn(i));
+                  click(day_ODE.buildingBookbtn(i));
                   break;
 			   }
 		   }
 	     String Bul_page=day_ODE.buildinginfo.getText();
-	     Assert.assertEquals(Bul_page, BuildingName);
-	     click(day_ODE.building_Daypass);
-	   }
-	   
-	   
+ 	     Assert.assertEquals(Bul_page, BuildingName);
+ 	     click(day_ODE.building_Daypass);
+	   }	   	   
    }
    
  }

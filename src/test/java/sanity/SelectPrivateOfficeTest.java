@@ -49,7 +49,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 		WebFlows.logoutOfApplication();
 	}
 
-/*	@Test(description = "Test02 - Verify User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadPrivateOfficeWorkspaces", groups= {"CO"})
+	@Test(description = "Test02 - Verify User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadPrivateOfficeWorkspaces", groups= {"CO"})
 	@Description("This test verifies that User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)")
 	public void test02_SelectPrivateOfficeInHyderabad(String city, String location, String buildingName)
 			throws InterruptedException
@@ -184,7 +184,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 		}
 		WebFlows.logoutOfApplication();
 
-	}*/
+	}
 
 	@DataProvider(name = "PunePrivateOfficeWorkspaces")
 	public Object[][] punePrivateOfficeWorkspaces()

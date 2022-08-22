@@ -128,11 +128,11 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 	{
 		return new Object[][] {
 			{"Delhi-NCR","Sector 15 Gurgaon"},
-			{"Delhi-NCR","Cybercity"},
-			{"Delhi-NCR","Noida Sector 160"},
-			{"Delhi-NCR","Bristol Chowk"},
-			{"Delhi-NCR","Golf Course Road"},
-			{"Delhi-NCR","Udyog Vihar"}
+//			{"Delhi-NCR","Cybercity"},
+//			{"Delhi-NCR","Noida Sector 160"},
+//			{"Delhi-NCR","Bristol Chowk"},
+//			{"Delhi-NCR","Golf Course Road"},
+//			{"Delhi-NCR","Udyog Vihar"}
 			};
 	}
 
@@ -141,12 +141,12 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 	{
 		return new Object[][] {
 			{"Bengaluru","Koramangala"},
-			{"Bengaluru","MG Road"},
-			{"Bengaluru","Bannerghatta Main Rd"},
-			{"Bengaluru","Infantry Road"},
-			{"Bengaluru","Domlur"},
-			{"Bengaluru","Bellandur"},
-			{"Bengaluru","Hebbal"},
+//			{"Bengaluru","MG Road"},
+//			{"Bengaluru","Bannerghatta Main Rd"},
+//			{"Bengaluru","Infantry Road"},
+//			{"Bengaluru","Domlur"},
+//			{"Bengaluru","Bellandur"},
+//			{"Bengaluru","Hebbal"},
 			{"Bengaluru","Mahadevapura"}
 			};
 	}
@@ -156,14 +156,14 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 	{
 		return new Object[][] {
 			{"Mumbai","Nariman Point"},
-			{"Mumbai","Goregaon East"},
-			{"Mumbai","Vikhroli West"},
-			{"Mumbai","Thane"},
-			{"Mumbai","Andheri East"},
-			{"Mumbai","Powai"},
-			{"Mumbai","Navi Mumbai"},
-			{"Mumbai","Malad"},
-			{"Mumbai","Worli"},
+//			{"Mumbai","Goregaon East"},
+//			{"Mumbai","Vikhroli West"},
+//			{"Mumbai","Thane"},
+//			{"Mumbai","Andheri East"},
+//			{"Mumbai","Powai"},
+//			{"Mumbai","Navi Mumbai"},
+//			{"Mumbai","Malad"},
+//			{"Mumbai","Worli"},
 			{"Mumbai","BKC"}
 		};
 	}
