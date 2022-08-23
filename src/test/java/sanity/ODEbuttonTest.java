@@ -108,7 +108,7 @@ public class ODEbuttonTest extends Daypass_OD {
 		public Object[][] puneDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Pune","WTC Tower 5"},
+				{"Pune","WTC Tower 5"," "},
 				{"Pune","Magarpatta Road"," "}
 				};
 

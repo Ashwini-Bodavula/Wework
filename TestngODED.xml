@@ -8,9 +8,9 @@
         <classes>
             
           <class name="sanity.ODEbuldaypassTest"/>        
-            <class name="sanity.ODEbuttonTest"/>
-         <class name="sanity.ODEdaypassTest"/>
-        <!--  <class name="sanity.SelectAllAccessWrkspaceTest"/>
+       <!--     <class name="sanity.ODEbuttonTest"/>
+          <class name="sanity.ODEdaypassTest"/>
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
           <class name="sanity.SelectDayPassTest"/>
           <class name="sanity.SelectEnterpriseSolutionsTest"/>
           <class name="sanity.SelectEventsAndWorkspacesTest"/>   

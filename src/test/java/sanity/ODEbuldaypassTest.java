@@ -36,7 +36,7 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		    ODEflows.logoutODE();
 	    }
 	 
-/*	 @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
+	 @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test02_OD_daypassBangalore(String city, String location, String Building) throws InterruptedException{
 		
@@ -103,13 +103,13 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		    ODEflows.Daypass_submission();
 		    ODEflows.logoutODE();
 	    }
-*/	 
+	 
 	 @DataProvider(name="PuneDayPassWorkspaces")
 		public Object[][] puneDayPassWorkspaces()
 		{
 			return new Object[][] {
 				{"Pune","WTC, Tower - 5"},
-				{"Pune","Futura, Magarpatta Road"}
+//				{"Pune","Futura, Magarpatta Road"}
 				};
 
 		}
@@ -119,17 +119,17 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		{
 			return new Object[][] {
 				{"Bengaluru","Prestige Atlanta, Koramangala"},
-				{"Bengaluru","The Pavilion, Central Business District"},
-				{"Bengaluru","Galaxy, Central Business District"},
-				{"Bengaluru","Prestige Central, Central Business District"},
-				{"Bengaluru","Embassy Quest, Central Business District "},
-				{"Bengaluru","Embassy GolfLinks"},
-				{"Bengaluru","RMZ Latitude Commercial, Hebbal"},
-				{"Bengaluru","Salarpuria Magnificia, Old Madras Rd" },
-				{"Bengaluru","Vaishnavi Signature, Bellandur "},
-				{"Bengaluru","Salarpuria Symbiosis, Bannerghatta Rd "},
-				{"Bengaluru","Prestige Cube, Koramangala "},
-				{"Bengaluru","Embassy TechVillage, Bellandur "},
+//				{"Bengaluru","The Pavilion, Central Business District"},
+//				{"Bengaluru","Galaxy, Central Business District"},
+//				{"Bengaluru","Prestige Central, Central Business District"},
+//				{"Bengaluru","Embassy Quest, Central Business District "},
+//				{"Bengaluru","Embassy GolfLinks"},
+//				{"Bengaluru","RMZ Latitude Commercial, Hebbal"},
+//				{"Bengaluru","Salarpuria Magnificia, Old Madras Rd" },
+//				{"Bengaluru","Vaishnavi Signature, Bellandur "},
+//				{"Bengaluru","Salarpuria Symbiosis, Bannerghatta Rd "},
+//				{"Bengaluru","Prestige Cube, Koramangala "},
+//				{"Bengaluru","Embassy TechVillage, Bellandur "},
 				{"Bengaluru","WeWork Manyata NXT "},
 				
 			};
@@ -139,7 +139,7 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		{
 			return new Object[][] {
 				{"Hyderabad","Krishe Emerald, Hitec City"},
-				{"Hyderabad","Rajapushpa Summit, Financial District"}
+//				{"Hyderabad","Rajapushpa Summit, Financial District"}
 				};
 
 		}
@@ -160,19 +160,19 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		{
 			return new Object[][] {
 				{"Mumbai","Express Towers, nariman Point"},
-				{"Mumbai","Oberoi Commerz II, Goregaon East"},
-				{"Mumbai","NESCO IT Park, Goregaon East"},
-				{"Mumbai","247 Park, Vikhroli West"},
-				{"Mumbai","Zenia, Thane"},
-				{"Mumbai","Vijay Diamond, Andheri East"},
-				{"Mumbai","The Masterpiece, Andheri East"},
-				{"Mumbai","K. Raheja Platinum, Andheri East"},
-				{"Mumbai","Chromium, Powai"},
-				{"Mumbai","Seawoods Grand Central, Navi Mumbai"},
-				{"Mumbai","Spectrum Tower, Malad"},
-				{"Mumbai","Vaswani Chambers, Worli"},
-				{"Mumbai","Enam Sambhav, BKC"},
-				{"Mumbai","WTC, Tower-5"}
+//				{"Mumbai","Oberoi Commerz II, Goregaon East"},
+//				{"Mumbai","NESCO IT Park, Goregaon East"},
+//				{"Mumbai","247 Park, Vikhroli West"},
+//				{"Mumbai","Zenia, Thane"},
+//				{"Mumbai","Vijay Diamond, Andheri East"},
+//				{"Mumbai","The Masterpiece, Andheri East"},
+//				{"Mumbai","K. Raheja Platinum, Andheri East"},
+//				{"Mumbai","Chromium, Powai"},
+//				{"Mumbai","Seawoods Grand Central, Navi Mumbai"},
+//				{"Mumbai","Spectrum Tower, Malad"},
+//				{"Mumbai","Vaswani Chambers, Worli"},
+//				{"Mumbai","Enam Sambhav, BKC"},
+//				{"Mumbai","WTC, Tower-5"}
 				};
 
 		}
@@ -181,11 +181,11 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		{
 			return new Object[][] {
 				{"Gurugram","BlueOne Square, Udyog Vihar"},
-				{"Gurugram","Vi-John Tower, Udyog Vihar"},
-				{"Gurugram","32nd Milestone, Sector 15"},
-				{"Gurugram","Two Horizon Centre, Golf Course Road"},
-				{"Gurugram","DLF Forum, Cybercity"},
-				{"Gurugram","Platina Tower, Bristol Chowk"},
+//				{"Gurugram","Vi-John Tower, Udyog Vihar"},
+//				{"Gurugram","32nd Milestone, Sector 15"},
+//				{"Gurugram","Two Horizon Centre, Golf Course Road"},
+//				{"Gurugram","DLF Forum, Cybercity"},
+//				{"Gurugram","Platina Tower, Bristol Chowk"},
 				};
 		}
 }
