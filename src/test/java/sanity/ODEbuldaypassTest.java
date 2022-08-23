@@ -108,7 +108,7 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		public Object[][] puneDayPassWorkspaces()
 		{
 			return new Object[][] {
-		//		{"Pune","WTC Tower 5"},
+				{"Pune","WTC, Tower - 5"},
 				{"Pune","Futura, Magarpatta Road"}
 				};
 
@@ -118,32 +118,37 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		public Object[][] bengaluruDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Bengaluru","Central Business District","The Pavilion, Central Business District"},
-				{"Bengaluru","Central Business District","Galaxy, Central Business District"},
-				{"Bengaluru","Central Business District","Prestige Central, Central Business District"},
-				{"Bengaluru","Central Business District","Embassy Quest, Central Business District"},
-				{"Bengaluru","Domlur"," "},
-				{"Bengaluru","Hebbal","RMZ Latitude Commercial, Hebbal"},
-				{"Bengaluru","Hebbal","WeWork Manyata NXT"},
-				{"Bengaluru","Old Madras Road"," " },
-				{"Bengaluru","Bannerghatta Main Rd"," "}	
+				{"Bengaluru","Prestige Atlanta, Koramangala"},
+				{"Bengaluru","The Pavilion, Central Business District"},
+				{"Bengaluru","Galaxy, Central Business District"},
+				{"Bengaluru","Prestige Central, Central Business District"},
+				{"Bengaluru","Embassy Quest, Central Business District "},
+				{"Bengaluru","Embassy GolfLinks"},
+				{"Bengaluru","RMZ Latitude Commercial, Hebbal"},
+				{"Bengaluru","Salarpuria Magnificia, Old Madras Rd" },
+				{"Bengaluru","Vaishnavi Signature, Bellandur "},
+				{"Bengaluru","Salarpuria Symbiosis, Bannerghatta Rd "},
+				{"Bengaluru","Prestige Cube, Koramangala "},
+				{"Bengaluru","Embassy TechVillage, Bellandur "},
+				{"Bengaluru","WeWork Manyata NXT "},
+				
 			};
 		}
 	 @DataProvider(name="HyderabadDayPassWorkspaces")
 	     public Object[][] hyderabadDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Hyderabad","Financial District"," "},
-				{"Hyderabad","Hitec City"," "}
+				{"Hyderabad","Krishe Emerald, Hitec City"},
+				{"Hyderabad","Rajapushpa Summit, Financial District"}
 				};
 
 		}
 
 		@DataProvider(name="NoidaDayPassWorkspaces")
-		public Object[][] delhiNCRDayPassWorkspaces()
+		public Object[][] NoidaDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Noida","Sector 16B"," "}
+				{"Noida","Berger Delhi One, Sector 16B "}
 				
 				};
 		}
@@ -154,20 +159,20 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		public Object[][] mumbaiDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Mumbai","Nariman Point","Express Towers"},
-				{"Mumbai","Goregaon East","Oberoi Commerz II, Goregaon East"},
-				{"Mumbai","Goregaon East","NESCO IT Park, Goregaon East"},
-				{"Mumbai","Vikhroli West"," "},
-				{"Mumbai","Thane"," "},
-				{"Mumbai","Andheri East","Vijay Diamond, Andheri East"},
-				{"Mumbai","Andheri East","The Masterpiece, Andheri East"},
-				{"Mumbai","Andheri East","K. Raheja Platinum, Andheri East"},
-				{"Mumbai","Powai"," "},
-				{"Mumbai","Navi Mumbai","Seawoods Grand Central, Navi Mumbai"},
-				{"Mumbai","Malad","Spectrum Tower"},
-				{"Mumbai","Worli"," "},
-				{"Mumbai","BKC","Enam Sambhav"},
-				{"Mumbai","WTC  Tower 5"," "}
+				{"Mumbai","Express Towers, nariman Point"},
+				{"Mumbai","Oberoi Commerz II, Goregaon East"},
+				{"Mumbai","NESCO IT Park, Goregaon East"},
+				{"Mumbai","247 Park, Vikhroli West"},
+				{"Mumbai","Zenia, Thane"},
+				{"Mumbai","Vijay Diamond, Andheri East"},
+				{"Mumbai","The Masterpiece, Andheri East"},
+				{"Mumbai","K. Raheja Platinum, Andheri East"},
+				{"Mumbai","Chromium, Powai"},
+				{"Mumbai","Seawoods Grand Central, Navi Mumbai"},
+				{"Mumbai","Spectrum Tower, Malad"},
+				{"Mumbai","Vaswani Chambers, Worli"},
+				{"Mumbai","Enam Sambhav, BKC"},
+				{"Mumbai","WTC, Tower-5"}
 				};
 
 		}
@@ -175,12 +180,12 @@ public class ODEbuldaypassTest extends Daypass_OD {
 		public Object[][] GurugramDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Gurugram","Udyog Vihar","BlueOne Square, Udyog Vihar"},
-				{"Gurugram","Udyog Vihar","Vi-John Tower, Udyog Vihar"},
-				{"Gurugram","Sector 15"," "},
-				{"Gurugram","Golf Course Road"," "},
-				{"Gurugram","Cybercity"," "},
-				{"Gurugram","Bristol Chowk"," "},
+				{"Gurugram","BlueOne Square, Udyog Vihar"},
+				{"Gurugram","Vi-John Tower, Udyog Vihar"},
+				{"Gurugram","32nd Milestone, Sector 15"},
+				{"Gurugram","Two Horizon Centre, Golf Course Road"},
+				{"Gurugram","DLF Forum, Cybercity"},
+				{"Gurugram","Platina Tower, Bristol Chowk"},
 				};
 		}
 }

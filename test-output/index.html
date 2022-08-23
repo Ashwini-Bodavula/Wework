@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Web_Suite">
-                    <span>TestngWeb.xml</span>
+                    <span>TestngODED.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -131,14 +131,13 @@
                   </a> <!-- Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road) -->
                   <span class="method-name">Test01_OD_daypassbulpune</span>
                   <span class="parameters">(Pune, Futura, Magarpatta Road)</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div class=&quot;&quot; id=&quot;menu-toggle&quot;&gt;...&lt;/div&gt; is not clickable at point (1372, 52). Other element would receive the click: &lt;div class=&quot;MuiDialog-container MuiDialog-scrollPaper&quot; role=&quot;none presentation&quot; tabindex=&quot;-1&quot; style=&quot;opacity: 1; transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=104.0.5112.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;Ashwini-BodavulaB598-MacBook-Air.local&apos;, ip: &apos;192.168.29.9&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;1.8.0_202&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:60808}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e4da495890456c752c0c845eb224530a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:51936}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c8559b692742259fb6c89d5f0f82fa8f
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -150,8 +149,8 @@ Session ID: e4da495890456c752c0c845eb224530a
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy14.click(Unknown Source)
 	at extensions.UIActions.click(UIActions.java:23)
-	at workflows.ODEflows.Daypass_submission(ODEflows.java:97)
-	at sanity.ODEbuldaypassTest.Test01_OD_daypassbulpune(ODEbuldaypassTest.java:35)
+	at workflows.ODEflows.logoutODE(ODEflows.java:63)
+	at sanity.ODEbuldaypassTest.Test01_OD_daypassbulpune(ODEbuldaypassTest.java:36)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
 ... Removed 35 stack frames
 </div> <!-- stack-trace -->
@@ -164,7 +163,7 @@ Session ID: e4da495890456c752c0c845eb224530a
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/ashwinibodavula/Downloads/WeWork-newbranch/TestngWeb.xml</span>
+            <span class="header-content">/Users/ashwinibodavula/Downloads/WeWork-newbranch/TestngODED.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -220,12 +219,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Test01_OD_daypassbulpune')
 data.setCell(0, 2, 'sanity.ODEbuldaypassTest')
-data.setCell(0, 3, 57770);
+data.setCell(0, 3, 51161);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 57 seconds</span>
+              <span class="suite-total-time">Total running time: 51 seconds</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -260,15 +259,15 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">Test01_OD_daypassbulpune(Pune, Futura, Magarpatta Road)</span>
-                <span class="method-start">10895 ms</span>
+                <span class="method-start">10867 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">68702 ms</span>
+                <span class="method-start">62075 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">68883 ms</span>
+                <span class="method-start">62245 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

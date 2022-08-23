@@ -2,24 +2,8 @@ package utilities;
 
 import org.openqa.selenium.support.PageFactory;
 
-import pageObjects.web.Bundles_OD;
-import pageObjects.web.ConferenceroomPage;
-import pageObjects.web.DashboardPage;
-import pageObjects.web.DayPassPage;
-import pageObjects.web.DaypassODE;
-import pageObjects.web.Daypass_OD;
-import pageObjects.web.EnterprisePage;
-import pageObjects.web.EventsPage;
-import pageObjects.web.GetInTouchPage;
-import pageObjects.web.HomePage;
-import pageObjects.web.LoginODE;
-import pageObjects.web.LoginPage;
-import pageObjects.web.MyAccPage;
-import pageObjects.web.LoginODPage;
-import pageObjects.web.PaymentPage;
-import pageObjects.web.VirtualOfficePage;
-import pageObjects.web.conferenceOD;
-import pageObjects.web.webLoading;
+import pageObjects.web.*;
+
 
 
 // Class Name: ManagePages
@@ -45,12 +29,12 @@ public class ManagePages extends Base {
         Day_OD = PageFactory.initElements(driver, Daypass_OD.class);
         BundlesOD= PageFactory.initElements(driver, Bundles_OD.class);
         ODconference= PageFactory.initElements(driver, conferenceOD.class);
-        MyAcc= PageFactory.initElements(driver, MyAccPage.class);
+        MyAcc= PageFactory.initElements(driver, MyAccPageOD.class);
         
         //ODE pages
         ODElogin = PageFactory.initElements(driver,LoginODE.class);
-        day_ODE =  PageFactory.initElements(driver, DaypassODE.class);
-
+        day_ODE  = PageFactory.initElements(driver, DaypassODE.class);
+        AccODE   = PageFactory.initElements(driver, MyAccPageODE.class);
     }
 
 

@@ -39,10 +39,11 @@ public class Base {
     protected static pageObjects.web.Daypass_OD Day_OD;
     protected static pageObjects.web.Bundles_OD BundlesOD;
     protected static pageObjects.web.conferenceOD ODconference;
-    protected static pageObjects.web.MyAccPage MyAcc;
+    protected static pageObjects.web.MyAccPageOD MyAcc;
 
     //ODE
     protected static pageObjects.web.LoginODE ODElogin;
     protected static pageObjects.web.DaypassODE day_ODE; 
+    protected static pageObjects.web.MyAccPageODE AccODE;
 }
 
