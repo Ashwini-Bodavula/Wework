@@ -6,14 +6,18 @@
     <parameter name="platformName" value="web"/>
     <parameter name="URL" value="ODED"/>
     <classes>
-      <class name="sanity.ODEbuldaypassTest">
+      <class name="sanity.ODEMyAccountTest">
         <methods>
+          <include name="Test01_ODE_Enterprise"/>
+          <include name="Test06_ODE_edit"/>
+          <include name="Test02_ODE_profile"/>
           <include name="afterMethod"/>
+          <include name="Test05_ODE_searchEmployee"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="Test01_OD_daypassbulpune" invocation-numbers="0"/>
+          <include name="Test04_OD_AddEmployee"/>
         </methods>
-      </class> <!-- sanity.ODEbuldaypassTest -->
+      </class> <!-- sanity.ODEMyAccountTest -->
     </classes>
   </test> <!-- Web Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->

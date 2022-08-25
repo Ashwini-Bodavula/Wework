@@ -13,24 +13,22 @@ public class MyAccPageODE extends CommonOps
 	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'My Account')]")
 	  public WebElement MyAccount;
 
-	//(//div[@class='sidebar-accordion-list-item'])[1]
 	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'Profile')]")
 	  public WebElement profile;
 
-	//(//div[@class='sidebar-accordion-list-item'])[2]
 	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'Enterprise Bookings')]")
 	  public WebElement Enterprise;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'My Bookings')]")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'My Bookings')]")
 	  public WebElement MyBookings;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Employees')]")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'Employees')]")
 	  public WebElement Employees;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Support')]")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'Support')]")
 	  public WebElement Support;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'On Ground Purchases')]")
+	@FindBy(how = How.XPATH, using = "//span[contains(text(), 'On Ground Purchases')]")
 	  public WebElement myPurchase;
 
 	//profile page
@@ -121,8 +119,12 @@ public class MyAccPageODE extends CommonOps
 	@FindBy(how = How.XPATH, using = "//button/span[@class='MuiIconButton-label']")
 	  public WebElement emp_close;
 	
-	@FindBy(how = How.XPATH, using = "(//div[@style='cursor: pointer;'][1]")
+	@FindBy(how = How.XPATH, using = "(//div[@style='cursor: pointer;'])[1]")
 	  public WebElement emp_edit;
+	
+	//tr[@style='color: rgb(0, 0, 0);']
+	@FindBy(how = How.XPATH, using = "//tr[@style='color: rgb(0, 0, 0);']")
+	  public WebElement emp_table;
 	
 
 	

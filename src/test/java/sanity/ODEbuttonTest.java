@@ -1,6 +1,6 @@
 package sanity;
 
-import static extensions.UIActions.click;
+import static extensions.UIActions.*;
 import static extensions.UIActions.getWindowHandel;
 import static extensions.UIActions.getWindowHandels;
 import static extensions.UIActions.scrollToElement;
@@ -35,40 +35,43 @@ public class ODEbuttonTest extends Daypass_OD {
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
+	 @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test02_OD_daypassBack(String city, String location, String Building) throws InterruptedException{
 		
 		    ODEflows.loginToODE();
 		    ODEflows.selection(city, location, Building);
 		    ODEflows.selectDate(getData("month"),getData("date"));
+		    loadTime(2);
 		    ODEflows.Daypass_Back();
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test03 - Verify admin is able to book a daypass", dataProvider = "HyderabadDayPassWorkspaces")
+/*	 @Test(description = "Test03 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test03_OD_daypassDiscard(String city, String location, String Building) throws InterruptedException{
 		
 		    ODEflows.loginToODE();
 		    ODEflows.selection(city, location, Building);
 		    ODEflows.selectDate(getData("month"),getData("date"));
+		    loadTime(2);
 		    ODEflows.Daypass_discard();
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test04 - Verify admin is able to book a daypass", dataProvider = "NoidaDayPassWorkspaces")
+	 @Test(description = "Test04 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test04_OD_daypassOthers(String city, String location, String Building) throws InterruptedException{
 		
 		    ODEflows.loginToODE();
 		    ODEflows.selection(city, location, Building);
 		    ODEflows.selectDate(getData("month"),getData("date"));
+		    loadTime(2);
 		    ODEflows.Daypass_Others();
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test05 - Verify admin is able to book a daypass", dataProvider = "MumbaiDayPassWorkspaces")
+	 @Test(description = "Test05 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test05_OD_daypassPrinting(String city, String location, String Building) throws InterruptedException{
 		
@@ -80,7 +83,7 @@ public class ODEbuttonTest extends Daypass_OD {
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test06 - Verify admin is able to book a daypass", dataProvider = "GurugramDayPassWorkspaces")
+	 @Test(description = "Test06 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test06_OD_daypassGurugram(String city, String location, String Building) throws InterruptedException{
 		
@@ -91,24 +94,24 @@ public class ODEbuttonTest extends Daypass_OD {
 		    ODEflows.logoutODE();
 	    }
 	 
-	 @Test(description = "Test06 - Verify admin is able to book a daypass", dataProvider = "HyderabadDayPassWorkspaces")
+/*	 @Test(description = "Test06 - Verify admin is able to book a multiple daypass", dataProvider = "HyderabadDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
-	    public void Test07_OD_daypass_multipltdates(String city, String location, String Building) throws InterruptedException{
+	    public void Test07_ODE_daypass_multipltdates(String location, String Building) throws InterruptedException{
 		
 	    	ODEflows.loginToODE();
-		    ODEflows.selection(city, location, Building);
-		    ODEflows.selectDate(getData("month"),getData("date"));
-		    ODEflows.selectDate(getData("month1"),getData("date1"));
-		    ODEflows.selectDate(getData("month2"),getData("date2"));
+		     ODEflows.Building_Daypass(location, Building);
+		    ODEflows.selectDate(getData("ODmonth1"),getData("ODdate1"));
+		    ODEflows.selectDate(getData("ODmonth2"),getData("ODdate2"));
+		    ODEflows.selectDate(getData("ODmonth3"),getData("ODdate3"));
 		    ODEflows.Daypass_submission();
 		    ODEflows.logoutODE();
 	    }
-	 
+	 */
 	 @DataProvider(name="PuneDayPassWorkspaces")
 		public Object[][] puneDayPassWorkspaces()
 		{
 			return new Object[][] {
-				{"Pune","WTC Tower 5"," "},
+//				{"Pune","WTC Tower 5"," "},
 				{"Pune","Magarpatta Road"," "}
 				};
 

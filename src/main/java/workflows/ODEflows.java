@@ -96,15 +96,18 @@ public class ODEflows extends CommonOps
 //		String success_msg=day_ODE.msg.getText();
 //		Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
 //		loadTime(50);
-//		click(day_ODE.msg_close);
+		click(day_ODE.msg_close);
 	   	}
    }
   
    @Step ("Select date in Calander UI")
    public static void selectDate(String month, String date) throws InterruptedException
    {
-    	while (!day_ODE.monthName.getText().contains(month))
+    	while (!day_ODE.monthName.getText().equals(month))
 		{
+    		System.out.println(month);
+    		String month1=day_ODE.monthName.getText();
+    		System.out.println(month1);
    		  click(day_ODE.nxt_month);
    		loadTime(1);
 		}
@@ -272,8 +275,8 @@ public class ODEflows extends CommonOps
 			   {
 				  
 				  System.out.println(bulName);
-				  scrollToElement(day_ODE.buildingBookbtn(i));
-                  click(day_ODE.buildingBookbtn(i));
+				  scrollToElement(day_ODE.buildingBookbtn(i+1));
+                  click(day_ODE.buildingBookbtn(i+1));
                   break;
 			   }
 		   }
@@ -289,7 +292,7 @@ public class ODEflows extends CommonOps
    public static void Enterprise_confirmed(String status, String update, String update1) throws InterruptedException
    {
 	  String Alertmsg ;
-	  click(AccODE.Enterprise);
+	 // click(AccODE.Enterprise);
 	  verifyTextInElement(AccODE.Enterprise_Heading,"Enterprise Wide Bookings"); 
 	  if(status.equals("CONFIRMED"))
 	   {
@@ -337,6 +340,90 @@ public class ODEflows extends CommonOps
 		  
 	   }
    }
-     
+   
+   @Step("verify profile")
+   public static void ODE_profile() throws InterruptedException
+   {
+     //  	click(AccODE.MyAccount);
+           click(AccODE.profile);
+           Boolean email=MyAcc.Email.isEnabled();
+           Assert.assertEquals(false, false);
+           //String name = "test";
+           clearTextBox(AccODE.Name);
+           updateText(AccODE.Name, getData("Name"));
+           clearTextBox(AccODE.Phone);
+           updateText(AccODE.Phone, getData("Phone"));
+           click(MyAcc.save);
+           loadTime(3);          
+           String msg=MyAcc.save_msg.getText();
+           Assert.assertEquals(msg,"User updated");
+           click(WebODLogin.msg_close);
+           String pname= MyAcc.Name.getAttribute("value");
+           Assert.assertEquals(pname, "tester");
+           String phone=MyAcc.Phone.getAttribute("value");
+           Assert.assertEquals(phone, "8905641237");
+           
+   	
+   }
+   
+   @Step("verify support")
+   public static void ODE_support() throws InterruptedException
+   {
+          // click(AccODE.MyAccount);
+           click(AccODE.Support);
+           String sup;           
+           sup=AccODE.supQueries.getText();
+           Assert.assertEquals(sup, "Reach out to us for any queries on support.ondemand@wework.co.in");
+   	 
+    }
+   
+   @Step("Adding employee")
+   public static void ODE_AddEmployee() throws InterruptedException
+   {
+	   click(AccODE.Employees);
+	   click(AccODE.addEmp);
+       updateText(AccODE.Name, getData("Name"));
+       updateText(AccODE.Phone, getData("Phone"));
+	   updateText(AccODE.emp_Id,getData("empID"));
+	   updateDropDown(AccODE.emp_Role,"Manager");
+	   updateText(AccODE.emp_Mgr,getData("manager"));	
+	   String msg=MyAcc.save_msg.getText();
+       Assert.assertEquals(msg,"Email Added");
+	   
+   }
+ 
+   @Step("search employee")
+   public static void ODE_searchEmployee() throws InterruptedException
+   {
+	   click(AccODE.Employees);
+	   updateText(AccODE.searchemp, getData("emp"));
+	   String emptable=AccODE.emp_table.getText();
+	   if(emptable.contains(getData("emp"))) 
+	   {
+		   System.out.println("search worked");
+	   }
+	   else
+		   System.out.println("search failed");	   
+   }
+   
+   @Step("Edit employee")
+   public static void ODE_editEmployee() throws InterruptedException
+   {
+	   click(AccODE.Employees);
+	   String emptable=AccODE.emp_table.getText();
+	   if(emptable.contains("abc")) 
+	   {
+		   click(AccODE.emp_edit);
+		   clearTextBox(AccODE.Name);
+           updateText(AccODE.Name, getData("Name"));
+           clearTextBox(AccODE.Phone);
+           updateText(AccODE.Phone, getData("Phone"));
+           click(MyAcc.save);
+		   String msg1=AccODE.msg.getText();
+		   Assert.assertEquals(msg1, "Employee Updated");	
+	   }
+	 	   
+   }
+   
  }
 
