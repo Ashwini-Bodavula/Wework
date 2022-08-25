@@ -33,6 +33,14 @@ public class Base {
     protected static pageObjects.web.DayPassPage DayPass;
     protected static pageObjects.web.GetInTouchPage GetInTouch;
     protected static pageObjects.web.EnterprisePage Enterprise;
+    
+    //protected static pageObjects.web.EnterprisePage enterprise;
+    protected static pageObjects.web.WBSPage Wbs;
+    protected static pageObjects.web.ReferralsPage Referral;
+    protected static pageObjects.web.CareersPage Careers;
+    protected static pageObjects.web.ODAdminUsersPage ODAdminUser;
+    
+    
 
     //OD
     protected static pageObjects.web.LoginODPage WebODLogin;

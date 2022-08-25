@@ -3,6 +3,7 @@ package utilities;
 import org.openqa.selenium.support.PageFactory;
 
 import pageObjects.web.Bundles_OD;
+import pageObjects.web.CareersPage;
 import pageObjects.web.ConferenceroomPage;
 import pageObjects.web.DashboardPage;
 import pageObjects.web.DayPassPage;
@@ -15,9 +16,12 @@ import pageObjects.web.HomePage;
 import pageObjects.web.LoginODE;
 import pageObjects.web.LoginPage;
 import pageObjects.web.MyAccPage;
+import pageObjects.web.ODAdminUsersPage;
 import pageObjects.web.LoginODPage;
 import pageObjects.web.PaymentPage;
+import pageObjects.web.ReferralsPage;
 import pageObjects.web.VirtualOfficePage;
+import pageObjects.web.WBSPage;
 import pageObjects.web.conferenceOD;
 import pageObjects.web.webLoading;
 
@@ -39,6 +43,13 @@ public class ManagePages extends Base {
         DayPass = PageFactory.initElements(driver, DayPassPage.class);
         GetInTouch = PageFactory.initElements(driver, GetInTouchPage.class);
         Enterprise = PageFactory.initElements(driver, EnterprisePage.class);
+     
+        Wbs = PageFactory.initElements(driver, WBSPage.class);
+        Referral= PageFactory.initElements(driver, ReferralsPage.class);
+        Careers = PageFactory.initElements(driver, CareersPage.class);
+        ODAdminUser = PageFactory.initElements(driver, ODAdminUsersPage.class);
+        
+         
 
         //OD pages
         WebODLogin = PageFactory.initElements(driver, LoginODPage.class);

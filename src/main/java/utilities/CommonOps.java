@@ -124,6 +124,9 @@ public class CommonOps extends Base {
         case "VOS":
         	driver.get(getData("VSD"));
         	break;
+        case "adminD":
+        	driver.get(getData("adminD"));
+        	break;
         }
         ManagePages.Wework();
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
