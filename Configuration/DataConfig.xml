@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Environment>
+    <!-- Timeout -->
+    <Timeout>30</Timeout>
+
+    <!-- Authorization -->
+   <Username>testers@geekyants.com</Username>
+    <Password>Orchids@9</Password>
+    <user>Rohini</user>
+    <name>Varsha</name>
+    <email>testers@geekyants.com</email>
+    <phoneNumber>9999999999</phoneNumber>
+    <lastName>R</lastName>
+    <companyName>GA</companyName>
+    <address>2nd main 4th cross HSR layout</address>
+    <landMark>Near J.P Nagar Metro Station</landMark>
+    <city>Bangalore</city>
+    <pincode>560063</pincode>
+    <couponCode>ABC123</couponCode>
+    <date1>30</date1>
+    <month1>August</month1>
+    <date2>22</date2>
+    <month2>September</month2>
+    <date3>5</date3>
+    <month3>October</month3>
+    <teamMember1>Anusha</teamMember1>
+    <teamMember1Email>anusha@abc.com</teamMember1Email>
+    <teamMember2>Bhuvan</teamMember2>
+    <teamMember2Email>bhuvan@abc.com</teamMember2Email>
+    
+    
+    
+    <whiteSpaces>    </whiteSpaces>
+    <invalidEmail>abcdef.com</invalidEmail>
+    <validEmail>testers@geekyants.com</validEmail>
+    <invalidPassword>invalidPassword</invalidPassword>
+    
+    
+    <TS>https://wework.co.in/terms-and-conditions/</TS>
+<!-- CO -->
+    <!-- Web -->
+    <BrowserName>chrome</BrowserName>
+    <CO>https://wework.co.in/</CO>
+     <COD>http://dev-wework-co-in-dot-wework-staging.el.r.appspot.com/</COD>
+     <COS>https://wework-co-in-dot-wework-staging.el.r.appspot.com/</COS>>
+    <ImageRepo>System.getProperty("user.dir")
+        + "\\src\\test\\resources\\"</ImageRepo>
+
+   <!-- OD -->
+
+  <Name>tester</Name>
+    <Email>tester@gmail.com</Email>
+    <Phone>8905641237</Phone>
+    <BrowserName>chrome</BrowserName>
+    <ODD>https://wod2.1stmain.dev/</ODD>
+    <ODS>https://wod.1stmain.dev/</ODS>
+    <OD>https://ondemand.wework.co.in/</OD>
+    
+    <!-- ODE -->
+    <ODED>https://payperuse2.1stmain.dev/ </ODED>
+    <ODES>https://payperuse.1stmain.dev/ </ODES>
+    <ODE>https://enterprise.ondemand.wework.co.in/</ODE>
+    <Eadmin>radhika@1stmain.co</Eadmin>
+    <pwd>admin@123</pwd>
+    <manager>manager1@1stmain.co</manager>
+    <emp>employee1@1stmain.com</emp>
+    <date>15</date>
+    <month>September 2022</month>
+    <ODdate1>30</ODdate1>
+    <ODmonth1>August 2022</ODmonth1>
+    <ODdate2>22</ODdate2>
+    <ODmonth2>September 2022</ODmonth2>
+    <ODdate3>5</ODdate3>
+    <ODmonth3>October 2022</ODmonth3>
+    <empID>09</empID>
+    
+    
+    <!-- VO -->
+    <VOD>https://payperuse2.1stmain.dev/ </VOD>
+    <VOS>https://payperuse.1stmain.dev/ </VOS>
+    <VO>https://enterprise.ondemand.wework.co.in/</VO>
+    
+    <!-- Data Driven Testing -->
+    <DDTFile>./DDTFiles/users.csv</DDTFile> 
+    
+</Environment>
