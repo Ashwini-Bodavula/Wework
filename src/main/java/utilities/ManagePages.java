@@ -2,8 +2,28 @@ package utilities;
 
 import org.openqa.selenium.support.PageFactory;
 
-import pageObjects.web.*;
-
+import pageObjects.web.Bundles_OD;
+import pageObjects.web.CareersPage;
+import pageObjects.web.ConferenceroomPage;
+import pageObjects.web.DashboardPage;
+import pageObjects.web.DayPassPage;
+import pageObjects.web.DaypassODE;
+import pageObjects.web.Daypass_OD;
+import pageObjects.web.EnterprisePage;
+import pageObjects.web.EventsPage;
+import pageObjects.web.GetInTouchPage;
+import pageObjects.web.HomePage;
+import pageObjects.web.LoginODE;
+import pageObjects.web.LoginPage;
+import pageObjects.web.MyAccPage;
+import pageObjects.web.ODAdminUsersPage;
+import pageObjects.web.LoginODPage;
+import pageObjects.web.PaymentPage;
+import pageObjects.web.ReferralsPage;
+import pageObjects.web.VirtualOfficePage;
+import pageObjects.web.WBSPage;
+import pageObjects.web.conferenceOD;
+import pageObjects.web.webLoading;
 
 
 // Class Name: ManagePages
@@ -23,18 +43,25 @@ public class ManagePages extends Base {
         DayPass = PageFactory.initElements(driver, DayPassPage.class);
         GetInTouch = PageFactory.initElements(driver, GetInTouchPage.class);
         Enterprise = PageFactory.initElements(driver, EnterprisePage.class);
+     
+        Wbs = PageFactory.initElements(driver, WBSPage.class);
+        Referral= PageFactory.initElements(driver, ReferralsPage.class);
+        Careers = PageFactory.initElements(driver, CareersPage.class);
+        ODAdminUser = PageFactory.initElements(driver, ODAdminUsersPage.class);
+        
+         
 
         //OD pages
         WebODLogin = PageFactory.initElements(driver, LoginODPage.class);
         Day_OD = PageFactory.initElements(driver, Daypass_OD.class);
         BundlesOD= PageFactory.initElements(driver, Bundles_OD.class);
         ODconference= PageFactory.initElements(driver, conferenceOD.class);
-        MyAcc= PageFactory.initElements(driver, MyAccPageOD.class);
+        MyAcc= PageFactory.initElements(driver, MyAccPage.class);
         
         //ODE pages
         ODElogin = PageFactory.initElements(driver,LoginODE.class);
-        day_ODE  = PageFactory.initElements(driver, DaypassODE.class);
-        AccODE   = PageFactory.initElements(driver, MyAccPageODE.class);
+        day_ODE =  PageFactory.initElements(driver, DaypassODE.class);
+
     }
 
 

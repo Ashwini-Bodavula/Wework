@@ -8,16 +8,19 @@
     <Password>Orchids@9</Password>
     <user>Rohini</user>
     <name>Varsha</name>
+    <newName>VarshaR</newName>
     <email>testers@geekyants.com</email>
     <phoneNumber>9999999999</phoneNumber>
-    <lastName>R</lastName>
-    <companyName>GA</companyName>
+    <lastName>R</lastName>\
+    <userEmail>varshar@geekyants.com</userEmail>
+    <userPassword>Varsha@123</userPassword>
+
     <address>2nd main 4th cross HSR layout</address>
     <landMark>Near J.P Nagar Metro Station</landMark>
     <city>Bangalore</city>
     <pincode>560063</pincode>
     <couponCode>ABC123</couponCode>
-    <date1>30</date1>
+    <date1>26</date1>
     <month1>August</month1>
     <date2>22</date2>
     <month2>September</month2>
@@ -28,12 +31,21 @@
     <teamMember2>Bhuvan</teamMember2>
     <teamMember2Email>bhuvan@abc.com</teamMember2Email>
     
+    <companyName>GeekyAnts</companyName>
+    <companyEmail>geek@geekyants.com</companyEmail>
     
     
     <whiteSpaces>    </whiteSpaces>
     <invalidEmail>abcdef.com</invalidEmail>
     <validEmail>testers@geekyants.com</validEmail>
     <invalidPassword>invalidPassword</invalidPassword>
+    
+    <adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
+    <ODUserEmail>rahul@geekyants.com</ODUserEmail>
+    <ODUserPwd>rahuladmin</ODUserPwd>
+    
+    
+    
     
     
     <TS>https://wework.co.in/terms-and-conditions/</TS>
@@ -48,7 +60,7 @@
 
    <!-- OD -->
 
-  <Name>tester</Name>
+  <Name>tester2</Name>
     <Email>tester@gmail.com</Email>
     <Phone>8905641237</Phone>
     <BrowserName>chrome</BrowserName>
@@ -65,14 +77,7 @@
     <manager>manager1@1stmain.co</manager>
     <emp>employee1@1stmain.com</emp>
     <date>15</date>
-    <month>September 2022</month>
-    <ODdate1>30</ODdate1>
-    <ODmonth1>August 2022</ODmonth1>
-    <ODdate2>22</ODdate2>
-    <ODmonth2>September 2022</ODmonth2>
-    <ODdate3>5</ODdate3>
-    <ODmonth3>October 2022</ODmonth3>
-    <empID>09</empID>
+    <month>September</month>
     
     
     <!-- VO -->

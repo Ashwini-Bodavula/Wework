@@ -1,0 +1,82 @@
+package pageObjects.web;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+
+import utilities.CommonOps;
+
+public class ODAdminUsersPage  extends CommonOps{
+
+	public WebElement select(String locator)
+	{
+		return driver.findElement(By.xpath("(//*[contains(text(), '"+locator+"')])"));
+
+	}
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='user-email']")
+    public WebElement Email;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='user-pwd']")
+    public WebElement password;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgot Password?')]")
+    public WebElement forgotPassword;
+	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Login')]")
+    public WebElement loginBtn;
+	
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Logout')]")
+    public WebElement logoutBtn;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Admin Users')]")
+    public WebElement adminUsers;
+	
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Add User')]")
+    public WebElement addUserBtn;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='useremail']")  
+    public WebElement userEmail;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='userpswd']")
+    public WebElement userpassword;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='user-name']")  
+    public WebElement userName;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'select__dropdown-indicator')]")
+    public WebElement SelectBuildingDrpdwn;
+	
+	@FindBy(how = How.XPATH, using = "(//span[@class='MuiSwitch-thumb'])[1]")
+    public WebElement isSuperAdminBtn;
+	
+	@FindBy(how = How.XPATH, using = "(//span[@class='MuiSwitch-thumb'])[2]")
+    public WebElement isPostPaidUser;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Prestige Atlanta, Koramangala')]")
+    public WebElement PrestigeAtlanatBuilding;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Futura, Magarpatta Road')]")
+    public WebElement FuturaBuilding;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'Add')])[2]")
+    public WebElement addBtn;
+	
+//	@FindBy(how = How.XPATH, using = "//div[contains(text(),'User Created Successfully')]")
+//    public WebElement userCreatedMessage;
+	
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[2]/div[1]")
+    public WebElement userCreatedMessage;
+	
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Update')]")
+    public WebElement updateBtn;
+	
+	
+	
+	
+	
+	
+	
+}

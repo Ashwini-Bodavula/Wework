@@ -33,17 +33,24 @@ public class Base {
     protected static pageObjects.web.DayPassPage DayPass;
     protected static pageObjects.web.GetInTouchPage GetInTouch;
     protected static pageObjects.web.EnterprisePage Enterprise;
+    
+    //protected static pageObjects.web.EnterprisePage enterprise;
+    protected static pageObjects.web.WBSPage Wbs;
+    protected static pageObjects.web.ReferralsPage Referral;
+    protected static pageObjects.web.CareersPage Careers;
+    protected static pageObjects.web.ODAdminUsersPage ODAdminUser;
+    
+    
 
     //OD
     protected static pageObjects.web.LoginODPage WebODLogin;
     protected static pageObjects.web.Daypass_OD Day_OD;
     protected static pageObjects.web.Bundles_OD BundlesOD;
     protected static pageObjects.web.conferenceOD ODconference;
-    protected static pageObjects.web.MyAccPageOD MyAcc;
+    protected static pageObjects.web.MyAccPage MyAcc;
 
     //ODE
     protected static pageObjects.web.LoginODE ODElogin;
     protected static pageObjects.web.DaypassODE day_ODE; 
-    protected static pageObjects.web.MyAccPageODE AccODE;
 }
 

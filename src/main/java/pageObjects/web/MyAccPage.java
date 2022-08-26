@@ -7,8 +7,21 @@ import org.openqa.selenium.support.How;
 
 import utilities.CommonOps;
 
-public class MyAccPageOD extends CommonOps
+public class MyAccPage extends CommonOps
 {
+
+	public WebElement selectlocation(String locator)
+	{
+		return driver.findElement(By.xpath("//*[contains(text(),'"+locator+"')]"));
+
+	}
+
+	public WebElement selectDate(String locator)
+	{
+		return driver.findElement(By.xpath("//p[text()='"+locator+"']"));
+
+	}
+
 
 	@FindBy(how = How.XPATH, using = "//p[contains(text(), 'My Account')]")
 	  public WebElement MyAccount;
