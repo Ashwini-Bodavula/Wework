@@ -4,7 +4,7 @@
     <test name="Web Tests">
         <parameter name="platformName" value="web" />
         <parameter name="browser" value="Chrome"></parameter>        
-          <parameter name="URL" value="COD"></parameter>
+          <parameter name="URL" value="CO"></parameter>
         <classes>
                      
           <class name="sanity.SelectDayPassTest"/> 

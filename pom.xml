@@ -182,9 +182,7 @@
                                 <suiteXmlFile>TestNGWeb.xml</suiteXmlFile>
                                 <suiteXmlFile>TestNGCO.xml</suiteXmlFile>
                                 <suiteXmlFile>TestNGODED.xml</suiteXmlFile>
-                                <suiteXmlFile>TestngODAdmin.xml</suiteXmlFile>
-                                
-                                
+                                <suiteXmlFile>TestngODAdmin.xml</suiteXmlFile>                                                               
                             </suiteXmlFiles>
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

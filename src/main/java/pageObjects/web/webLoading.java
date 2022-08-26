@@ -302,13 +302,13 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Phone number*']")
     public  WebElement phonenNumberField;
 
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])[2]")
+    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
     public  WebElement username;
 
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Email*'])[2]")
+    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Email*'])")
     public  WebElement userEmail;
 
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])[2]")
+    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])")
     public  WebElement userPhnNumber;
 
     @FindBy(how = How.XPATH, using = "(//*[name()='path'][@stroke='#0000FF'])[1]")
@@ -357,12 +357,4 @@ public class webLoading extends CommonOps{
   
     @FindBy(how = How.XPATH, using = "//a[contains(text(),'Careers')]")
     public  WebElement CareersLink;
-    
-    
-   
-    
-  
-  
-    
-    
 }

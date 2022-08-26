@@ -10,7 +10,7 @@
           <class name="sanity.WebODMyAccountTest"/>        
           
            <class name="sanity.WebODTest"/>
-        <!--    <class name="sanity.SelectAllAccessWrkspaceTest"/>
+        <class name="sanity.SelectAllAccessWrkspaceTest"/>
           <class name="sanity.SelectDayPassTest"/>
           <class name="sanity.SelectEnterpriseSolutionsTest"/>
           <class name="sanity.SelectEventsAndWorkspacesTest"/>   
@@ -21,7 +21,7 @@
           <class name="sanity.SelectSubscriptionTest"/>
           <class name="sanity.SelectVirtualOfficeTest"/> 
            <class name="sanity.WebODBundlesTest"/>
-          <class name="sanity.SelectAllAccessWrkspaceTest"/>-->
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
           
             
         </classes>
