@@ -1,1 +1,0 @@
-{"uuid":"5f6bebb9-d6f0-4413-b6f7-fd823afa3728","name":"sanity.WeWorkWebAppTest","children":["e4aa5466-c735-4616-9a20-ed22e0bad9e5"],"befores":[],"afters":[{"name":"closeSession","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661343816736,"stop":1661343816736}],"links":[],"start":1661343780955,"stop":1661343821775}
