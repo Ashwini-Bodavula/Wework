@@ -19,7 +19,7 @@ public class WebAppTest extends CommonOps
     @Description("This test verifies that the website is opening on the chrome browser")
     public void test01_verifyWebsite() throws InterruptedException {
         WebFlows.loadWebsite();
-    }*/
+    }
 
     @Test(description = "Test02 - Verify User is able to Login and logout", groups= {"CO"})
     @Description("This test verifies that User is able to login and logout")
@@ -179,7 +179,7 @@ public class WebAppTest extends CommonOps
 
    @Test(description = "Test06 - Verify User is able to navigate to terms and services", groups= {"CO"})
     @Description("This test verifies that User is able to navigate to terms and services")
-    public void test04_verifyTermsAndConditions() throws InterruptedException {
+    public void test06_verifyTermsAndConditions() throws InterruptedException {
     //	WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
         scrollToElement(WebLoading.termsAndServices);
@@ -195,7 +195,7 @@ public class WebAppTest extends CommonOps
 
 	@Test(description = "Test07 - Verify User is able to select why wework option", groups= {"CO"} )
     @Description("This test verifies that User is able to select why wework option")
-    public void test05_SelectWhyWework() throws InterruptedException
+    public void test07_SelectWhyWework() throws InterruptedException
     {
 	//	WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
@@ -220,25 +220,15 @@ public class WebAppTest extends CommonOps
         mouseHover(WebLoading.closeIcon);
         WebFlows.logoutOfApplication();
 
-    }
+    }*/
 
-	@Test(description = "Test06 - Verify User is able to Select contact us option")
+	@Test(description = "Test08 - Verify User is able to Select contact us option")
     @Description("This test verifies that User is able to Select contact us option")
-    public void test06_VerifyContactUsFeature() throws InterruptedException
+    public void test08_VerifyContactUsFeature() throws InterruptedException
     {
 	//	WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
-    	click(WebLoading.contactUsBtn);
-    	scrollToElement(WebLoading.fullName);
-    	Verifications.elementIsVisible(WebLoading.fullName);
-    	updateText(WebLoading.fullName, getData("name"));
-        updateText(WebLoading.email, getData("email"));
-        updateText(WebLoading.phnNumber, getData("phoneNumber"));
-        scrollToElement(WebLoading.loctnDropdown);
-        click(WebLoading.loctnDropdown);
-        click(WebLoading.CityTwo);
-        mouseHover(WebLoading.scheduleVistiBtn);
-        click(WebLoading.getInTouchBtn);
+    	WebFlows.fillGetInTouchForm();
         WebFlows.logoutOfApplication();
 
     }

@@ -845,6 +845,68 @@ public class WebFlows extends CommonOps
        return validationPassed;
    }
 
+	@Step("Select time")
+	public static void selectTime(String hours, String minutes) throws InterruptedException 
+	{
+		click(Events.clockIcon);
+		loadTime(3);
+		mouseHover(Events.selectHour(hours));
+		loadTime(3);
+		mouseHover(Events.selectMinute(minutes));
+		loadTime(3);
+	}
+	
+	@Step("Fill WBS Form")
+	public static void fillWBSForm() throws InterruptedException 
+	{
+		click(WebLoading.workspaceDrpdwn);
+		Verifications.elementIsVisible(WebLoading.WBS);
+		mouseHover(WebLoading.WBS);
+		loadTime(2);
+		scrollToElement(Wbs.fullName);
+		Verifications.elementIsVisible(Wbs.fullName);
+		updateText(Wbs.fullName, getData("name"));
+		updateText(Wbs.companyName, getData("companyName"));
+		updateText(Wbs.companyEmail, getData("companyEmail"));
+		updateText(Wbs.phoneNumber, getData("phoneNumber"));
+		click(Wbs.locationDropdwon);
+		click(Wbs.selectCity("Mumbai"));
+		click(Wbs.selectService("Hardware rentals"));
+		click(Wbs.selectService("Payroll processing"));
+		click(Wbs.selectService(" Food & Beverage"));
+		//click(wbs.getInTouch);
+		
+	}
+	
+	
+	@Step("Fill getInTouch form")
+	public static void fillGetInTouchForm() throws InterruptedException
+	{
+		click(WebLoading.contactUsBtn);
+    	scrollToElement(GetInTouch.firstName);
+    	Verifications.elementIsVisible(GetInTouch.firstName);
+    	updateText(GetInTouch.firstName, getData("name"));
+        updateText(GetInTouch.lastName, getData("lastName"));
+        updateText(GetInTouch.companyName, getData("companyName"));
+        updateText(GetInTouch.companyEmail, getData("companyEmail"));
+        updateText(GetInTouch.phoneNumber, getData("phoneNumber"));
+        click(GetInTouch.locationsDrpdwn);
+        click(GetInTouch.select("Pune"));
+        click(GetInTouch.micromarketDrpdwn);
+        click(GetInTouch.select("Kharadi"));
+        click(GetInTouch.buildingsDropdown);
+        click(GetInTouch.select("World Trade Center"));
+        click(GetInTouch.workspaceTypedrpdwn);
+        click(GetInTouch.select("Private Office"));
+        click(GetInTouch.increaseNoOfDesk);
+        click(GetInTouch.increaseNoOfDesk);
+        click(GetInTouch.decreaseNoOfDesk);
+        //click(GetInTouch.getInTouchBtn);
+	}
+	
+	
+
+
 @Step("verify profile")
 public static void profile() throws InterruptedException
 {
@@ -867,8 +929,10 @@ public static void profile() throws InterruptedException
         String phone=MyAcc.Phone.getAttribute("value");
         Assert.assertEquals(phone, "8905641237");
         click(WebODLogin.msg_close);
+        
 	}
-}
+
+ }
 }
 
 

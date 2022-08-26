@@ -88,12 +88,6 @@ public class Verifications extends CommonOps {
 
     @Step("Verify Page Title")
     public static void verifyUrl(String actual, String expected){ assertEquals(actual, expected); }
-   
-    @Step("Verify Page Title")
-    public static void verifycontains(String actual, String expected) 
-    {
-    actual.contains(expected);
-    }
 
 
 

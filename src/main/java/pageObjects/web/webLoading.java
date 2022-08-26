@@ -349,5 +349,20 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "(//p[@class='title'])[3]")
     public  WebElement workspaceTitle;
 
-
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'WBS')]")
+    public  WebElement WBS;
+  
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Referrals')]")
+    public  WebElement referralsLink;
+  
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Careers')]")
+    public  WebElement CareersLink;
+    
+    
+   
+    
+  
+  
+    
+    
 }

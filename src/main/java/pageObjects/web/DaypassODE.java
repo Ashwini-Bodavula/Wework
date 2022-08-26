@@ -114,7 +114,7 @@ public class DaypassODE extends CommonOps
 		//@FindBy(how = How.XPATH, using ="//button[@class='ray-button ray-button--primary card-btn individual-card-btn']")
 		public WebElement buildingBookbtn(int j)
 		{
-			return driver.findElement(By.xpath("(//button[contains(@class, 'card-btn')])["+j+"]"));
+			return driver.findElement(By.xpath("(//button[contains(@class, 'card-btn')])['"+j+"']"));
 		}
 		
 		@FindBy(how = How.XPATH, using ="//h1[contains(@class, 'ray-text--h1')]")
