@@ -4,20 +4,16 @@
   <test thread-count="5" name="Web Tests(failed)">
     <parameter name="browser" value="Chrome"/>
     <parameter name="platformName" value="web"/>
-    <parameter name="URL" value="ODED"/>
+    <parameter name="URL" value="adminD"/>
     <classes>
-      <class name="sanity.ODEMyAccountTest">
+      <class name="sanity.ODAdminDashboardTest">
         <methods>
-          <include name="Test01_ODE_Enterprise"/>
-          <include name="Test06_ODE_edit"/>
-          <include name="Test02_ODE_profile"/>
+          <include name="test04_shopSelection"/>
           <include name="afterMethod"/>
-          <include name="Test05_ODE_searchEmployee"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="Test04_OD_AddEmployee"/>
         </methods>
-      </class> <!-- sanity.ODEMyAccountTest -->
+      </class> <!-- sanity.ODAdminDashboardTest -->
     </classes>
   </test> <!-- Web Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->

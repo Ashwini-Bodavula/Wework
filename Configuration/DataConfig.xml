@@ -40,10 +40,14 @@
     <validEmail>testers@geekyants.com</validEmail>
     <invalidPassword>invalidPassword</invalidPassword>
     
+    <!-- admin dashboard -->
     <adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
     <ODUserEmail>rahul@geekyants.com</ODUserEmail>
     <ODUserPwd>rahuladmin</ODUserPwd>
-    
+    <loc1>Prestige Atlanta, Koramangala</loc1>
+  <loc2>Futura, Magarpatta Road</loc2>
+  <isPostpaidUser>NO</isPostpaidUser>
+  <isSuperAdmin>YES</isSuperAdmin>
     
     
     

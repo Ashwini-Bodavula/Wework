@@ -6,6 +6,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -285,22 +286,31 @@ public class ODEflows extends CommonOps
    public static void Enterprise_confirmed(String status, String update, String update1) throws InterruptedException
    {
 	  String Alertmsg ;
-	 // click(AccODE.Enterprise);
+	  loadTime(5);
+	  click(ODElogin.weWorkHome);
+	  click(ODElogin.hamBurger);
+	  click(AccODE.MyAccount);
+//	  click(AccODE.Enterprise);
 	  Verifications.verifyTextInElement(AccODE.Enterprise_Heading,"Enterprise Wide Bookings"); 
 	  if(status.equals("CONFIRMED"))
 	   {
-		  String stat=AccODE.orderType.getText();
-		  Assert.assertEquals(stat, "Confirmed");
+		  String stat=AccODE.orderType.getAttribute("value");
+		  Assert.assertEquals(stat, "completed");
 		  String row1=AccODE.bookingTable.getText();
 		  click(AccODE.status(status));
-		  click(AccODE.updatestatus(update));
-		   if(update.equalsIgnoreCase("Cancel"))
-		   { 			   
+		  boolean value=AccODE.updatestatus(update).isEnabled();
+		   if(value)
+		   {
+		     if(update.equalsIgnoreCase("Cancel"))
+		     { 	
+			   click(AccODE.updatestatus(update));
 			   if(update1.equalsIgnoreCase("cancel All"))
 			   {
 				 click(AccODE.updatestatus(update1));
+				 loadTime(5);
 				 Alertmsg = AccODE.msg.getText();
 				 Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				 click(day_ODE.msg_close);
 			     
 	     	   }
 			   else if(update1.equalsIgnoreCase("Done"))
@@ -310,17 +320,25 @@ public class ODEflows extends CommonOps
 				  if(count==1)
 				  {
 					  click(AccODE.updatestatus("Cancel All")); 
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
 				  }
 				  else
 				  {
-					  for(int i=0;i<count-1;i++) 
+					  System.out.println(count);
+					  for(int i=1;i<count;i++) 
 					  {
-					   AccODE.delete(i);
+					   click(AccODE.delete);
+					   loadTime(1);
+					   
 					  }
 					  click(AccODE.updatestatus("Done"));
+					  loadTime(2);
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Modified Successfully, please refresh page after 20s to see the changes");
 				  }		
-				  Alertmsg = AccODE.msg.getText();
-				  Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				 
+				  click(day_ODE.msg_close);
  	    	   }
 			   else
 			    {
@@ -330,8 +348,116 @@ public class ODEflows extends CommonOps
 				   Verifications.verifycontains(page,"Order");
 			    }			   			   
 		   }
-		  
+		  } 
 	   }
+   }
+ 
+   public static void Enterprise_Rescheduled(String status, String update, String update1) throws InterruptedException
+   {
+	  String Alertmsg ;
+	  loadTime(5);
+	  click(ODElogin.weWorkHome);
+	  click(ODElogin.hamBurger);
+	  click(AccODE.MyAccount);
+//	  click(AccODE.Enterprise);
+	  Verifications.verifyTextInElement(AccODE.Enterprise_Heading,"Enterprise Wide Bookings"); 
+	  if(status.equals("CONFIRMED"))
+	   {
+		  String stat=AccODE.orderType.getAttribute("value");
+		  Assert.assertEquals(stat, "completed");
+		  String row1=AccODE.bookingTable.getText();
+		  click(AccODE.status(status));
+		  boolean value=AccODE.updatestatus(update).isEnabled();
+		   if(value)
+		   {
+		     if(update.equalsIgnoreCase("Reschedule"))
+		     { 	
+			   click(AccODE.updatestatus(update));
+			   if(update1.equalsIgnoreCase("cancel All"))
+			   {
+				 click(AccODE.updatestatus(update1));
+				 loadTime(5);
+				 Alertmsg = AccODE.msg.getText();
+				 Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				 click(day_ODE.msg_close);
+			     
+	     	   }
+			   else if(update1.equalsIgnoreCase("Done"))
+			   {
+				  List <WebElement> orders=driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-4']"));
+				  int count= orders.size();
+				  if(count==1)
+				  {
+					  click(AccODE.updatestatus("Cancel All")); 
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				  }
+				  else
+				  {
+					  System.out.println(count);
+					  for(int i=1;i<count;i++) 
+					  {
+					   click(AccODE.delete);
+					   loadTime(1);
+					   
+					  }
+					  click(AccODE.updatestatus("Done"));
+					  loadTime(2);
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Modified Successfully, please refresh page after 20s to see the changes");
+				  }		
+				 
+				  click(day_ODE.msg_close);
+ 	    	   }
+			   else
+			    {
+				   click(AccODE.updatestatus("Back"));
+				   String page=AccODE.order.getText();
+				  // page.contains("Order");
+				   Verifications.verifycontains(page,"Order");
+			    }			   			   
+		   }
+		  } 
+	   }
+   }
+   public static void Enterprise_pending(String status, String update) throws InterruptedException
+   {
+	   String Alertmsg ;
+	   loadTime(5);
+	 
+   	  click(AccODE.Enterprise);
+	  Verifications.verifyTextInElement(AccODE.Enterprise_Heading,"Enterprise Wide Bookings"); 
+	  if(status.equals("PENDING"))
+	   {
+		  click(AccODE.orderType);
+		  updateDropDown(AccODE.orderType,"Pending");
+		  String stat=AccODE.orderType.getText();
+		  Assert.assertEquals(stat, "pending");
+		 // String row1=AccODE.bookingTable.getText();
+		  click(AccODE.status(status));
+		 
+		   if(update.equalsIgnoreCase("Approve"))
+		   { 	
+			   click(AccODE.updatestatus(update));
+			   Alertmsg = AccODE.msg.getText();
+			   Assert.assertEquals(Alertmsg, "Order Approved Successfully");
+			   click(day_ODE.msg_close);
+		   } 
+		   if(update.equalsIgnoreCase("Rejected"))
+		   { 	
+			   click(AccODE.updatestatus(update));
+			   Alertmsg = AccODE.msg.getText();
+			   Assert.assertEquals(Alertmsg, "Order Rejected Successfully");
+			   click(day_ODE.msg_close);
+		   }
+	       if(update.equalsIgnoreCase("cancel All"))
+			{
+				 click(AccODE.updatestatus(update));
+				 Alertmsg = AccODE.msg.getText();
+				 Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				 click(day_ODE.msg_close);			     
+	     	} 	    	   		  			   			   		   		  
+     }
    }
    
    @Step("verify profile")
@@ -375,13 +501,15 @@ public class ODEflows extends CommonOps
    {
 	   click(AccODE.Employees);
 	   click(AccODE.addEmp);
-       updateText(AccODE.Name, getData("Name"));
+	   String generatedString = RandomStringUtils.randomAlphabetic(10);
+       updateText(AccODE.Name, generatedString );
        updateText(AccODE.Phone, getData("Phone"));
 	   updateText(AccODE.emp_Id,getData("empID"));
 	   updateDropDown(AccODE.emp_Role,"Manager");
 	   updateText(AccODE.emp_Mgr,getData("manager"));	
 	   String msg=MyAcc.save_msg.getText();
        Assert.assertEquals(msg,"Email Added");
+       click(day_ODE.msg_close);
 	   
    }
  
@@ -408,12 +536,14 @@ public class ODEflows extends CommonOps
 	   {
 		   click(AccODE.emp_edit);
 		   clearTextBox(AccODE.Name);
-           updateText(AccODE.Name, getData("Name"));
+		   String name = RandomStringUtils.randomAlphabetic(10);
+           updateText(AccODE.Name, name);
            clearTextBox(AccODE.Phone);
            updateText(AccODE.Phone, getData("Phone"));
            click(MyAcc.save);
 		   String msg1=AccODE.msg.getText();
 		   Assert.assertEquals(msg1, "Employee Updated");	
+		   click(day_ODE.msg_close);
 	   }
 	 	   
    }
