@@ -2,6 +2,7 @@ package workflows;
 
 import static extensions.UIActions.click;
 import static extensions.UIActions.loadTime;
+import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateDropDown;
 import static extensions.UIActions.updateText;
 
@@ -11,6 +12,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import com.tigervnc.rfb.Exception;
+
+import extensions.UIActions;
 import extensions.Verifications;
 import io.qameta.allure.Step;
 import utilities.CommonOps;
@@ -70,37 +74,87 @@ public class ODEconfrenceroomflows extends CommonOps {
 	    loadTime(5);
 	   	click(ODElogin.weWorkHome);
 	   	System.out.println("logged in");
-	   	click(ODEconferenceroom.ConferenceRoom);
+	   	click(ODEconferenceroom.ConferenceRoomS);
 	   	click(ODEconferenceroom.city);
 	   	updateDropDown(ODEconferenceroom.city, city);
 	   	click(ODEconferenceroom.location);
 	   	updateDropDown(ODEconferenceroom.location, location);
 	   	click(ODEconferenceroom.search);
-	   	click(ODEconferenceroom.date);
+//	   	click(ODEconferenceroom.date);
    }
-//    @Step ("Select Number of hours for conference room")
-//    public static void selectNumberOfHours(int hourse) throws InterruptedException
-//		   {
-//		   	    for(int i=1;i<hourse;i++)
-//		   	    {
-//		   	    	click(ODEconferenceroom.increaseHours);
-//		   	    }
-//		   	    Thread.sleep(2000);
-//		   	    
-//		    	String numberofhours = ODEconferenceroom.numberofhours.getText();
-//		    	int hoursInt = Integer.parseInt(numberofhours);
-//		    	if(hourse==hoursInt)
-//		    	{
-//		    		Assert.assertTrue(true, hourse+" hours selected");
-//		    		
-//		    	}
-//		    	else
-//		    	{
-//		    		Assert.assertTrue(false, hourse +" hours not selected");
-//		    		
-//		    	}
+    @Step ("Select Number of hours for conference room")
+    public static void selectNumberOfHours(int hourse) throws InterruptedException
+		   {
+    	try
+    	{
+				for(int i=1;i<hourse;i++)
+		   	    {
+		   	    	click(ODEconferenceroom.increaseHours);
+		   	    }
+		   	    Thread.sleep(2000);
+		   	   
+		    	String numberofhours = ODEconferenceroom.numberofhours.getText();
+		   	    
+		    	int hoursInt = Integer.parseInt(numberofhours);
 		    	
+		    	if(hourse==hoursInt)
+		    	{
+		    		Assert.assertTrue(true, hourse+" hours selected");
+		    		
+		    	}
+		    	else
+		    	{
+		    		Assert.assertTrue(false, hourse +" hours not selected");
+		    		
+		    	}
+		    	
+    	}
+    	
+    	catch (NumberFormatException nfe) {
+    	      nfe.printStackTrace();
+    		
+    	}
 		   
+		   }
+    
+    @Step ("select month and date ")
+    public static void selectdate()
+    {
+    	String month="march2020";
+    	String date="20";
+    	
+    	  while(true)
+    	  {
+    		  String text = ODEconferenceroom.textbox.getAttribute("value");
+    		  
+    		  if (text.equals(month))
+    		  {
+    			  break;
+    		  }
+    		  else
+    		  {
+    			  driver.findElement(By.xpath("//body[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/button[2]/span[1]/svg[1]/path[1]"));
+    		  }
+    	  }
+    	  
+    	  driver.findElement(By.xpath("//button[contains(@class,'MuiButtonBase-root-570 MuiIconButton-root-562 MuiPickersDay-day-617 MuiPickersDay-dayDisabled-621')]")).click();
+   }
+    
+    
+    
+    
+    
+    
+    @Step ("Select Number of hours for conference room")
+	   public static void verifyDate(String year, String month, String date) throws InterruptedException
+	   {
+		   String dateTextBox = ODEconferenceroom.textbox.getAttribute("value");
+		   //System.out.println(dateTextBox);
+		   if(dateTextBox.contains(month) && dateTextBox.contains(date))
+		   {
+			   Assert.assertTrue(true, "Date selected");
+		   }
+	   }
 
              @Step ("Select date for conference room")
            public static void selectdate(String month, String date) {
@@ -134,13 +188,61 @@ public class ODEconfrenceroomflows extends CommonOps {
          		   }
             }
             
+             @Step ("Select date and slots for conference room ")
+      	   public static boolean selectConferenceRoomDateAndSlots(int hours, String year, String month, String date, String seaterSize, String slot) throws InterruptedException
+      	   {
+            	 ODEconfrenceroomflows.selectNumberOfHours(hours);
+            	 click(ODEconferenceroom.date);
+            	 ODEconfrenceroomflows.selectdate();
+//            	 ODEconfrenceroomflows.selection(year,month,date);
+            	 ODEconfrenceroomflows.verifyDate(year,month,date);
+      			UIActions.scrollPage(ConferenceRoom.slotsWindow, 10000);
+      			ODEconfrenceroomflows.selectSeater(seaterSize);
+      			ODEconfrenceroomflows.selectSlots(slot);
+      			boolean addButtonEnabled = false;
+      			scrollToElement(ODEconferenceroom.addBtn);
+      			if(ODEconferenceroom.addBtn.getCssValue("color").contains("1"))
+      			{
+      				 addButtonEnabled = true;
+      			}
+      			return addButtonEnabled;
+      	   }
+  	 
             	 
-            	 
-            	 
-            	 
-            	 
-             }
 
+         @Step ("Select slots")
+       public static void selectSlots(String time) throws InterruptedException
+	{
+		List<WebElement> slotsList = driver
+				.findElements(By.xpath("//div[contains(@class,'startTimesWrapper')] //div //span"));
+
+		for (WebElement element : slotsList) {
+			if (element.getCssValue("Color").contains("0.87")) {
+				if (element.getText().equals(time)) {
+					element.click();
+					loadTime(1);
+					break;
+				}
+			}
+		}
+	}
+
+          @Step ("Select seater size [4 seater, 6 seater , 12 seater]")
+        public static void selectSeater(String seatSize) throws InterruptedException
+	 {
+		List<WebElement> seatersList = driver.findElements(By.xpath("//div[@class='roomCapacityContent'] "));
+		for (WebElement element : seatersList) {
+			if (element.getText().contains(seatSize))
+			{
+				element.click();
+				loadTime(1);
+				break;
+			}
+		}
+	}
+}
+            	 
+          
              
 	
           
