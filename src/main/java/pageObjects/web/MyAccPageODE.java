@@ -61,6 +61,9 @@ public class MyAccPageODE extends CommonOps
 	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'Export Booking')]")
     public WebElement exportBooking;
 	
+	@FindBy(how = How.XPATH, using = "(//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-md-1'])[1]")
+    public WebElement delete;
+	
 	public WebElement status(String status)
 	{
 		return driver.findElement(By.xpath("(//span[contains(text(),'"+status+"')])[1]"));
@@ -74,11 +77,11 @@ public class MyAccPageODE extends CommonOps
 
 	}
 	
-	public WebElement delete(int num)
-	{
-		return driver.findElement(By.xpath("(MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-md-1)["+num+"]"));
-
-	}
+//	public WebElement delete(int num)
+//	{
+//	 return driver.findElement(By.xpath("(//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-1 MuiGrid-grid-md-1'])["+num+"]"));
+//
+//	}
 	
 	@FindBy(how = How.XPATH, using = "//h3[contains(text(), Order)]")
 	  public WebElement order;
@@ -125,7 +128,5 @@ public class MyAccPageODE extends CommonOps
 	//tr[@style='color: rgb(0, 0, 0);']
 	@FindBy(how = How.XPATH, using = "//tr[@style='color: rgb(0, 0, 0);']")
 	  public WebElement emp_table;
-	
-
 	
 }

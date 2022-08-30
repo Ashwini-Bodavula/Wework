@@ -48,7 +48,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.logoutOfApplication();
     }
 
-	@Test(description = "Test02 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces",groups= {"CO"})
+/*	@Test(description = "Test02 - Verify User is able to Select virtual office in Hyderabad", dataProvider = "HyderabadVirtualOfficeWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Hyderabad")
     public void test02_VerifySelectVirtualOfficeInHyderabad(String city , String location, String buildingName, String workspaceLocation) throws InterruptedException
     {
@@ -248,7 +248,7 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        WebFlows.logoutOfApplication();
 		}
     }
-
+*/
 	@DataProvider(name="PuneVirtualOfficeWorkspaces")
 	public Object[][] puneVirtualOfficeWorkspaces()
 	{

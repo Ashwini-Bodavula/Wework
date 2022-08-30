@@ -33,7 +33,7 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 
     }
 
-	@Test(description = "Test02 - Verify User is able to Select Enterprise in Pune(Private Office option)",dataProvider = "PuneWorkspaces", groups= {"CO"})
+/*	@Test(description = "Test02 - Verify User is able to Select Enterprise in Pune(Private Office option)",dataProvider = "PuneWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to Select Enterprise in Pune(Private Office option)")
     public void test02_SelectEnterprisePrivateOfficeInPune(String city , String location, String noOfPeople) throws InterruptedException
     {
@@ -103,7 +103,7 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
         click(Enterprise.closeBtn);
         WebFlows.logoutOfApplication();
 
-    }
+    }*/
 
 	@DataProvider(name="PuneWorkspaces")
 	public Object[][] puneWorkspaces()

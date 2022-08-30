@@ -80,7 +80,7 @@ public class SelectConferenceRoomTest extends CommonOps
 
 
 
-	@Test(description = "Test02 - Verify User is able to select conference room in Hyderabad",dataProvider= "HyderabadConferenceRoomWorkspaces",groups= {"CO"})
+/*	@Test(description = "Test02 - Verify User is able to select conference room in Hyderabad",dataProvider= "HyderabadConferenceRoomWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to select conference room in Hyderabad")
     public void test02_SelectConferenceRoomInHyderabad(String city , String location, String buildingName) throws InterruptedException
 	{
@@ -320,7 +320,7 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.logoutOfApplication();
      }
 
-	
+	*/
 
 
 	@DataProvider(name="PuneConferenceRoomWorkspaces")

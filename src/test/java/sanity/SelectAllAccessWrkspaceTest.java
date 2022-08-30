@@ -44,7 +44,7 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		WebFlows.logoutOfApplication();
 	}
 
-	@Test(description = "Test02 - Verify User is able to select all access in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadAllAccessWorkspace", groups= {"CO"})
+/*	@Test(description = "Test02 - Verify User is able to select all access in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadAllAccessWorkspace", groups= {"CO"})
 	@Description("This test verifies that User is able to select all access in Hyderabad. (Scroll down in home page and select workspaces)")
 	public void test02_SelectAllAccessInHyderabad(String city, String location, String buildingName)
 			throws InterruptedException
@@ -159,12 +159,12 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		}
 		WebFlows.logoutOfApplication();
 	}
-
+*/
 	@DataProvider(name = "PuneAllAccessWorkspace")
 	public Object[][] puneAllAccessWorkspace() {
 		return new Object[][] {
-					{ "Pune", "Kharadi", "World Trade Center" },
-//				    {"Pune","Magarpatta","Panchshil Futura"}
+//					{ "Pune", "Kharadi", "World Trade Center" },
+				    {"Pune","Magarpatta","Panchshil Futura"}
 					};
 
 	}
