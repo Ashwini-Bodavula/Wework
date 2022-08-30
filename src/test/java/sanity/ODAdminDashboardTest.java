@@ -88,20 +88,11 @@ public class ODAdminDashboardTest extends CommonOps
 //				scrollToElement(ODAdminUser.plusBtn);
 //				
 //				click(ODAdminUser.plusBtn);
-//				click(ODAdminUser.plusBtn);
-//				click(ODAdminUser.plusBtn);
 //				
 				Thread.sleep(5000);
 			}
 			
 		}
-		
-		
-		System.out.println();
-		
-		Thread.sleep(5000);
-		
-		
 		
 		//AdminFlows.logoutOfODDashboard();
     }
