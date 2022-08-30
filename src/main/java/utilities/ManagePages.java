@@ -16,6 +16,7 @@ import pageObjects.web.HomePage;
 import pageObjects.web.LoginODE;
 import pageObjects.web.LoginPage;
 import pageObjects.web.MyAccPage;
+import pageObjects.web.MyAccPageODE;
 import pageObjects.web.ODAdminUsersPage;
 import pageObjects.web.LoginODPage;
 import pageObjects.web.PaymentPage;
@@ -61,7 +62,7 @@ public class ManagePages extends Base {
         //ODE pages
         ODElogin = PageFactory.initElements(driver,LoginODE.class);
         day_ODE =  PageFactory.initElements(driver, DaypassODE.class);
-
+        AccODE   = PageFactory.initElements(driver, MyAccPageODE.class);
     }
 
 

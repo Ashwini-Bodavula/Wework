@@ -3,11 +3,16 @@ sanity/SelectEnterpriseSolutionsTest.class
 sanity/SelectAllAccessWrkspaceTest.class
 sanity/WebODTest.class
 sanity/SelectDayPassTest.class
+sanity/ODAdminDashboardTest.class
 sanity/SelectPrivateOfficeTest.class
 sanity/WebODBundlesTest.class
 sanity/SelectSubscriptionsTest.class
 sanity/SelectVirtualOfficeTest.class
+sanity/ODEMyAccountTest.class
+sanity/ODEdaypassTest.class
 sanity/WeWorkWebAppTest.class
+sanity/ODEbuldaypassTest.class
+sanity/ODEbuttonTest.class
 sanity/WebODMyAccountTest.class
 sanity/SelectEventsAndWorkspacesTest.class
 sanity/WebAppTest.class

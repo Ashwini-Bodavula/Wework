@@ -5,25 +5,14 @@
         <parameter name="platformName" value="web" />
             <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="ODED"></parameter>
-        <classes>
-            
-                  
-           <class name="sanity.ODEMyAccountTest"/>
-      <!--  <class name="sanity.ODEbuldaypassTest"/>
-      <class name="sanity.ODEbuttonTest"/>
-          <class name="sanity.ODEdaypassTest"/>
-          <class name="sanity.SelectAllAccessWrkspaceTest"/>
-          <class name="sanity.SelectDayPassTest"/>
-          <class name="sanity.SelectEnterpriseSolutionsTest"/>
-          <class name="sanity.SelectEventsAndWorkspacesTest"/>   
-          <class name="sanity.WeWorkWebAppTest"/>
-           <class name="sanity.ODEbuldaypassTest"/> 
-          <class name="sanity.SelectHotDeskTest"/>
-          <class name="sanity.SelectPrivateOfficeTest"/>
-          <class name="sanity.SelectSubscriptionTest"/>
-          <class name="sanity.SelectVirtualOfficeTest"/> 
-          <class name="sanity.SelectAllAccessWrkspaceTest"/>-->
-                     
+        <classes>                
+  <!--        <class name="sanity.ODEMyAccountTest"/>
+           <class name="sanity.ODEbuldaypassTest"/>
+           <class name="sanity.ODEbuttonTest"/>
+           <class name="sanity.ODEdaypassTest"/>
+          --> 
+           
+           <class name="sanity.ODEBooking"/>          
         </classes>
     </test>
 </suite>

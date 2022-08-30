@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -137,12 +138,15 @@ public class CommonOps extends Base {
     @Step("Launch Chrome browser")
     public static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+//        WebDriver driver = new ChromeDriver();
 
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("headless");
-//       	driver = new ChromeDriver(options);
-////       	options.addArguments("USER AGENT");
+        ChromeOptions options = new ChromeOptions();
+    	driver = new ChromeDriver(options);
+        options.setHeadless(true);
+       	options.addArguments("disable-dev-shm-usage"); 
+       	options.addArguments("no-sandbox");
+        options.addArguments("--disable-gpu");
+//       	options.addArguments("USER AGENT");
 //       	options.addArguments("window-size=1400,539");
         return driver;
     }
@@ -152,10 +156,10 @@ public class CommonOps extends Base {
     @Step("Launch Firefox browser")
     public static WebDriver initFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
-    //    WebDriver driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver();
         //Set Firefox Headless mode as TRUE
-        FirefoxOptions options = new FirefoxOptions();
-        options.setHeadless(true);
+       // FirefoxOptions options = new FirefoxOptions();
+      //  options.setHeadless(true);
         return driver;
     }
 

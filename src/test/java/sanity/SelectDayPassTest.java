@@ -83,7 +83,7 @@ public class SelectDayPassTest extends CommonOps
     }
 
 
-	@Test(description = "Test02 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces",groups= {"CO"})
+/*	@Test(description = "Test02 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)")
     public void test02_SelectDayPassInHyderabad(String city , String location, String buildingName) throws InterruptedException
     {

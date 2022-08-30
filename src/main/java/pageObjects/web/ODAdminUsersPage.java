@@ -1,19 +1,20 @@
 package pageObjects.web;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
 import utilities.CommonOps;
-
 public class ODAdminUsersPage  extends CommonOps{
-
 	public WebElement select(String locator)
 	{
 		return driver.findElement(By.xpath("(//*[contains(text(), '"+locator+"')])"));
-
 	}
+	
+	public WebElement selectBuilding(String locator)
+	{
+		return driver.findElement(By.xpath("//div[contains(text(),'"+locator+"')]"));
+	}
+	
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='user-email']")
     public WebElement Email;
@@ -36,13 +37,13 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Add User')]")
     public WebElement addUserBtn;
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='useremail']")  
+	@FindBy(how = How.XPATH, using = "//input[@id='useremail']")
     public WebElement userEmail;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='userpswd']")
     public WebElement userpassword;
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='user-name']")  
+	@FindBy(how = How.XPATH, using = "//input[@id='user-name']")
     public WebElement userName;
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(@class,'select__dropdown-indicator')]")
@@ -52,7 +53,7 @@ public class ODAdminUsersPage  extends CommonOps{
     public WebElement isSuperAdminBtn;
 	
 	@FindBy(how = How.XPATH, using = "(//span[@class='MuiSwitch-thumb'])[2]")
-    public WebElement isPostPaidUser;
+    public WebElement isPostPaidUserBtn;
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Prestige Atlanta, Koramangala')]")
     public WebElement PrestigeAtlanatBuilding;
@@ -73,10 +74,37 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Update')]")
     public WebElement updateBtn;
 	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'DeleteDialog__DialogWrapper-sc-19usnbu-0 cMGXhg')] //button[contains(text(),'Delete')]")
+    public WebElement deleteBtn;
 	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[2]/div[1]/div[3]/button[1]")
+    public WebElement closeBtn;
 	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Shop Purchases')]")
+    public WebElement shopPurchasesTab;
 	
+	@FindBy(how = How.XPATH, using = "//a[@href='/shop']")
+    public WebElement shopTab;
 	
+	@FindBy(how = How.XPATH, using = "(//span[@class='MuiIconButton-label'])[2]")
+    public WebElement buildingDrpdwn;
 	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Color')]")
+    public WebElement colorPrinting;
 	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Black & White')]")
+    public WebElement blackAndwhitePrinting;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='email__id']")
+    public WebElement customerEmail;
+	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Place Order')]")
+    public WebElement placeOrderBtn;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
+    public WebElement plusBtn;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'-')]")
+    public WebElement minusBtn;
+		
 }
