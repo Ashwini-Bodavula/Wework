@@ -32,9 +32,6 @@ public class EnterprisePage extends CommonOps
 
 	}
 
-
-
-
 	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiTab-iconWrapper'])[2]")
     public WebElement enterpriseBtn;
 
@@ -46,6 +43,12 @@ public class EnterprisePage extends CommonOps
 
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Explore Solutions')]")
     public  WebElement exploreSolnBtn;
+    
+    public WebElement selectEnterpriseType(int index)
+	{
+		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-xs-3.7')])["+index+"]"));
+
+	}
 
     @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-xs-3.7')])[1]")
     public  WebElement dayPassForTeam;

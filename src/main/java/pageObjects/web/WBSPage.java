@@ -20,6 +20,13 @@ public class WBSPage extends CommonOps{
 		return driver.findElement(By.xpath("//label[contains(text(),'"+locator+"')]"));
 
 	}
+	
+	 public WebElement select(String locator) 
+	{
+		return driver.findElement(By.xpath("//input[@placeholder='"+locator+"*']"));
+			
+	}
+	    
 
 	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
 	public WebElement fullName;

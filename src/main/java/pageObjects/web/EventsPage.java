@@ -48,6 +48,11 @@ public class EventsPage extends CommonOps
 	}
 	
 	
+	public WebElement selectRadioBtn(String index) 
+	{
+		return driver.findElement(By.xpath("(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])["+index+"]"));
+	}
+	
 	
     @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[1]")
     public WebElement yesRadioBtn1;
@@ -87,6 +92,11 @@ public class EventsPage extends CommonOps
     
     @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
     public WebElement plusIcon;
+    
+    public WebElement selectdropDwon(String index) 
+	{
+		return driver.findElement(By.xpath("(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])["+index+"]"));
+	}
     
     @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])[1]")
     public WebElement cityDropdown;
