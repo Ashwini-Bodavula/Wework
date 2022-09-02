@@ -34,7 +34,7 @@ public class webLoading extends CommonOps{
 	}
 	public WebElement selectBuilding(String locator)
 	{
-		return driver.findElement(By.xpath("(//p[contains(text(),'World Trade Center')])"));
+		return driver.findElement(By.xpath("(//p[contains(text(),'"+locator+"')])"));
 
 	}
 
