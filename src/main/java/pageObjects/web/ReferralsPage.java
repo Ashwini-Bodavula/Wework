@@ -31,6 +31,13 @@ public class ReferralsPage extends CommonOps{
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Get Started')]")
     public  WebElement getStartedBtn;
     
+    public WebElement select(String locator) 
+	{
+		return driver.findElement(By.xpath("//input[@placeholder='"+locator+"*']"));
+		
+	}
+    
+    
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Full Name*']")
     public  WebElement fullName;
     
@@ -43,18 +50,6 @@ public class ReferralsPage extends CommonOps{
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Company Name*']")
     public  WebElement companyName;
     
-    @FindBy(how = How.XPATH, using = "//div[@id='a2d9703f3cb9']  ")
-    public  WebElement preferredOfficeLocationDropdwon;
-    
-    @FindBy(how = How.XPATH, using = "//div[@id='ce84839b1f45']  ")
-    public  WebElement workspaceIntrestedInDrpdwn;
-    
-    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'+')])[1]")
-    public  WebElement increaseNoOfDesk;
-    
-    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'-')])[1]")
-    public  WebElement decreaseNoOfDesk;
-    
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Referrer Name*']")
     public  WebElement referrerName;
     
@@ -64,6 +59,18 @@ public class ReferralsPage extends CommonOps{
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Referrer Phone*']")
     public  WebElement referrerPhone;
     
+    @FindBy(how = How.XPATH, using = "//div[@id='a2d9703f3cb9']")
+    public  WebElement preferredOfficeLocationDropdwon;
+    
+    @FindBy(how = How.XPATH, using = "//div[@id='ce84839b1f45']")
+    public  WebElement workspaceIntrestedInDrpdwn;
+    
+    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'+')])[1]")
+    public  WebElement increaseNoOfDesk;
+    
+    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'-')])[1]")
+    public  WebElement decreaseNoOfDesk;
+     
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Add Referral')]")
     public  WebElement addReferralBtn;
     		

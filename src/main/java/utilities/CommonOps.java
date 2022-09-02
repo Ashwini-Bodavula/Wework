@@ -155,12 +155,14 @@ public class CommonOps extends Base {
 
     @Step("Launch Firefox browser")
     public static WebDriver initFirefoxDriver() {
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        //Set Firefox Headless mode as TRUE
-       // FirefoxOptions options = new FirefoxOptions();
-      //  options.setHeadless(true);
-        return driver;
+       
+    	WebDriverManager.firefoxdriver().setup();
+    	  //	WebDriver driver = new FirefoxDriver();
+    	  	FirefoxOptions options = new FirefoxOptions();
+    	  	options.setHeadless(true);
+    	  	WebDriver driver = new FirefoxDriver(options);
+    	    return driver;
+    	
     }
 
     // Method Name: initIEDriver

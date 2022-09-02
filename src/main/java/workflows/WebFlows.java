@@ -271,12 +271,12 @@ public class WebFlows extends CommonOps
     @Step("Fill the form")
     public static void fillTheFormDetails() throws InterruptedException
     {
-    	updateText(WebLoading.username, getData("Username"));
-		updateText(WebLoading.userEmail, getData("email"));
-		updateText(WebLoading.userPhnNumber, getData("phoneNumber"));
+    	updateText(WebLoading.enter("Full name"), getData("Username"));
+		updateText(WebLoading.enter("Email"), getData("email"));
+		updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
 		scrollToElement(WebLoading.plusIcon);
 		selectNoOfPeople(4);
-		selectDate("2024", "September", "26");
+		selectDate(getData("year"), getData("month3"), getData("date1"));
 //		Verifications.elementIsVisible(WebLoading.continueBtn);
 //		click(WebLoading.continueBtn);
 //		Verifications.elementIsVisible(WebLoading.thankyouText);
@@ -286,6 +286,7 @@ public class WebFlows extends CommonOps
 //		click(WebLoading.backToHomePageBtn);
 		mouseHover(WebLoading.closeIcon); //as the form is not submited and msg is not validated, clicking on close icon
 
+		
     }
 
     @Step("Fill the Enterprise form")
@@ -313,31 +314,34 @@ public class WebFlows extends CommonOps
     @Step ("Select date in Calander UI")
 	public static void selectDate(String year, String month, String date) throws InterruptedException
 	{
-		click(WebLoading.calendarIcon);
+		
+    	click(WebLoading.calendarIcon);
 		loadTime(2);
-		mouseHover(WebLoading.yearDropdown);
+		Verifications.elementIsVisible(WebLoading.yearDropdown);
+		click(WebLoading.yearDropdown);
 		loadTime(1);
 		int yearINT = Integer.parseInt(year);
 
 		if(yearINT < 2022)
 			Assert.assertTrue(false, "Invalid year selection");
 
-		List<WebElement> yearsList = driver.findElements(
-				By.xpath("//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']//button"));
+		List<WebElement> yearsList = driver.findElements(By.xpath("//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']//button"));
 		loadTime(1);
-		for (WebElement selectedYear : yearsList) {
-			String currentyear = selectedYear.getText();
+		for (WebElement yearFromList : yearsList) 
+		{
+			String currentyear = yearFromList.getText();
 			if (currentyear.equals(year))
 			{
-				if (selectedYear.isEnabled())
+				if (yearFromList.isEnabled())
 				{
 					loadTime(1);
-					mouseHover(selectedYear);
+					mouseHover(yearFromList);
+					loadTime(2);
 					break;
 				}
 			}
 		}
-		while (!WebLoading.monthName.getText().equals(month))
+		while(!WebLoading.monthName.getText().equals(month))
 		{
 			click(WebLoading.rightArrowBtn);
 		}
@@ -365,7 +369,6 @@ public class WebFlows extends CommonOps
 
 			}
 		}
-
 	}
 
 	@Step ("Select date in Calander UI")
@@ -374,7 +377,7 @@ public class WebFlows extends CommonOps
     	while (!WebLoading.monthName.getText().contains(month))
 		{
     		click(WebLoading.rightArrowBtn);
-			//WebLoading.rightArrowBtn.click();
+			
     		loadTime(1);
 		}
 
