@@ -1,1 +1,0 @@
-{"uuid":"dc429eca-d3d7-4cfa-8971-020bf9629e63","name":"sanity.WebAppTest","children":["84ac44e5-cd7a-4245-8aef-899b048816c7"],"befores":[],"afters":[{"name":"closeSession","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1662360665838,"stop":1662360665838}],"links":[],"start":1662360515368,"stop":1662360670889}
