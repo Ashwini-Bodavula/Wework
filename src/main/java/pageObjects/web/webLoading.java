@@ -29,12 +29,12 @@ public class webLoading extends CommonOps{
 
 	public WebElement selectLocation(String locator)
 	{
-		return driver.findElement(By.xpath("(//div[contains(@class,'building_container')] //p[contains(text(),'"+locator+"')])"));
+		return driver.findElement(By.xpath("(//p[contains(text(),'"+locator+"')])[2]"));
 
 	}
 	public WebElement selectBuilding(String locator)
 	{
-		return driver.findElement(By.xpath("(//div[contains(@class,'building_container')] //p[contains(text(),'"+locator+"')])"));
+		return driver.findElement(By.xpath("(//p[contains(text(),'"+locator+"')])"));
 
 	}
 
@@ -89,24 +89,32 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//button[text()='Explore Solutions']")
     public WebElement exploreBtn;
+    
+    
+    public WebElement selectWorkspace(int locator)
+	{
+		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])["+locator+"]"));
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
-    public WebElement privateOfficeOptn;
+	}
+    
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
-    public WebElement hotDeskOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
+//    public WebElement privateOfficeOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
-    public WebElement AllAccessOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
+//    public WebElement hotDeskOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
-    public WebElement VirtualOfficeOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
+//    public WebElement AllAccessOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
-    public WebElement dayPassBtn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
+//    public WebElement VirtualOfficeOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
-    public WebElement conferenceRoomOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
+//    public WebElement dayPassBtn;
+
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
+//    public WebElement conferenceRoomOptn;
 
    // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
    // public WebElement VirtualOfficeOptn;
@@ -143,7 +151,7 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Phone number*']")
     public WebElement phnNumber;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
+    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'+')])[2]")
     public WebElement plusIcon;
 
     @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='CalendarIcon']")
@@ -159,9 +167,10 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']")
     public WebElement yearsList;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'Group-root css-1bx5ylf')])[1]")
+    @FindBy(how = How.XPATH, using = "(//div[@ class='css-1v994a0'])[1]")
     public WebElement monthName;
 
+    
     @FindBy(how = How.XPATH, using = "//button[@title='Next month']")
     public WebElement rightArrowBtn;
 
@@ -301,15 +310,34 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Phone number*']")
     public  WebElement phonenNumberField;
+    
+    //
+    
+    public WebElement enter(String locator)
+	{
+    	if(locator.equals("Phone number"))
+    	{
+    		return driver.findElement(By.xpath("(//input[@placeholder='"+locator+"*'])[2]"));
+    	}
+    	else
+    	{
+    		return driver.findElement(By.xpath("(//input[@placeholder='"+locator+"*'])"));
+    	}
+		
+	}
+    
+    
 
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
-    public  WebElement username;
-
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Email*'])")
-    public  WebElement userEmail;
-
-    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])")
-    public  WebElement userPhnNumber;
+//    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
+//    public  WebElement fullName_form;
+//
+//    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Email*'])")
+//    public  WebElement email_form;
+//
+//    @FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])[2]")
+//    public  WebElement phoneNumber_form;
+    
+    //
 
     @FindBy(how = How.XPATH, using = "(//*[name()='path'][@stroke='#0000FF'])[1]")
     public  WebElement leftArrow;

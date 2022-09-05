@@ -24,23 +24,23 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
-      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Web_Suite">
-              <span class="suite-name border-failed">Web Suite</span>
+            <a href="#" panel-name="suite-Web_Suite" class="navigator-link">
+              <span class="suite-name border-passed">Web Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Web_Suite">
-                    <span>TestngODAdmin.xml</span>
+                  <a href="#" panel-name="test-xml-Web_Suite" class="navigator-link ">
+                    <span>TestngCO.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Web_Suite">
+                  <a href="#" panel-name="testlist-Web_Suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Web_Suite">
+                  <a href="#" panel-name="group-Web_Suite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Web_Suite">
+                  <a href="#" panel-name="times-Web_Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Web_Suite">
+                  <a href="#" panel-name="reporter-Web_Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Web_Suite">
+                  <a href="#" panel-name="ignored-methods-Web_Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Web_Suite">
+                  <a href="#" panel-name="chronological-Web_Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods failed suite-Web_Suite"> (hide)</a> <!-- hide-methods failed suite-Web_Suite -->
-                      <a href="#" panel-name="suite-Web_Suite" class="show-methods failed suite-Web_Suite"> (show)</a> <!-- show-methods failed suite-Web_Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods passed suite-Web_Suite"> (hide)</a> <!-- hide-methods passed suite-Web_Suite -->
+                      <a href="#" panel-name="suite-Web_Suite" class="show-methods passed suite-Web_Suite"> (show)</a> <!-- show-methods passed suite-Web_Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Web_Suite">
+                    <div class="method-list-content passed suite-Web_Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.ODAdminDashboardTest" hash-for-method="test04_shopSelection">test04_shopSelection</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.WebAppTest" class="method navigator-link" hash-for-method="test08_VerifyContactUsFeature">test08_VerifyContactUsFeature</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Web_Suite -->
+                    </div> <!-- method-list-content passed suite-Web_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,61 +119,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Web_Suite" class="panel Web_Suite">
-          <div class="suite-Web_Suite-class-failed">
+          <div class="suite-Web_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">sanity.ODAdminDashboardTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">sanity.WebAppTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test04_shopSelection">
-                  </a> <!-- test04_shopSelection -->
-                  <span class="method-name">test04_shopSelection</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=104.0.5112.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Ashwini-BodavulaB598-MacBook-Air.local&apos;, ip: &apos;192.168.29.9&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;1.8.0_202&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:56130}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 638af994c7d54306c580151063bae032
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
-	at sanity.ODAdminDashboardTest.test04_shopSelection(ODAdminDashboardTest.java:74)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
+                  <a name="test08_VerifyContactUsFeature">
+                  </a> <!-- test08_VerifyContactUsFeature -->
+                  <span class="method-name">test08_VerifyContactUsFeature</span>
                   <em>
-(Test04 - Verify User is able to select shop.)                  </em>
+(Test08 - Verify User is able to Select contact us option)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_Suite-class-failed -->
+          </div> <!-- suite-Web_Suite-class-passed -->
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/ashwinibodavula/Downloads/WeWork-newbranch/TestngODAdmin.xml</span>
+            <span class="header-content">/Users/varsharyattinahalli/gitFolder/NewWework/Wework/TestngCO.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Web Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Web Tests&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;firefox Tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;web&quot;/&gt;
-    &lt;parameter name=&quot;URL&quot; value=&quot;adminD&quot;/&gt;
+    &lt;parameter name=&quot;URL&quot; value=&quot;CO&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.ODAdminDashboardTest&quot;/&gt;
+      &lt;class name=&quot;sanity.WebAppTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Web Tests --&gt;
+  &lt;/test&gt; &lt;!-- firefox Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,7 +165,7 @@ Session ID: 638af994c7d54306c580151063bae032
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Web Tests (1 class)</span>
+                <span class="test-name">firefox Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -213,14 +193,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test04_shopSelection')
-data.setCell(0, 2, 'sanity.ODAdminDashboardTest')
-data.setCell(0, 3, 25256);
+data.setCell(0, 1, 'test08_VerifyContactUsFeature')
+data.setCell(0, 2, 'sanity.WebAppTest')
+data.setCell(0, 3, 33482);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -246,24 +226,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.ODAdminDashboardTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.WebAppTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">startSession(web, Chrome, adminD)</span>
+                <span class="method-name">startSession(web, chrome, CO)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test04_shopSelection</span>
-                <span class="method-start">7665 ms</span>
+                <span class="method-name">test08_VerifyContactUsFeature</span>
+                <span class="method-start">4787 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">32948 ms</span>
+                <span class="method-start">38287 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">33096 ms</span>
+                <span class="method-start">38649 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
