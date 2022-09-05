@@ -117,33 +117,7 @@ public class ODEconfrenceroomflows extends CommonOps {
 		   
 		   }
     
-    @Step ("select month and date ")
-    public static void selectdate()
-    {
-    	String month="march2020";
-    	String date="20";
-    	
-    	  while(true)
-    	  {
-    		  String text = ODEconferenceroom.textbox.getAttribute("value");
-    		  
-    		  if (text.equals(month))
-    		  {
-    			  break;
-    		  }
-    		  else
-    		  {
-    			  driver.findElement(By.xpath("//body[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/button[2]/span[1]/svg[1]/path[1]"));
-    		  }
-    	  }
-    	  
-    	  driver.findElement(By.xpath("//button[contains(@class,'MuiButtonBase-root-570 MuiIconButton-root-562 MuiPickersDay-day-617 MuiPickersDay-dayDisabled-621')]")).click();
-   }
-    
-    
-    
-    
-    
+   
     
     @Step ("Select Number of hours for conference room")
 	   public static void verifyDate(String year, String month, String date) throws InterruptedException
@@ -187,31 +161,24 @@ public class ODEconfrenceroomflows extends CommonOps {
          			   }
          		   }
             }
-            
-             @Step ("Select date and slots for conference room ")
-      	   public static boolean selectConferenceRoomDateAndSlots(int hours, String year, String month, String date, String seaterSize, String slot) throws InterruptedException
-      	   {
-            	 ODEconfrenceroomflows.selectNumberOfHours(hours);
-            	 click(ODEconferenceroom.date);
-            	 ODEconfrenceroomflows.selectdate();
-//            	 ODEconfrenceroomflows.selection(year,month,date);
-            	 ODEconfrenceroomflows.verifyDate(year,month,date);
-      			UIActions.scrollPage(ConferenceRoom.slotsWindow, 10000);
-      			ODEconfrenceroomflows.selectSeater(seaterSize);
-      			ODEconfrenceroomflows.selectSlots(slot);
-      			boolean addButtonEnabled = false;
-      			scrollToElement(ODEconferenceroom.addBtn);
-      			if(ODEconferenceroom.addBtn.getCssValue("color").contains("1"))
-      			{
-      				 addButtonEnabled = true;
-      			}
-      			return addButtonEnabled;
-      	   }
-  	 
-            	 
+             
 
-         @Step ("Select slots")
-       public static void selectSlots(String time) throws InterruptedException
+             @Step ("Select seater size [4 seater, 6 seater , 12 seater]")
+           public static void selectSeater(String seatSize) throws InterruptedException
+   	 {
+   		List<WebElement> seatersList = driver.findElements(By.xpath("//div[@class='roomCapacityContent'] "));
+   		for (WebElement element : seatersList) {
+   			if (element.getText().contains(seatSize))
+   			{
+   				element.click();
+   				loadTime(1);
+   				break;
+   			}
+   		}
+   	 }	
+
+        @Step ("Select slots")
+      public static void selectSlots(String time) throws InterruptedException
 	{
 		List<WebElement> slotsList = driver
 				.findElements(By.xpath("//div[contains(@class,'startTimesWrapper')] //div //span"));
@@ -223,59 +190,34 @@ public class ODEconfrenceroomflows extends CommonOps {
 					loadTime(1);
 					break;
 				}
-			}
+				}
+			
 		}
 	}
-
-          @Step ("Select seater size [4 seater, 6 seater , 12 seater]")
-        public static void selectSeater(String seatSize) throws InterruptedException
-	 {
-		List<WebElement> seatersList = driver.findElements(By.xpath("//div[@class='roomCapacityContent'] "));
-		for (WebElement element : seatersList) {
-			if (element.getText().contains(seatSize))
-			{
-				element.click();
-				loadTime(1);
-				break;
-			}
-		}
-	}
-}
-            	 
-          
-             
-	
-          
+            
+             @Step ("Select date and slots for conference room ")
+      	   public static boolean selectConferenceRoomDateAndSlots(int hours, String seaterSize, String slot) throws InterruptedException
+      	   {
+            	 ODEconfrenceroomflows.selectNumberOfHours(hours);
+            	 click(ODEconferenceroom.date);
+            	 ODEconfrenceroomflows.selectdate(getData("month"),getData("date"));
+            	 Thread.sleep(2000);
+      			ODEconfrenceroomflows.selectSeater(seaterSize);
+      			ODEconfrenceroomflows.selectSlots(slot);
+      			boolean addButtonEnabled = false;
+      			scrollToElement(ODEconferenceroom.addBtn);
+      			if(ODEconferenceroom.addBtn.getCssValue("color").contains("1"))
+      			{
+      				 addButtonEnabled = true;
+      			}
+      			return addButtonEnabled;
+      	   }
+  	 
+       
 		
+	}
 
+	
 
-  
-
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
+            	 
+        

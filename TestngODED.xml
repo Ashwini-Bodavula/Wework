@@ -6,8 +6,12 @@
             <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="ODED"></parameter>
         <classes>
-                <class name="sanity.ODEconferenceroomTest"/>
-        <!--    <class name="sanity.SelectAllAccessWrkspaceTest"/>
+       
+        
+            <class name="sanity.ODEconferenceroomTest"/>
+         <!-- 
+           <class name="sanity.ODEdaypassTest"/>
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
           <class name="sanity.SelectDayPassTest"/>
          <class name="sanity.SelectAllAccessWrkspaceTest"/>
           <class name="sanity.SelectEnterpriseSolutionsTest"/>
