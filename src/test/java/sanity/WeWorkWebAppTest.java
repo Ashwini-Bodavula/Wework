@@ -131,46 +131,13 @@ public class WeWorkWebAppTest extends CommonOps
 	
 	
 
-@Test(description = "Test04 - Verify User is able to fill referrals form.")
+	@Test(description = "Test04 - Verify User is able to fill referrals form.")
     @Description("This test verifies that User is able to fill referrals form")
     public void test04_SelectRefferals() throws InterruptedException
     {
 		//WebFlows.loadWebsite(getData("CO"));
 	    WebFlows.loginToApplication();
-		scrollToElement(WebLoading.referralsLink);
-		click(WebLoading.referralsLink);
-		loadTime(4);
-		Thread.sleep(2000);
-		scrollToElement(Referral.FAQ1);
-		loadTime(4);
-		Verifications.elementIsVisible(Referral.FAQ1);
-		loadTime(4);
-		click(Referral.FAQ1);
-		scrollToElement(Referral.referralLinkInFAQ1);
-		String referralLinkText = Referral.referralLinkInFAQ1.getText();
-		String actualReferralLinkText = "https://wework.co.in/referrals";
-		Assert.assertEquals(referralLinkText, actualReferralLinkText);
-		scrollToElement(Referral.getStartedBtn);
-		click(Referral.getStartedBtn);
-		scrollToElement(Referral.fullName);
-		updateText(Referral.fullName, getData("name"));
-		updateText(Referral.Email, getData("email"));
-		updateText(Referral.phoneNumber, getData("phoneNumber"));
-		updateText(Referral.companyName, getData("companyName"));
-		click(Referral.preferredOfficeLocationDropdwon);
-		click(Referral.selectLocation("Pune"));
-		click(Referral.workspaceIntrestedInDrpdwn);
-		click(Referral.selectWorkspace("All Access"));
-		scrollToElement(Referral.increaseNoOfDesk);
-		click(Referral.addReferralBtn);
-		boolean errormessageDisplayed = Referral.errorMessage.isDisplayed();
-		Assert.assertTrue(errormessageDisplayed);
-		click(Referral.increaseNoOfDesk);
-		click(Referral.increaseNoOfDesk);
-		updateText(Referral.referrerName, getData("name"));
-		updateText(Referral.referrerEmail, getData("email"));
-		updateText(Referral.referrerPhone, getData("phoneNumber"));
-//		click(referral.addReferralBtn);
+	    WebFlows.fillReferralForm();
 		WebFlows.logoutOfApplication();
 		
     }
@@ -182,19 +149,7 @@ public class WeWorkWebAppTest extends CommonOps
     {
 		//WebFlows.loadWebsite(getData("CO"));
 		WebFlows.loginToApplication();
-		scrollToElement(WebLoading.CareersLink);
-		click(WebLoading.CareersLink);
-		loadTime(3);
-		Thread.sleep(1000);
-		waitForLoad();
-		click(Careers.joinUsBtn);
-		loadTime(4);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();	
+		WebFlows.validateCareersLink();	
 		WebFlows.logoutOfApplication();
 	
     }*/
@@ -207,32 +162,8 @@ public class WeWorkWebAppTest extends CommonOps
     {
 		//WebFlows.loadWebsite(getData("CO"));
 		WebFlows.loginToApplication();
-		click(WebLoading.contactUsBtn);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnBfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnBfrSelectingChkBox, "Get in touch");
-		boolean nameEnabled = Careers.firstName.isEnabled();
-		Assert.assertTrue(nameEnabled);
-		scrollToElement(Careers.jobOportunitiescheckBox);
-		mouseHover(Careers.jobOportunitiescheckBox);
-		waitForLoad();
-		boolean nameDisabledled = Careers.firstName.isEnabled();
-		Assert.assertFalse(nameDisabledled);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnAfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnAfrSelectingChkBox, "Explore Now");
-		click(Careers.submitButton);
-		waitForLoad();
-		Thread.sleep(1000);
-		click(Careers.joinUsBtn);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();
+		WebFlows.selectCareersfromContactUsBtn();
 		WebFlows.logoutOfApplication();
-		loadTime(4);
 		
     }
 	

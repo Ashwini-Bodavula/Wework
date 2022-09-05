@@ -10,11 +10,9 @@ import utilities.CommonOps;
 public class EventsPage extends CommonOps
 {
 
-	
-
 	public WebElement select(String locator) 
 	{
-		return driver.findElement(By.xpath("//*[contains(text(),'"+locator+"')]"));
+		return driver.findElement(By.xpath("//*[name()='svg'][@data-testid='"+locator+"']"));
 		
 	}
 	public WebElement commonlocator(String locator) 
@@ -47,65 +45,20 @@ public class EventsPage extends CommonOps
 		return driver.findElement(By.xpath("//li[contains(text(),'"+locator+"')]"));
 	}
 	
-	
-	public WebElement selectRadioBtn(String index) 
+	public WebElement selectRadioBtn(int index) 
 	{
 		return driver.findElement(By.xpath("(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])["+index+"]"));
 	}
-	
-	
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[1]")
-    public WebElement yesRadioBtn1;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[2]")
-    public WebElement noRadioBtn1;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[3]")
-    public WebElement notSureRadioBtn;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[4]")
-    public WebElement yesRadioBtn2;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[5]")
-    public WebElement noRadioBtn2;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[6]")
-    public WebElement yesRadioBtn3;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[7]")
-    public WebElement noRadioBtn3;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[8]")
-    public WebElement FAndBradioBtn;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[9]")
-    public WebElement productionRadioBtn;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='RadioButtonUncheckedIcon'])[10]")
-    public WebElement otherRadioBtn;
-    
-    @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='CalendarIcon']")
-    public WebElement calendarIcon;
-    
-    @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='ClockIcon']")
-    public WebElement clockIcon;
     
     @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
     public WebElement plusIcon;
     
-    public WebElement selectdropDwon(String index) 
+    public WebElement selectdropDown(int index) 
 	{
-		return driver.findElement(By.xpath("(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])["+index+"]"));
+		return driver.findElement(By.xpath("(//div[@aria-haspopup='listbox'])["+index+"]"));
 	}
+   
+    @FindBy(how = How.XPATH, using = "//li[contains(text(),'Workshops')]")
+    public WebElement selectWorkshops;
     
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])[1]")
-    public WebElement cityDropdown;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])[2]")
-    public WebElement buildingDropdown;
-    
-    @FindBy(how = How.XPATH, using = "(//*[name()='svg'][@data-testid='ArrowDropDownIcon'])[3]")
-    public WebElement eventTypeDropdown;
-	
-
 }

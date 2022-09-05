@@ -89,24 +89,32 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//button[text()='Explore Solutions']")
     public WebElement exploreBtn;
+    
+    
+    public WebElement selectWorkspace(int locator)
+	{
+		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])["+locator+"]"));
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
-    public WebElement privateOfficeOptn;
+	}
+    
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
-    public WebElement hotDeskOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
+//    public WebElement privateOfficeOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
-    public WebElement AllAccessOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
+//    public WebElement hotDeskOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
-    public WebElement VirtualOfficeOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
+//    public WebElement AllAccessOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
-    public WebElement dayPassBtn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
+//    public WebElement VirtualOfficeOptn;
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
-    public WebElement conferenceRoomOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
+//    public WebElement dayPassBtn;
+
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
+//    public WebElement conferenceRoomOptn;
 
    // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
    // public WebElement VirtualOfficeOptn;

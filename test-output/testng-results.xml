@@ -2,15 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-02T17:22:18 IST" name="Web Suite" finished-at="2022-09-02T17:22:57 IST" duration-ms="38981">
+  <suite started-at="2022-09-05T12:38:51 IST" name="Web Suite" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
     <groups>
-      <group name="CO">
-        <method signature="SelectPrivateOfficeTest.test01_SelectPrivateOfficeInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectPrivateOfficeTest@5ddf0d24]" name="test01_SelectPrivateOfficeInPune" class="sanity.SelectPrivateOfficeTest"/>
-      </group> <!-- CO -->
     </groups>
-    <test started-at="2022-09-02T17:22:18 IST" name="firefox Tests" finished-at="2022-09-02T17:22:57 IST" duration-ms="38981">
-      <class name="sanity.SelectPrivateOfficeTest">
-        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectPrivateOfficeTest@5ddf0d24]" started-at="2022-09-02T17:22:18 IST" name="startSession" finished-at="2022-09-02T17:22:22 IST" duration-ms="4655" status="PASS">
+    <test started-at="2022-09-05T12:38:51 IST" name="firefox Tests" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
+      <class name="sanity.WebAppTest">
+        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:51 IST" name="startSession" finished-at="2022-09-05T12:38:55 IST" duration-ms="4678" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,36 +28,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method signature="test01_SelectPrivateOfficeInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectPrivateOfficeTest@5ddf0d24]" started-at="2022-09-02T17:22:22 IST" name="test01_SelectPrivateOfficeInPune" description="Test01 - Verify User is able to select private office in Pune. (Scroll down in home page and select workspaces)" data-provider="PunePrivateOfficeWorkspaces" finished-at="2022-09-02T17:22:56 IST" duration-ms="33879" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Pune]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Kharadi]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[World Trade Center]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="test08_VerifyContactUsFeature()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:55 IST" name="test08_VerifyContactUsFeature" description="Test08 - Verify User is able to Select contact us option" finished-at="2022-09-05T12:39:29 IST" duration-ms="33482" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test01_SelectPrivateOfficeInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectPrivateOfficeTest@5ddf0d24]" started-at="2022-09-02T17:22:56 IST" name="afterMethod" finished-at="2022-09-02T17:22:57 IST" duration-ms="312" status="PASS">
+        </test-method> <!-- test08_VerifyContactUsFeature -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="afterMethod" finished-at="2022-09-05T12:39:29 IST" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectPrivateOfficeTest@5ddf0d24]" started-at="2022-09-02T17:22:57 IST" name="closeSession" finished-at="2022-09-02T17:22:57 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="closeSession" finished-at="2022-09-05T12:39:29 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.SelectPrivateOfficeTest -->
+      </class> <!-- sanity.WebAppTest -->
     </test> <!-- firefox Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>
