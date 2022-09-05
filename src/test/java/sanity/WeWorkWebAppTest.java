@@ -112,7 +112,7 @@ public class WeWorkWebAppTest extends CommonOps
 			}
 		}
 		WebFlows.logoutOfApplication();
-    }
+    }*/
 
 
 	
@@ -131,7 +131,7 @@ public class WeWorkWebAppTest extends CommonOps
 	
 	
 
-@Test(description = "Test04 - Verify User is able to fill referrals form.")
+	/*   @Test(description = "Test04 - Verify User is able to fill referrals form.")
     @Description("This test verifies that User is able to fill referrals form")
     public void test04_SelectRefferals() throws InterruptedException
     {
@@ -152,11 +152,11 @@ public class WeWorkWebAppTest extends CommonOps
 		Assert.assertEquals(referralLinkText, actualReferralLinkText);
 		scrollToElement(Referral.getStartedBtn);
 		click(Referral.getStartedBtn);
-		scrollToElement(Referral.fullName);
-		updateText(Referral.fullName, getData("name"));
-		updateText(Referral.Email, getData("email"));
-		updateText(Referral.phoneNumber, getData("phoneNumber"));
-		updateText(Referral.companyName, getData("companyName"));
+		scrollToElement(Referral.select("Full Name"));
+		updateText(Referral.select("Full Name"), getData("name"));
+		updateText(Referral.select("Email"), getData("email"));
+		updateText(Referral.select("Phone Number"), getData("phoneNumber"));
+		updateText(Referral.select("Company Name"), getData("companyName"));
 		click(Referral.preferredOfficeLocationDropdwon);
 		click(Referral.selectLocation("Pune"));
 		click(Referral.workspaceIntrestedInDrpdwn);
@@ -167,9 +167,9 @@ public class WeWorkWebAppTest extends CommonOps
 		Assert.assertTrue(errormessageDisplayed);
 		click(Referral.increaseNoOfDesk);
 		click(Referral.increaseNoOfDesk);
-		updateText(Referral.referrerName, getData("name"));
-		updateText(Referral.referrerEmail, getData("email"));
-		updateText(Referral.referrerPhone, getData("phoneNumber"));
+		updateText(Referral.select("Referrer Name"), getData("name"));
+		updateText(Referral.select("Referrer Email"), getData("email"));
+		updateText(Referral.select("Referrer Phone"), getData("phoneNumber"));
 //		click(referral.addReferralBtn);
 		WebFlows.logoutOfApplication();
 		
@@ -197,7 +197,7 @@ public class WeWorkWebAppTest extends CommonOps
 		waitForLoad();	
 		WebFlows.logoutOfApplication();
 	
-    }*/
+    }
 	
 	
 	
@@ -234,7 +234,7 @@ public class WeWorkWebAppTest extends CommonOps
 		WebFlows.logoutOfApplication();
 		loadTime(4);
 		
-    }
+    }*/
 	
 	
 	    @DataProvider(name = "PuneWorkspaces")

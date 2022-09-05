@@ -22,9 +22,9 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	WebFlows.selectLocationForEnterprise(city, location, noOfPeople);
-    	click(Enterprise.dayPassForTeam);
+    	click(Enterprise.selectEnterpriseType(1));
     	loadTime(3);
-    	if(Enterprise.dayPassForTeam.getAttribute("class").contains("card_selected"))
+    	if(Enterprise.selectEnterpriseType(1).getAttribute("class").contains("card_selected"))
     	{
     		WebFlows.fillEnterpriseFormDetails();
     	}
@@ -33,16 +33,16 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 
     }
 
-/*	@Test(description = "Test02 - Verify User is able to Select Enterprise in Pune(Private Office option)",dataProvider = "PuneWorkspaces", groups= {"CO"})
+	/*@Test(description = "Test02 - Verify User is able to Select Enterprise in Pune(Private Office option)",dataProvider = "PuneWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to Select Enterprise in Pune(Private Office option)")
     public void test02_SelectEnterprisePrivateOfficeInPune(String city , String location, String noOfPeople) throws InterruptedException
     {
 		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	WebFlows.selectLocationForEnterprise(city, location, noOfPeople);
-    	click(Enterprise.readyToMoveInrivateOffice);
+    	click(Enterprise.selectEnterpriseType(2));
     	loadTime(3);
-    	if(Enterprise.readyToMoveInrivateOffice.getAttribute("class").contains("card_selected"))
+    	if(Enterprise.selectEnterpriseType(2).getAttribute("class").contains("card_selected"))
     	{
     		WebFlows.fillEnterpriseFormDetails();
     	}
@@ -58,9 +58,9 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	WebFlows.selectLocationForEnterprise(city, location, noOfPeople);
-    	click(Enterprise.allAccessForTeam);
+    	click(Enterprise.selectEnterpriseType(3));
     	loadTime(3);
-    	if(Enterprise.allAccessForTeam.getAttribute("class").contains("card_selected"))
+    	if(Enterprise.selectEnterpriseType(3).getAttribute("class").contains("card_selected"))
     	{
     		WebFlows.fillEnterpriseFormDetails();
     	}
@@ -76,9 +76,9 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	WebFlows.selectLocationForEnterprise(city, location, noOfPeople);
-    	click(Enterprise.managedOffices);
+    	click(Enterprise.selectEnterpriseType(4));
     	loadTime(3);
-    	if(Enterprise.managedOffices.getAttribute("class").contains("card_selected"))
+    	if(Enterprise.selectEnterpriseType(4).getAttribute("class").contains("card_selected"))
     	{
     		WebFlows.fillEnterpriseFormDetails();
     	}
@@ -94,9 +94,9 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	WebFlows.selectLocationForEnterprise(city, location, noOfPeople);
-    	click(Enterprise.customBuiltSpaces);
+        click(Enterprise.selectEnterpriseType(5));
     	loadTime(3);
-    	if(Enterprise.customBuiltSpaces.getAttribute("class").contains("card_selected"))
+    	if(Enterprise.selectEnterpriseType(5).getAttribute("class").contains("card_selected"))
     	{
     		WebFlows.fillEnterpriseFormDetails();
     	}
@@ -118,8 +118,8 @@ public class SelectEnterpriseSolutionsTest extends CommonOps
 	public Object[][] hyderabadWorkspaces()
 	{
 		return new Object[][] {
-			{"Hyderabad","Financial District"},
-			{"Hyderabad","Hitec City"}
+			{"Hyderabad","Financial District","50-100"},
+		//	{"Hyderabad","Hitec City"}
 			};
 	}
 

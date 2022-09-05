@@ -27,15 +27,21 @@
         <parameter name="browser" value="chrome"></parameter>        
           <parameter name="URL" value="CO"></parameter>
         <classes>
-           
-           <class name="sanity.SelectPrivateOfficeTest"/>          
           
-   <!--   <class name="sanity.SelectAllAccessWrkspaceTest"/>
+               
+               
+                 
+      <!--  
+       <class name="sanity.SelectEventsAndWorkspacesTest"/>     
+        <class name="sanity.SelectHotDeskTest"/>   
+        <class name="sanity.SelectEnterpriseSolutionsTest"/>
+     <class name="sanity.SelectAllAccessWrkspaceTest"/> 
+     <class name="sanity.SelectEnterpriseSolutionsTest"/>
    
-          <class name="sanity.SelectEnterpriseSolutionsTest"/>
-          <class name="sanity.SelectEventsAndWorkspacesTest"/>   
-          <class name="sanity.WeWorkWebAppTest"/>
-          <class name="sanity.SelectHotDeskTest"/>
+          <class name="sanity.SelectPrivateOfficeTest"/> 
+           <class name="sanity.WeWorkWebAppTest"/>
+         
+          
          <class name="sanity.SelectDayPassTest"/> 
           <class name="sanity.SelectSubscriptionTest"/>
           <class name="sanity.SelectVirtualOfficeTest"/> 

@@ -167,11 +167,11 @@ public class WebFlows extends CommonOps
 		if(!value1)
 		{
 			click(Enterprise.enterpriseBtn);
-	    	click(Enterprise.locationDropdown);
+	    	click(Enterprise.selectDropdown(1));
 	        loadTime(1);
 	    	click(Enterprise.selectCity(city));
 	    	click(Enterprise.selectLocation(location));
-	    	click(Enterprise.noOfPplDrpdwn);
+	    	click(Enterprise.selectDropdown(2));
 	    	click(Enterprise.selectNoOfPeople(noOfPpl));
 	    	boolean value2 = WebLoading.exploreBtn.isEnabled();
 			if(value2)
@@ -292,20 +292,21 @@ public class WebFlows extends CommonOps
     @Step("Fill the Enterprise form")
     public static void fillEnterpriseFormDetails() throws InterruptedException
     {
-    	click(Enterprise.getInTouchBtn);
-    	updateText(Enterprise.fullName, getData("Username"));
-        updateText(Enterprise.workEmail, getData("email"));
-        updateText(Enterprise.phoneNumber, getData("phoneNumber"));
+    	click(Enterprise.getInTouchBtnForSoln);
+    	updateText(Enterprise.enter("Full Name"), getData("Username"));
+        updateText(Enterprise.enter("Work Email"), getData("email"));
+        updateText(Enterprise.enter("Phone Number"), getData("phoneNumber"));
     	scrollToElement(Enterprise.companySizeDrpdwn);
     	click(Enterprise.companySizeDrpdwn);
     	click(Enterprise.selectCompanySize("100+"));
     	loadTime(1);
-    	mouseHover(Enterprise.noRadioBtn);
-//    	click(Enterprise.getInTouchButton);
+    	scrollToElement(Enterprise.selectRadioButton("No"));
+    	mouseHover(Enterprise.selectRadioButton("No"));
+//    	click(Enterprise.getInTouchButtonForSumbtn);
 //    	loadTime(1);
 //    	Verifications.elementIsVisible(WebLoading.FormSubbmittedMsg);
-//      String actualText = WebLoading.FormSubbmittedMsg.getText();
-//      Verifications.verifyText(actualText,"Form Submitted Successfully");
+//        String actualText = WebLoading.FormSubbmittedMsg.getText();
+//        Verifications.verifyText(actualText,"Form Submitted Successfully");
 
     }
 
@@ -851,10 +852,12 @@ public class WebFlows extends CommonOps
 	@Step("Select time")
 	public static void selectTime(String hours, String minutes) throws InterruptedException 
 	{
-		click(Events.clockIcon);
+		click(Events.select("ClockIcon"));
 		loadTime(3);
+		//scrollToElement(Events.selectHour(hours));
 		mouseHover(Events.selectHour(hours));
 		loadTime(3);
+		Verifications.elementIsVisible(Events.selectMinute(minutes));
 		mouseHover(Events.selectMinute(minutes));
 		loadTime(3);
 	}
@@ -866,12 +869,12 @@ public class WebFlows extends CommonOps
 		Verifications.elementIsVisible(WebLoading.WBS);
 		mouseHover(WebLoading.WBS);
 		loadTime(2);
-		scrollToElement(Wbs.fullName);
-		Verifications.elementIsVisible(Wbs.fullName);
-		updateText(Wbs.fullName, getData("name"));
-		updateText(Wbs.companyName, getData("companyName"));
-		updateText(Wbs.companyEmail, getData("companyEmail"));
-		updateText(Wbs.phoneNumber, getData("phoneNumber"));
+		scrollToElement(Wbs.select("Full name"));
+		Verifications.elementIsVisible(Wbs.select("Full name"));
+		updateText(Wbs.select("Full name"), getData("name"));
+		updateText(Wbs.select("Company name"), getData("companyName"));
+		updateText(Wbs.select("Company email"), getData("companyEmail"));
+		updateText(Wbs.select("Phone number"), getData("phoneNumber"));
 		click(Wbs.locationDropdwon);
 		click(Wbs.selectCity("Mumbai"));
 		click(Wbs.selectService("Hardware rentals"));
