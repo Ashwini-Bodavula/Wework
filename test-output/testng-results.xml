@@ -2,15 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-04T20:13:06 IST" name="Web Suite" finished-at="2022-09-04T20:13:44 IST" duration-ms="37916">
+  <suite started-at="2022-09-05T12:38:51 IST" name="Web Suite" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
     <groups>
-      <group name="CO">
-        <method signature="SelectAllAccessWrkspaceTest.test01_SelectAllAccessInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@1800a575]" name="test01_SelectAllAccessInPune" class="sanity.SelectAllAccessWrkspaceTest"/>
-      </group> <!-- CO -->
     </groups>
-    <test started-at="2022-09-04T20:13:06 IST" name="firefox Tests" finished-at="2022-09-04T20:13:44 IST" duration-ms="37916">
-      <class name="sanity.SelectAllAccessWrkspaceTest">
-        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@1800a575]" started-at="2022-09-04T20:13:06 IST" name="startSession" finished-at="2022-09-04T20:13:12 IST" duration-ms="6276" status="PASS">
+    <test started-at="2022-09-05T12:38:51 IST" name="firefox Tests" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
+      <class name="sanity.WebAppTest">
+        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:51 IST" name="startSession" finished-at="2022-09-05T12:38:55 IST" duration-ms="4678" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,36 +28,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method signature="test01_SelectAllAccessInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@1800a575]" started-at="2022-09-04T20:13:13 IST" name="test01_SelectAllAccessInPune" description="Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces)" data-provider="PuneAllAccessWorkspace" finished-at="2022-09-04T20:13:44 IST" duration-ms="31230" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Pune]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Kharadi]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[World Trade Center]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="test08_VerifyContactUsFeature()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:55 IST" name="test08_VerifyContactUsFeature" description="Test08 - Verify User is able to Select contact us option" finished-at="2022-09-05T12:39:29 IST" duration-ms="33482" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test01_SelectAllAccessInPune -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@1800a575]" started-at="2022-09-04T20:13:44 IST" name="afterMethod" finished-at="2022-09-04T20:13:44 IST" duration-ms="303" status="PASS">
+        </test-method> <!-- test08_VerifyContactUsFeature -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="afterMethod" finished-at="2022-09-05T12:39:29 IST" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@1800a575]" started-at="2022-09-04T20:13:44 IST" name="closeSession" finished-at="2022-09-04T20:13:44 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="closeSession" finished-at="2022-09-05T12:39:29 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.SelectAllAccessWrkspaceTest -->
+      </class> <!-- sanity.WebAppTest -->
     </test> <!-- firefox Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

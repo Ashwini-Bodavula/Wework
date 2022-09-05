@@ -889,34 +889,131 @@ public class WebFlows extends CommonOps
 	public static void fillGetInTouchForm() throws InterruptedException
 	{
 		click(WebLoading.contactUsBtn);
-    	scrollToElement(GetInTouch.firstName);
-    	Verifications.elementIsVisible(GetInTouch.firstName);
-    	updateText(GetInTouch.firstName, getData("name"));
-        updateText(GetInTouch.lastName, getData("lastName"));
-        updateText(GetInTouch.companyName, getData("companyName"));
-        updateText(GetInTouch.companyEmail, getData("companyEmail"));
-        updateText(GetInTouch.phoneNumber, getData("phoneNumber"));
-        click(GetInTouch.locationsDrpdwn);
+    	scrollToElement(GetInTouch.enter("First Name"));
+    	Verifications.elementIsVisible(GetInTouch.enter("First Name"));
+    	updateText(GetInTouch.enter("First Name"), getData("name"));
+        updateText(GetInTouch.enter("Last Name"), getData("lastName"));
+        updateText(GetInTouch.enter("Company Name"), getData("companyName"));
+        updateText(GetInTouch.enter("Company E-mail address"), getData("companyEmail"));
+        updateText(GetInTouch.enter("Phone number"), getData("phoneNumber"));
+        click(GetInTouch.selectDropdown(1));
         click(GetInTouch.select("Pune"));
-        click(GetInTouch.micromarketDrpdwn);
+        click(GetInTouch.selectDropdown(2));
         click(GetInTouch.select("Kharadi"));
-        click(GetInTouch.buildingsDropdown);
+        click(GetInTouch.selectDropdown(3));
         click(GetInTouch.select("World Trade Center"));
-        click(GetInTouch.workspaceTypedrpdwn);
+        click(GetInTouch.selectDropdown(4));
         click(GetInTouch.select("Private Office"));
-        click(GetInTouch.increaseNoOfDesk);
-        click(GetInTouch.increaseNoOfDesk);
-        click(GetInTouch.decreaseNoOfDesk);
+        WebFlows.selectNoOfDesks(3);
         //click(GetInTouch.getInTouchBtn);
 	}
 	
+	@Step("Fill referral form")
+	public static void fillReferralForm() throws InterruptedException
+	{
+		
+		scrollToElement(WebLoading.referralsLink);
+		click(WebLoading.referralsLink);
+		loadTime(4);
+		Thread.sleep(2000);
+		scrollToElement(Referral.FAQ1);
+		loadTime(4);
+		Verifications.elementIsVisible(Referral.FAQ1);
+		loadTime(4);
+		click(Referral.FAQ1);
+		scrollToElement(Referral.referralLinkInFAQ1);
+		String referralLinkText = Referral.referralLinkInFAQ1.getText();
+		String actualReferralLinkText = "https://wework.co.in/referrals";
+		Assert.assertEquals(referralLinkText, actualReferralLinkText);
+		scrollToElement(Referral.getStartedBtn);
+		click(Referral.getStartedBtn);
+		scrollToElement(Referral.select("Full Name"));
+		updateText(Referral.select("Full Name"), getData("name"));
+		updateText(Referral.select("Email"), getData("email"));
+		updateText(Referral.select("Phone Number"), getData("phoneNumber"));
+		updateText(Referral.select("Company Name"), getData("companyName"));
+		click(Referral.preferredOfficeLocationDropdwon);
+		click(Referral.selectLocation("Pune"));
+		click(Referral.workspaceIntrestedInDrpdwn);
+		click(Referral.selectWorkspace("All Access"));
+		scrollToElement(Referral.increaseNoOfDesk);
+		click(Referral.addReferralBtn);
+		boolean errormessageDisplayed = Referral.errorMessage.isDisplayed();
+		Assert.assertTrue(errormessageDisplayed);
+		click(Referral.increaseNoOfDesk);
+		click(Referral.increaseNoOfDesk);
+		updateText(Referral.select("Referrer Name"), getData("name"));
+		updateText(Referral.select("Referrer Email"), getData("email"));
+		updateText(Referral.select("Referrer Phone"), getData("phoneNumber"));
+//		click(referral.addReferralBtn);
+	}
+
+	@Step("Validate careers link")
+	public static void validateCareersLink() throws InterruptedException
+	{
+		scrollToElement(WebLoading.CareersLink);
+		click(WebLoading.CareersLink);
+		loadTime(3);
+		Thread.sleep(1000);
+		waitForLoad();
+		click(Careers.joinUsBtn);
+		loadTime(4);
+		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
+		Assert.assertTrue(openingsBtnPresent, "Button present");
+		String currentURL = driver.getCurrentUrl();
+		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
+		driver.navigate().back();
+		waitForLoad();
+	}
 	
+	@Step("Validate careers link by clicking on contact us butoon")
+	public static void selectCareersfromContactUsBtn() throws InterruptedException
+	{ 
+		click(WebLoading.contactUsBtn);
+		scrollToElement(Careers.submitButton);
+		String textInSubmitBtnBfrSelectingChkBox = Careers.submitButton.getText();
+		Assert.assertEquals(textInSubmitBtnBfrSelectingChkBox, "Get in touch");
+		boolean nameEnabled = Careers.firstName.isEnabled();
+		Assert.assertTrue(nameEnabled);
+		scrollToElement(Careers.jobOportunitiescheckBox);
+		mouseHover(Careers.jobOportunitiescheckBox);
+		waitForLoad();
+		boolean nameDisabledled = Careers.firstName.isEnabled();
+		Assert.assertFalse(nameDisabledled);
+		scrollToElement(Careers.submitButton);
+		String textInSubmitBtnAfrSelectingChkBox = Careers.submitButton.getText();
+		Assert.assertEquals(textInSubmitBtnAfrSelectingChkBox, "Explore Now");
+		click(Careers.submitButton);
+		waitForLoad();
+		Thread.sleep(1000);
+		click(Careers.joinUsBtn);
+		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
+		Assert.assertTrue(openingsBtnPresent, "Button present");
+		String currentURL = driver.getCurrentUrl();
+		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
+		driver.navigate().back();
+		waitForLoad();
+	}	
+	
+	@Step ("Select number of Desks")
+    public static void selectNoOfDesks(int count)
+    {
+    	if(count == 1)
+    	{
+    		return;
+    	}
 
+    	for(int i=1;i<=count;i++)
+    	{
+    		click(GetInTouch.increaseNoOfDesk);
+    	}
 
-@Step("verify profile")
-public static void profile() throws InterruptedException
-{
-	if(MyAcc.MyAccount.isDisplayed()) {
+    }
+	
+	@Step("verify profile")
+	public static void profile() throws InterruptedException
+	{
+		if(MyAcc.MyAccount.isDisplayed()) {
     	click(MyAcc.MyAccount);
         click(MyAcc.profile);
         Boolean email=MyAcc.Email.isEnabled();
@@ -936,9 +1033,9 @@ public static void profile() throws InterruptedException
         Assert.assertEquals(phone, "8905641237");
         click(WebODLogin.msg_close);
         
-	}
+		}
 
- }
+	}
 }
 
 

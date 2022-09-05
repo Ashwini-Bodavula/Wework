@@ -4,16 +4,16 @@
   <test thread-count="2" parallel="methods" name="firefox Tests(failed)">
     <parameter name="browser" value="chrome"/>
     <parameter name="platformName" value="web"/>
-    <parameter name="URL" value="CO"/>
+    <parameter name="URL" value="COD"/>
     <classes>
-      <class name="sanity.SelectEventsAndWorkspacesTest">
+      <class name="sanity.WebAppTest">
         <methods>
+          <include name="test08_VerifyContactUsFeature"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="test01_SelectEventsAndWorkspaces"/>
         </methods>
-      </class> <!-- sanity.SelectEventsAndWorkspacesTest -->
+      </class> <!-- sanity.WebAppTest -->
     </classes>
   </test> <!-- firefox Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->
