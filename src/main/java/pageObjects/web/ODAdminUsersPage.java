@@ -94,11 +94,14 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "(//span[@class='MuiIconButton-label'])[2]")
     public WebElement buildingDrpdwn;
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='select-building-select']")
+	@FindBy(how = How.XPATH, using = "//input[@id='select-building-select']")  
     public WebElement selectBuilding;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='email__id']")
     public WebElement customerEmail;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='name']")
+    public WebElement customerName;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='gstin__customer']")
     public WebElement customerGSTN;
@@ -116,8 +119,35 @@ public class ODAdminUsersPage  extends CommonOps{
     public WebElement total;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']")
-    public WebElement propertyAndQuantinty;
+    public WebElement billingDetailsList;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='select-event-type-select']")
+    public WebElement postPaidEventDropdown;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='price']")
+    public WebElement price;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='enterprise-select']")
+    public WebElement selectEnterprise;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='product type-select']")
+    public WebElement selectproductType;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiInput-formControl')]")
+    public WebElement bookinStartDate;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'+')])[1]")
+    public WebElement plusBtnToincreaseRoomSize;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'+')])[2]")
+    public WebElement plusBtnToincreaseCredits;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
+    public WebElement conferenceRoom;	
 	
 	
-		
+	
+	
+	
+	
 }
