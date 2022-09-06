@@ -55,10 +55,10 @@ public class ConferenceRoomODE extends CommonOps {
 		@FindBy(how = How.XPATH, using = "//p[contains(text(),'August 2022')]")
 		public WebElement textbox;
 		
-		@FindBy(how = How.XPATH, using = "(//button[contains(@class, 'MuiButtonBase-root-1821 MuiIconButton-root-1813 MuiPickersCalendarHeader-iconButton-1810')]")
+		@FindBy(how = How.XPATH, using = "(//button[contains(@class, 'MuiPickersCalendar')])[2]/span")
 	    public WebElement nxt_month;
 		
-		@FindBy(how = How.XPATH, using = "//p[contains(@class, 'MuiTypography-root-1838 MuiTypography-body1-1840 MuiTypography-alignCenter-1854')]")
+		@FindBy(how = How.XPATH, using = "//p[contains(@class, 'MuiTypography-alignCenter')]")
 	    public WebElement monthName;
 		
 		@FindBy(how = How.XPATH, using = "//input[@id='no_of_hrs_0']")
@@ -74,8 +74,26 @@ public class ConferenceRoomODE extends CommonOps {
 		public WebElement calendericon;
 		
 		
-		@FindBy(how = How.XPATH, using = "///span[contains(text(),'Add')]")
+		@FindBy(how = How.XPATH, using = "//span[contains(text(),'Add')]")
 	    public WebElement addBtn;
+		
+		@FindBy(how = How.XPATH, using = "//button[contains(text(),'+Add another meeting room')]")
+	    public WebElement Addanothermeeting; 
+		
+		@FindBy(how = How.XPATH, using = "//span[contains(text(),'Continue')]")
+		public WebElement continuebutton; 
+		
+		@FindBy(how = How.XPATH, using = "//button[contains(text(),'Discard')]")
+		public WebElement discard; 
+		
+		@FindBy(how = How.XPATH, using = "//button[contains(text(),'Finish')]")
+		public WebElement Finish; 
+		
+		
+		
+		
+		
+		
 
   
 }

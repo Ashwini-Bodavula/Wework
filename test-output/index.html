@@ -131,22 +131,22 @@
                   </a> <!-- test01_SelectConferenceRoomInPune(Pune, Magarpatta Road, Panchshil Futura) -->
                   <span class="method-name">test01_SelectConferenceRoomInPune</span>
                   <span class="parameters">(Pune, Magarpatta Road, Panchshil Futura)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@class=&apos;wework-desktop-logo&apos;]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //p[contains(text(), &apos;Conference Room&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 	at extensions.UIActions.click(UIActions.java:23)
-	at workflows.ODEconfrenceroomflows.selection(ODEconfrenceroomflows.java:75)
-	at sanity.ODEconferenceroomTest.test01_SelectConferenceRoomInPune(ODEconferenceroomTest.java:39)
+	at workflows.ODEconfrenceroomflows.selection(ODEconfrenceroomflows.java:77)
+	at sanity.ODEconferenceroomTest.test01_SelectConferenceRoomInPune(ODEconferenceroomTest.java:41)
 	at java.util.ArrayList.forEach(ArrayList.java:1257)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;wework-desktop-logo&apos;]&quot;}
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(), &apos;Conference Room&apos;)]&quot;}
   (Session info: chrome=104.0.5112.101)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sukanya-J-B224s-MacBook-Pro.local&apos;, ip: &apos;192.168.165.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.3&apos;, java.version: &apos;1.8.0_181&apos;
+System info: host: &apos;Sukanya-J-B224s-MacBook-Pro.local&apos;, ip: &apos;192.168.199.1&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.3&apos;, java.version: &apos;1.8.0_181&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/l3/xm0kp0x17bj...}, goog:chromeOptions: {debuggerAddress: localhost:65195}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 029f6054642cbf476e77d5d61ef7c5a0
-*** Element info: {Using=xpath, value=//div[@class=&apos;wework-desktop-logo&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/l3/xm0kp0x17bj...}, goog:chromeOptions: {debuggerAddress: localhost:62510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ca75fe194517bf0c51859610a5e1a68d
+*** Element info: {Using=xpath, value=//p[contains(text(), &apos;Conference Room&apos;)]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -235,7 +235,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test01_SelectConferenceRoomInPune')
 data.setCell(0, 2, 'sanity.ODEconferenceroomTest')
-data.setCell(0, 3, 63154);
+data.setCell(0, 3, 79745);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
@@ -275,15 +275,15 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">test01_SelectConferenceRoomInPune(Pune, Magarpatta Road, Panchshil Futura)</span>
-                <span class="method-start">37744 ms</span>
+                <span class="method-start">129518 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">100918 ms</span>
+                <span class="method-start">209280 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">101072 ms</span>
+                <span class="method-start">209514 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
