@@ -78,7 +78,7 @@ public class CommonOps extends Base {
     
    
     public static void URL(String URL)    {
-       driver.manage().window().maximize();
+//       driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
      /*   if(URL.equalsIgnoreCase("OD")) {
@@ -141,13 +141,16 @@ public class CommonOps extends Base {
 //        WebDriver driver = new ChromeDriver();
 
         ChromeOptions options = new ChromeOptions();
-    	driver = new ChromeDriver(options);
-        options.setHeadless(true);
+   
+//        options.setHeadless(true);
        	options.addArguments("disable-dev-shm-usage"); 
        	options.addArguments("no-sandbox");
         options.addArguments("--disable-gpu");
+    	options.addArguments("window-size=1400,1400");
+        WebDriver driver = new ChromeDriver(options);
+        
 //       	options.addArguments("USER AGENT");
-//       	options.addArguments("window-size=1400,539");
+       
         return driver;
     }
 
@@ -155,14 +158,12 @@ public class CommonOps extends Base {
 
     @Step("Launch Firefox browser")
     public static WebDriver initFirefoxDriver() {
-       
     	WebDriverManager.firefoxdriver().setup();
-    	  //	WebDriver driver = new FirefoxDriver();
-    	  	FirefoxOptions options = new FirefoxOptions();
-    	  	options.setHeadless(true);
-    	  	WebDriver driver = new FirefoxDriver(options);
-    	    return driver;
-    	
+    //	WebDriver driver = new FirefoxDriver();
+    	FirefoxOptions options = new FirefoxOptions();
+    	options.setHeadless(true);
+    	WebDriver driver = new FirefoxDriver(options);
+        return driver;
     }
 
     // Method Name: initIEDriver
