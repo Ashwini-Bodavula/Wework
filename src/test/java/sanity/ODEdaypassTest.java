@@ -30,13 +30,13 @@ public class ODEdaypassTest extends Daypass_OD {
 		
 		    ODEflows.loginToODE();
 		    ODEflows.selection(city, location, Building);
-		 //   ODEflows.Daypass_Myself();
+		    ODEflows.Daypass_Myself();
 		    ODEflows.selectDate(getData("month"),getData("date"));
 		    ODEflows.Daypass_submission();
 		    ODEflows.logoutODE();
 	    }
 	 
-  /*  @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
+    @Test(description = "Test02 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test02_OD_daypassBangalore(String city, String location, String Building) throws InterruptedException{
 		
@@ -58,7 +58,7 @@ public class ODEdaypassTest extends Daypass_OD {
 		    ODEflows.logoutODE();
 	    }
 	 
-/*	 @Test(description = "Test04 - Verify admin is able to book a daypass", dataProvider = "NoidaDayPassWorkspaces")
+	 @Test(description = "Test04 - Verify admin is able to book a daypass", dataProvider = "NoidaDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test04_OD_daypassNoida(String city, String location, String Building) throws InterruptedException{
 		
@@ -103,7 +103,7 @@ public class ODEdaypassTest extends Daypass_OD {
 		    ODEflows.Daypass_submission();
 		    ODEflows.logoutODE();
 	    }
-	 */
+	 
 	 @DataProvider(name="PuneDayPassWorkspaces")
 		public Object[][] puneDayPassWorkspaces()
 		{
@@ -133,7 +133,7 @@ public class ODEdaypassTest extends Daypass_OD {
 	     public Object[][] hyderabadDayPassWorkspaces()
 		{
 			return new Object[][] {
-			//	{"Hyderabad","Financial District"," "},
+				{"Hyderabad","Financial District"," "},
 				{"Hyderabad","Hitec City"," "}
 				};
 
@@ -167,7 +167,7 @@ public class ODEdaypassTest extends Daypass_OD {
 //				{"Mumbai","Malad","Spectrum Tower"},
 //				{"Mumbai","Worli"," "},
 //				{"Mumbai","BKC","Enam Sambhav"},
-//				{"Mumbai","WTC  Tower 5"," "}
+				{"Mumbai","WTC  Tower 5"," "}
 				};
 
 		}

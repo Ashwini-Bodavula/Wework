@@ -26,13 +26,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.conferenceRoomOptn.getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
+			click(WebLoading.selectWorkspace(6));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))
@@ -88,13 +88,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.conferenceRoomOptn.getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
+			click(WebLoading.selectWorkspace(6));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))
@@ -148,13 +148,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.conferenceRoomOptn.getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
+			click(WebLoading.selectWorkspace(6));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))
@@ -208,13 +208,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.conferenceRoomOptn.getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
+			click(WebLoading.selectWorkspace(6));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))
@@ -268,13 +268,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.conferenceRoomOptn.getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
+			click(WebLoading.selectWorkspace(6));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))

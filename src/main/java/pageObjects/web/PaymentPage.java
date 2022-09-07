@@ -10,13 +10,7 @@ import utilities.CommonOps;
 public class PaymentPage extends CommonOps
 {
 
-	public WebElement select(String locator)
-	{
-		return driver.findElement(By.xpath("//*[contains(text(),'"+locator+"')]"));
-
-	}
-
-
+	
 	@FindBy(how = How.XPATH, using = "//inputcontains(@id, 'checkout_email')]")
     public WebElement checkoutEmail;
 
@@ -37,6 +31,12 @@ public class PaymentPage extends CommonOps
 
 	@FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'Company')]")
     public WebElement companyName;
+	
+	public WebElement select(String locator)
+	{
+		return driver.findElement(By.xpath("//input[@placeholder='"+locator+"']"));
+
+	}
 
 	@FindBy(how = How.XPATH, using = "//input[@placeholder='Address']")
     public WebElement address;
@@ -55,6 +55,7 @@ public class PaymentPage extends CommonOps
 
 	@FindBy(how = How.XPATH, using = "//input[@placeholder='Phone']")
     public WebElement phoneNumber;
+	
 
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Continue to payment')]")
     public WebElement continuePayment;
