@@ -20,19 +20,25 @@ public class WBSPage extends CommonOps{
 		return driver.findElement(By.xpath("//label[contains(text(),'"+locator+"')]"));
 
 	}
-
-	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
-	public WebElement fullName;
-
-	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Company name*'])")
-	public WebElement companyName;
-
-	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Company email*'])")
-	public WebElement companyEmail;
-
-	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])")
-	public WebElement phoneNumber;
-
+	
+	 public WebElement select(String locator) 
+	{
+		return driver.findElement(By.xpath("//input[@placeholder='"+locator+"*']"));
+			
+	}
+	    
+//	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Full name*'])")
+//	public WebElement fullName;
+//
+//	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Company name*'])")
+//	public WebElement companyName;
+//
+//	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Company email*'])")
+//	public WebElement companyEmail;
+//
+//	@FindBy(how = How.XPATH, using = "(//input[@placeholder='Phone number*'])")
+//	public WebElement phoneNumber;
+//
 	@FindBy(how = How.XPATH, using = "//div[@aria-haspopup='listbox']")
 	public WebElement locationDropdwon;
 	    

@@ -94,8 +94,8 @@ public class ODEflows extends CommonOps
 		click(day_ODE.finish);
 		loadTime(30);
 		String success_msg=day_ODE.msg.getText();
-	//	Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
-		click(day_ODE.msg_close);
+//		Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
+//		click(day_ODE.msg_close);
 	   	}
    }
   
@@ -373,9 +373,50 @@ public class ODEflows extends CommonOps
 		     if(update.equalsIgnoreCase("Reschedule"))
 		     { 	
 			   click(AccODE.updatestatus(update));
-			   List <WebElement> orders=driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-4']"));
+			   if(update1.equalsIgnoreCase("cancel All"))
+			   {
+				 click(AccODE.updatestatus(update1));
+				 loadTime(5);
+				 Alertmsg = AccODE.msg.getText();
+				 Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				 click(day_ODE.msg_close);
+			     
+	     	   }
+			   else if(update1.equalsIgnoreCase("Done"))
+			   {
+				  List <WebElement> orders=driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-4']"));
 				  int count= orders.size();
-		     }
+				  if(count==1)
+				  {
+					  click(AccODE.updatestatus("Cancel All")); 
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Cancelled Successfully");
+				  }
+				  else
+				  {
+					  System.out.println(count);
+					  for(int i=1;i<count;i++) 
+					  {
+					   click(AccODE.delete);
+					   loadTime(1);
+					   
+					  }
+					  click(AccODE.updatestatus("Done"));
+					  loadTime(2);
+					  Alertmsg = AccODE.msg.getText();
+					  Assert.assertEquals(Alertmsg, "Order Modified Successfully, please refresh page after 20s to see the changes");
+				  }		
+				 
+				  click(day_ODE.msg_close);
+ 	    	   }
+			   else
+			    {
+				   click(AccODE.updatestatus("Back"));
+				   String page=AccODE.order.getText();
+				  // page.contains("Order");
+				   Verifications.verifycontains(page,"Order");
+			    }			   			   
+		   }
 		  } 
 	   }
    }

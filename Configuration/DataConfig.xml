@@ -11,7 +11,7 @@
     <newName>VarshaR</newName>
     <email>testers@geekyants.com</email>
     <phoneNumber>9999999999</phoneNumber>
-    <lastName>R</lastName>\
+    <lastName>R</lastName>
     <userEmail>varshar@geekyants.com</userEmail>
     <userPassword>Varsha@123</userPassword>
 
@@ -25,7 +25,8 @@
     <date2>22</date2>
     <month2>September</month2>
     <date3>5</date3>
-    <month3>October</month3>
+    <month3>December</month3>
+    <year>2022</year>
     <teamMember1>Anusha</teamMember1>
     <teamMember1Email>anusha@abc.com</teamMember1Email>
     <teamMember2>Bhuvan</teamMember2>
@@ -39,17 +40,17 @@
     <invalidEmail>abcdef.com</invalidEmail>
     <validEmail>testers@geekyants.com</validEmail>
     <invalidPassword>invalidPassword</invalidPassword>
-    
-    <!-- admin dashboard -->
-    <adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
-    <ODUserEmail>rahul@geekyants.com</ODUserEmail>
-    <ODUserPwd>rahuladmin</ODUserPwd>
-    <loc1>Prestige Atlanta, Koramangala</loc1>
-  <loc2>Futura, Magarpatta Road</loc2>
-  <isPostpaidUser>NO</isPostpaidUser>
-  <isSuperAdmin>YES</isSuperAdmin>
-    
-    
+
+	<!-- admin dashboard -->
+	<adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
+	<ODUserEmail>rahul@geekyants.com</ODUserEmail>
+	<ODUserPwd>rahuladmin</ODUserPwd>
+	<loc1>Prestige Atlanta, Koramangala</loc1>
+	<loc2>Futura, Magarpatta Road</loc2>
+	<isPostpaidUser>NO</isPostpaidUser>
+	<isSuperAdmin>YES</isSuperAdmin>
+	<count>3</count>
+	<GSTN>29AACCF8045D1ZM</GSTN>
     
     
     <TS>https://wework.co.in/terms-and-conditions/</TS>
