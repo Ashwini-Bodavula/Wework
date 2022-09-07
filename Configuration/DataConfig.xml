@@ -51,7 +51,8 @@
 	<isSuperAdmin>YES</isSuperAdmin>
 	<count>3</count>
 	<GSTN>29AACCF8045D1ZM</GSTN>
-    
+	<eventType>Cloud services</eventType>
+       <price>10</price>
     
     <TS>https://wework.co.in/terms-and-conditions/</TS>
 <!-- CO -->

@@ -29,9 +29,9 @@
         <classes>
           
                  
-       
+       <class name="sanity.SelectPrivateOfficeTest"/> 
 
-	<!-- <class name="sanity.SelectPrivateOfficeTest"/> 
+	<!-- 
 		<class name="sanity.SelectHotDeskTest"/> 
 		<class name="sanity.SelectAllAccessWrkspaceTest"/> 
 		<class name="sanity.WeWorkWebAppTest"/> 

@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Web_Suite" class="navigator-link ">
-                    <span>TestngCO.xml</span>
+                    <span>TestngODAdmin.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Web_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Web_Suite" title="sanity.WebAppTest" class="method navigator-link" hash-for-method="test08_VerifyContactUsFeature">test08_VerifyContactUsFeature</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.ODAdminDashboardTest" class="method navigator-link" hash-for-method="test06_shopSelectionODEPurchase">test06_shopSelectionODEPurchase</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Web_Suite -->
@@ -122,16 +122,16 @@
           <div class="suite-Web_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">sanity.WebAppTest</span>
+              <span class="class-name">sanity.ODAdminDashboardTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test08_VerifyContactUsFeature">
-                  </a> <!-- test08_VerifyContactUsFeature -->
-                  <span class="method-name">test08_VerifyContactUsFeature</span>
+                  <a name="test06_shopSelectionODEPurchase">
+                  </a> <!-- test06_shopSelectionODEPurchase -->
+                  <span class="method-name">test06_shopSelectionODEPurchase</span>
                   <em>
-(Test08 - Verify User is able to Select contact us option)                  </em>
+(Test06 - Verify User is able to select shop - ODE purchase.)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,21 +139,21 @@
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/varsharyattinahalli/gitFolder/NewWework/Wework/TestngCO.xml</span>
+            <span class="header-content">/Users/varsharyattinahalli/gitFolder/NewWework/Wework/TestngODAdmin.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;firefox Tests&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+&lt;suite name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Web Tests&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;web&quot;/&gt;
-    &lt;parameter name=&quot;URL&quot; value=&quot;CO&quot;/&gt;
+    &lt;parameter name=&quot;URL&quot; value=&quot;adminD&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.WebAppTest&quot;/&gt;
+      &lt;class name=&quot;sanity.ODAdminDashboardTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- firefox Tests --&gt;
+  &lt;/test&gt; &lt;!-- Web Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -165,7 +165,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">firefox Tests (1 class)</span>
+                <span class="test-name">Web Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -193,14 +193,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test08_VerifyContactUsFeature')
-data.setCell(0, 2, 'sanity.WebAppTest')
-data.setCell(0, 3, 33482);
+data.setCell(0, 1, 'test06_shopSelectionODEPurchase')
+data.setCell(0, 2, 'sanity.ODAdminDashboardTest')
+data.setCell(0, 3, 35159);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -226,22 +226,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.WebAppTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.ODAdminDashboardTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">startSession(web, chrome, CO)</span>
+                <span class="method-name">startSession(web, Chrome, adminD)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test08_VerifyContactUsFeature</span>
-                <span class="method-start">4787 ms</span>
+                <span class="method-name">test06_shopSelectionODEPurchase</span>
+                <span class="method-start">12807 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">38287 ms</span>
+                <span class="method-start">47984 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">38649 ms</span>
+                <span class="method-start">48184 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
