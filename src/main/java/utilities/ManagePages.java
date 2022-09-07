@@ -23,6 +23,7 @@ import pageObjects.web.PaymentPage;
 import pageObjects.web.ReferralsPage;
 import pageObjects.web.VirtualOfficePage;
 import pageObjects.web.WBSPage;
+import pageObjects.web.Workspacespage;
 import pageObjects.web.conferenceOD;
 import pageObjects.web.webLoading;
 
@@ -63,6 +64,10 @@ public class ManagePages extends Base {
         ODElogin = PageFactory.initElements(driver,LoginODE.class);
         day_ODE =  PageFactory.initElements(driver, DaypassODE.class);
         AccODE   = PageFactory.initElements(driver, MyAccPageODE.class);
+        
+        //CO web pages
+        
+        Compareworkspace = PageFactory.initElements(driver, Workspacespage.class);
     }
 
 

@@ -1,6 +1,7 @@
 package sanity;
 
 import static extensions.UIActions.click;
+
 import static extensions.UIActions.mouseHover;
 import static extensions.UIActions.scrollToElement;
 import static extensions.UIActions.updateText;

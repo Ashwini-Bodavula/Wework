@@ -54,5 +54,9 @@ public class Base {
     protected static pageObjects.web.DaypassODE day_ODE; 
     protected static pageObjects.web.MyAccPageODE AccODE;
     
+    //CO WEB
+    protected static pageObjects.web.Workspacespage Compareworkspace;
+
+    
 }
 
