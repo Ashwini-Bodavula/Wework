@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Web Suite" parallel="true" thread-count = "2">
-
-  <!--  <test name="chrome Tests">
+     <test name="chrome Tests">
         <parameter name="platformName" value="web" />
         <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="CO"></parameter>
         <classes>
-                     
-          <class name="sanity.SelectDayPassTest"/> 
-         <class name="sanity.SelectAllAccessWrkspaceTest"/>
+           
+            <class name="sanity.SelectEventsAndWorkspacesTest"/>           
+      <!--  <class name="sanity.SelectDayPassTest"/> 
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
           <class name="sanity.SelectEnterpriseSolutionsTest"/>
           <class name="sanity.SelectEventsAndWorkspacesTest"/>   
           <class name="sanity.WeWorkWebAppTest"/>
@@ -17,16 +17,16 @@
           <class name="sanity.SelectPrivateOfficeTest"/>
           <class name="sanity.SelectSubscriptionTest"/>
           <class name="sanity.SelectVirtualOfficeTest"/> 
-          <class name="selectConferenceRoomTest"/>          
+          <class name="selectConferenceRoomTest"/>    -->      
         </classes>
-           firefox
-    </test> -->  
+    </test>  
     
-        <test name="firefox Tests">
+  <!--   <test name="firefox Tests">
         <parameter name="platformName" value="web" />
-        <parameter name="browser" value="chrome"></parameter>        
-        <parameter name="URL" value="CO"></parameter>
+        <parameter name="browser" value="firefox"></parameter>        
+          <parameter name="URL" value="CO"></parameter>
         <classes>
+<<<<<<< HEAD
           
                  
        <class name="sanity.SelectPrivateOfficeTest"/> 
@@ -43,6 +43,19 @@
 		<class name="sanity.SelectDayPassTest"/> 
 		<class name="sanity.SelectVirtualOfficeTest"/> 
 		<class name="selectConferenceRoomTest"/> -->     
+=======
+                     
+          <class name="sanity.SelectDayPassTest"/> 
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
+          <class name="sanity.SelectEnterpriseSolutionsTest"/>
+          <class name="sanity.SelectEventsAndWorkspacesTest"/>   
+          <class name="sanity.WeWorkWebAppTest"/>
+          <class name="sanity.SelectHotDeskTest"/>
+          <class name="sanity.SelectPrivateOfficeTest"/>
+          <class name="sanity.SelectSubscriptionTest"/>
+          <class name="sanity.SelectVirtualOfficeTest"/> 
+          <class name="selectConferenceRoomTest"/>       
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
         </classes>
-    </test>
+    </test>  --> 
 </suite>

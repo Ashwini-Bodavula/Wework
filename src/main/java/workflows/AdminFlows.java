@@ -64,7 +64,38 @@ public class AdminFlows extends CommonOps {
 		
 		
 		
-	}	
+	}
+	
+	@Step("Search user")
+	public static boolean searchUserDetails(String user,  String email , String buildingName , String isAdmin)
+	{
+		boolean userDetailsFound = false;
+		click(ODAdminUser.adminUsers);
+		List<WebElement> usersList = driver .findElements(By.xpath("//tbody/tr"));
+		for(int i=0;i<usersList.size();i++)
+		{
+			String selectedUserDetails = usersList.get(i).getText();
+			if(selectedUserDetails.contains(user))
+			{
+				if(selectedUserDetails.contains(email))
+				{
+					if(selectedUserDetails.contains(buildingName))
+					{
+						if(selectedUserDetails.contains(isAdmin))
+						{
+							
+							userDetailsFound = true;
+							Assert.assertTrue(userDetailsFound);
+							break;
+						}
+						
+					}
+				}
+			}
+		}
+		return userDetailsFound;
+	}
+	
 	
 	@Step("Edit user")
 	public static void editUser(String oldName,  String newName, String newLoc) throws InterruptedException
@@ -159,6 +190,7 @@ public class AdminFlows extends CommonOps {
 		}
 		return userDetailsFound;
 	}
+<<<<<<< HEAD
 	
 	@Step("Search user")
 	public static void increaseQuantity(String number)
@@ -450,4 +482,6 @@ public class AdminFlows extends CommonOps {
 		
     }	
 	
+=======
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 }

@@ -32,7 +32,7 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
@@ -43,8 +43,8 @@ public class SelectDayPassTest extends CommonOps
 			Assert.assertEquals(bookNowBtnBeforeClick, false);
 			loadTime(1);
 
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.dayPassBtn);
+			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				loadTime(1);
@@ -91,15 +91,15 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.dayPassBtn);
+			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -133,15 +133,15 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.dayPassBtn);
+			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -175,15 +175,15 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.dayPassBtn);
+			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -217,15 +217,15 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.dayPassBtn);
+			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -260,14 +260,14 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
+			click(WebLoading.dayPassBtn);
 			click(WebLoading.bookNowBtn);
 			String daypaassHeader = DayPass.dayPassHeader.getText();
 			if(daypaassHeader.contains(buildingName))
@@ -332,14 +332,14 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(5));
+			click(WebLoading.dayPassBtn);
 			click(WebLoading.bookNowBtn);
 			String daypaassHeader = DayPass.dayPassHeader.getText();
 			if(daypaassHeader.contains(buildingName))
@@ -413,7 +413,7 @@ public class SelectDayPassTest extends CommonOps
     }
 
 
-   @Test(description = "Test08 - Verify User is able to select day pass with budnles for Pune",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
+/*	@Test(description = "Test08 - Verify User is able to select day pass with budnles for Pune",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to select day pass with budnles for Pune")
     public void test08_SelectDayPasswithBundlesforPune(String city , String location, String buildingName) throws InterruptedException
     {
@@ -617,8 +617,8 @@ public class SelectDayPassTest extends CommonOps
 	      click(WebLoading.select(buildingName));
 	      click(WebLoading.exploreBtn);
 	      String currentWindow = getWindowHandel();
-	      scrollToElement(WebLoading.selectWorkspace(5));
-	      click(WebLoading.selectWorkspace(5));
+	      scrollToElement(WebLoading.dayPassBtn);
+	      click(WebLoading.dayPassBtn);
 	      click(WebLoading.bookNowBtn);
 	      click(WebLoading.buyABundleLink);
 	      loadTime(4);

@@ -23,15 +23,15 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.privateOfficeOptn);
+			String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -57,15 +57,15 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.privateOfficeOptn);
+			String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -91,15 +91,15 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.privateOfficeOptn);
+			String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -125,15 +125,15 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.privateOfficeOptn);
+			String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -159,15 +159,15 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.privateOfficeOptn);
+			String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
