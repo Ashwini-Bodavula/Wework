@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-05T12:38:51 IST" name="Web Suite" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
+  <suite started-at="2022-09-06T22:34:04 IST" name="Web Suite" finished-at="2022-09-06T22:34:52 IST" duration-ms="48216">
     <groups>
     </groups>
-    <test started-at="2022-09-05T12:38:51 IST" name="firefox Tests" finished-at="2022-09-05T12:39:29 IST" duration-ms="38689">
-      <class name="sanity.WebAppTest">
-        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:51 IST" name="startSession" finished-at="2022-09-05T12:38:55 IST" duration-ms="4678" status="PASS">
+    <test started-at="2022-09-06T22:34:04 IST" name="Web Tests" finished-at="2022-09-06T22:34:52 IST" duration-ms="48216">
+      <class name="sanity.ODAdminDashboardTest">
+        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-06T22:34:04 IST" name="startSession" finished-at="2022-09-06T22:34:17 IST" duration-ms="12720" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -16,31 +16,31 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[CO]]>
+                <![CDATA[adminD]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method signature="test08_VerifyContactUsFeature()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:38:55 IST" name="test08_VerifyContactUsFeature" description="Test08 - Verify User is able to Select contact us option" finished-at="2022-09-05T12:39:29 IST" duration-ms="33482" status="PASS">
+        <test-method signature="test06_shopSelectionODEPurchase()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-06T22:34:17 IST" name="test06_shopSelectionODEPurchase" description="Test06 - Verify User is able to select shop - ODE purchase." finished-at="2022-09-06T22:34:52 IST" duration-ms="35159" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test08_VerifyContactUsFeature -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="afterMethod" finished-at="2022-09-05T12:39:29 IST" duration-ms="360" status="PASS">
+        </test-method> <!-- test06_shopSelectionODEPurchase -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-06T22:34:52 IST" name="afterMethod" finished-at="2022-09-06T22:34:52 IST" duration-ms="198" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.WebAppTest@ca30bc1]" started-at="2022-09-05T12:39:29 IST" name="closeSession" finished-at="2022-09-05T12:39:29 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-06T22:34:52 IST" name="closeSession" finished-at="2022-09-06T22:34:52 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.WebAppTest -->
-    </test> <!-- firefox Tests -->
+      </class> <!-- sanity.ODAdminDashboardTest -->
+    </test> <!-- Web Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

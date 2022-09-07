@@ -58,8 +58,18 @@ public class ODAdminDashboardTest extends CommonOps
 			Assert.assertTrue(userDetailsFound);
 		}
 		AdminFlows.logoutOfODDashboard();
-    }*/
+    }
 	
+<<<<<<< HEAD
+	@Test(description = "Test04 - Verify User is able to select shop - printing.")
+	@Description("This test verifies that User is able to select shop - printing.")
+	public void test04_shopSelectionPrinting() throws InterruptedException 
+	{
+		AdminFlows.loginToODDashboard();		
+		AdminFlows.selectShop("Printing", getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
+		AdminFlows.logoutOfODDashboard();
+	}
+=======
 	@Test(description = "Test04 - Verify User is able to select shop.")
     @Description("This test verifies that User is able to select shop.")
     public void test04_shopSelection() throws InterruptedException
@@ -105,5 +115,28 @@ public class ODAdminDashboardTest extends CommonOps
 		
 		//AdminFlows.logoutOfODDashboard();
     }
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
+	
+	@Test(description = "Test05 - Verify User is able to select shop - postpaid.")
+	@Description("This test verifies that User is able to select shop - Postpaid.")
+	public void test05_shopSelectionPostpaid() throws InterruptedException 
+	{
+		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShopForPostPaid("Postpaid Events" ,getData("eventType"), getData("loc1"), getData("price"),  getData("userEmail"),getData("name"), getData("GSTN"));
+		AdminFlows.logoutOfODDashboard();
+	}*/
+	
+	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.")
+	@Description("This test verifies that User is able to select shop - ODE purchase.")
+	public void test06_shopSelectionODEPurchase() throws InterruptedException 
+	{
+		AdminFlows.loginToODDashboard();
+		
+		AdminFlows.selectShopForODEPurchases("ODE purchases","5th-main","Conference room",getData("loc1"),getData("userEmail") );
+		
+		AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("count"), getData("date"),  getData("time"),getData("conference room"), getData("userEmail"));
+		
+		AdminFlows.logoutOfODDashboard();
+	}
 	
 }

@@ -314,7 +314,12 @@ public class WebFlows extends CommonOps
     @Step ("Select date in Calander UI")
 	public static void selectDate(String year, String month, String date) throws InterruptedException
 	{
+<<<<<<< HEAD
+    	scrollToElement(WebLoading.calendarIcon);
+    	click(WebLoading.calendarIcon);
+=======
 		click(WebLoading.calendarIcon);
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 		loadTime(2);
 		mouseHover(WebLoading.yearDropdown);
 		loadTime(1);
@@ -369,7 +374,7 @@ public class WebFlows extends CommonOps
 
 	}
 
-	@Step ("Select date in Calander UI")
+	@Step ("Select date in Calander UI for Daypass")
     public static void selectDate(String month, String date) throws InterruptedException
     {
     	while (!WebLoading.monthName.getText().contains(month))

@@ -26,6 +26,24 @@
         <parameter name="browser" value="firefox"></parameter>        
           <parameter name="URL" value="CO"></parameter>
         <classes>
+<<<<<<< HEAD
+          
+                 
+       <class name="sanity.SelectPrivateOfficeTest"/> 
+
+	<!-- 
+		<class name="sanity.SelectHotDeskTest"/> 
+		<class name="sanity.SelectAllAccessWrkspaceTest"/> 
+		<class name="sanity.WeWorkWebAppTest"/> 
+		<class name="sanity.SelectEnterpriseSolutionsTest"/>
+		<class name="sanity.WebAppTest"/>  
+		 
+		<class name="sanity.SelectEventsAndWorkspacesTest"/> 
+		<class name="sanity.SelectSubscriptionTest"/> 
+		<class name="sanity.SelectDayPassTest"/> 
+		<class name="sanity.SelectVirtualOfficeTest"/> 
+		<class name="selectConferenceRoomTest"/> -->     
+=======
                      
           <class name="sanity.SelectDayPassTest"/> 
           <class name="sanity.SelectAllAccessWrkspaceTest"/>
@@ -37,6 +55,7 @@
           <class name="sanity.SelectSubscriptionTest"/>
           <class name="sanity.SelectVirtualOfficeTest"/> 
           <class name="selectConferenceRoomTest"/>       
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
         </classes>
     </test>  --> 
 </suite>

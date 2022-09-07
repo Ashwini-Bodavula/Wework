@@ -89,15 +89,29 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "(//span[@class='MuiIconButton-label'])[2]")
     public WebElement buildingDrpdwn;
 	
+<<<<<<< HEAD
+	@FindBy(how = How.XPATH, using = "//input[@id='select-building-select']")  
+    public WebElement selectBuilding;
+=======
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Color')]")
     public WebElement colorPrinting;
 	
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Black & White')]")
     public WebElement blackAndwhitePrinting;
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='email__id']")
     public WebElement customerEmail;
 	
+<<<<<<< HEAD
+	@FindBy(how = How.XPATH, using = "//input[@id='name']")
+    public WebElement customerName;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='gstin__customer']")
+    public WebElement customerGSTN;
+	
+=======
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Place Order')]")
     public WebElement placeOrderBtn;
 	
@@ -106,5 +120,44 @@ public class ODAdminUsersPage  extends CommonOps{
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'-')]")
     public WebElement minusBtn;
+<<<<<<< HEAD
+	
+	@FindBy(how = How.XPATH, using = "//h4[contains(text(),'Total:')]")
+    public WebElement total;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1']")
+    public WebElement billingDetailsList;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='select-event-type-select']")
+    public WebElement postPaidEventDropdown;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='price']")
+    public WebElement price;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='enterprise-select']")
+    public WebElement selectEnterprise;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='product type-select']")
+    public WebElement selectproductType;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiInput-formControl')]")
+    public WebElement bookinStartDate;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'+')])[1]")
+    public WebElement plusBtnToincreaseRoomSize;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'+')])[2]")
+    public WebElement plusBtnToincreaseCredits;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
+    public WebElement conferenceRoom;	
+	
+	
+	
+	
+	
+	
+=======
 		
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 }

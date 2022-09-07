@@ -39,6 +39,21 @@
     <invalidEmail>abcdef.com</invalidEmail>
     <validEmail>testers@geekyants.com</validEmail>
     <invalidPassword>invalidPassword</invalidPassword>
+<<<<<<< HEAD
+
+	<!-- admin dashboard -->
+	<adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
+	<ODUserEmail>rahul@geekyants.com</ODUserEmail>
+	<ODUserPwd>rahuladmin</ODUserPwd>
+	<loc1>Prestige Atlanta, Koramangala</loc1>
+	<loc2>Futura, Magarpatta Road</loc2>
+	<isPostpaidUser>NO</isPostpaidUser>
+	<isSuperAdmin>YES</isSuperAdmin>
+	<count>3</count>
+	<GSTN>29AACCF8045D1ZM</GSTN>
+	<eventType>Cloud services</eventType>
+       <price>10</price>
+=======
     
     <!-- admin dashboard -->
     <adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
@@ -51,6 +66,7 @@
     
     
     
+>>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
     
     <TS>https://wework.co.in/terms-and-conditions/</TS>
 <!-- CO -->
