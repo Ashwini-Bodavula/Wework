@@ -319,7 +319,7 @@ public class AdminFlows extends CommonOps {
 		}	
     }  
 	
-	@Step ("Validate the order details")
+	@Step ("Validate the order details for Postpaid")
     public static boolean validateOrderDetailsForPostPaid(String postpaidEvent, String location,  String email, String name,String GSTN, String price) throws InterruptedException
     {
 		boolean detailsValidated = false;
@@ -357,7 +357,7 @@ public class AdminFlows extends CommonOps {
     }
 	
 	@Step ("Select shop - ODE purchases")
-    public static void selectShopForODEPurchases(String optService,String enterprise, String productType, String location) throws InterruptedException
+    public static void selectShopForODEPurchases(String optService,String enterprise, String productType, String location, String email) throws InterruptedException
     {
 		
 		click(ODAdminUser.shopTab);
@@ -404,7 +404,7 @@ public class AdminFlows extends CommonOps {
 					
 					updateText(ODAdminUser.conferenceRoom, "Test");
 					
-					updateText(ODAdminUser.customerEmail, "Test.email");
+					updateText(ODAdminUser.customerEmail, email);
 					//
 					Thread.sleep(9000);
 					break;
@@ -412,5 +412,42 @@ public class AdminFlows extends CommonOps {
 			}
 		}	
     }
+	
+	@Step ("Validate the order details for ODE purchases")
+    public static boolean validateOrderDetailsForODE(String location, String noOfGuests,  String meetingDate, String meetingTime,String conferenceRoom, String email) throws InterruptedException
+    {
+		boolean detailsValidated = false;
+
+		String totalAmount = ODAdminUser.total.getText().split("₹")[1];
+		String bookingDetailsinFrame = ODAdminUser.billingDetailsList.getText();
+		String[] bookingDetails = bookingDetailsinFrame.split("\r?\n|\r");
+		
+		System.out.println(bookingDetails[6]);
+		
+		int k=6;
+		if(bookingDetails[k].equalsIgnoreCase(location))
+		{
+			if(bookingDetails[k+1].equalsIgnoreCase(noOfGuests))
+			{
+				if(bookingDetails[k+2].equalsIgnoreCase(meetingDate))
+				{	
+					if(bookingDetails[k+3].equalsIgnoreCase(meetingTime))
+					{
+						if(bookingDetails[k+4].equalsIgnoreCase(conferenceRoom))
+						{
+							if(bookingDetails[k+5].equalsIgnoreCase(email))
+							{
+								
+										detailsValidated = true;				
+									
+							}	
+						}
+					}
+				}	
+			}
+		}
+		return detailsValidated;
+		
+    }	
 	
 }
