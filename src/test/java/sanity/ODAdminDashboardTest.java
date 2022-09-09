@@ -60,7 +60,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
     }
 	
-<<<<<<< HEAD
+
 	@Test(description = "Test04 - Verify User is able to select shop - printing.")
 	@Description("This test verifies that User is able to select shop - printing.")
 	public void test04_shopSelectionPrinting() throws InterruptedException 
@@ -69,11 +69,11 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.selectShop("Printing", getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
 		AdminFlows.logoutOfODDashboard();
 	}
-=======
+
 	@Test(description = "Test04 - Verify User is able to select shop.")
-    @Description("This test verifies that User is able to select shop.")
-    public void test04_shopSelection() throws InterruptedException
-    {
+        @Description("This test verifies that User is able to select shop.")
+        public void test04_shopSelection() throws InterruptedException
+        {
 		AdminFlows.loginToODDashboard();
 		
 		click(ODAdminUser.shopTab);
@@ -115,7 +115,7 @@ public class ODAdminDashboardTest extends CommonOps
 		
 		//AdminFlows.logoutOfODDashboard();
     }
->>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
+
 	
 	@Test(description = "Test05 - Verify User is able to select shop - postpaid.")
 	@Description("This test verifies that User is able to select shop - Postpaid.")
