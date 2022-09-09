@@ -190,7 +190,7 @@ public class AdminFlows extends CommonOps {
 		}
 		return userDetailsFound;
 	}
-<<<<<<< HEAD
+
 	
 	@Step("Search user")
 	public static void increaseQuantity(String number)
@@ -482,6 +482,4 @@ public class AdminFlows extends CommonOps {
 		
     }	
 	
-=======
->>>>>>> 9d7fb0c58103dd450b9b137e910252fdc7692464
 }
