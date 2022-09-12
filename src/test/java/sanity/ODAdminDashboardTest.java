@@ -60,84 +60,37 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
     }
 	
-
+	
 	@Test(description = "Test04 - Verify User is able to select shop - printing.")
 	@Description("This test verifies that User is able to select shop - printing.")
 	public void test04_shopSelectionPrinting() throws InterruptedException 
 	{
-		AdminFlows.loginToODDashboard();		
-		AdminFlows.selectShop("Printing", getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
+		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShopType("Printing");		
+		AdminFlows.selectShopForPrinting(getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
 		AdminFlows.logoutOfODDashboard();
 	}
-
-	@Test(description = "Test04 - Verify User is able to select shop.")
-        @Description("This test verifies that User is able to select shop.")
-        public void test04_shopSelection() throws InterruptedException
-        {
-		AdminFlows.loginToODDashboard();
-		
-		click(ODAdminUser.shopTab);
-		
-		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
-		for(int i=0;i<shopList.size();i++)
-		{
-			String itemInList = shopList.get(i).getText();
-			if(itemInList.contains("Printing"))
-			{
-				int j=0;
-				j = i+1;
-				driver.findElement(By.xpath("//div[@class='ray-card__content']//a["+j+"]")).click();
-				
-				click(ODAdminUser.buildingDrpdwn);
-				click(ODAdminUser.select(getData("loc1")));
-//				
-//				Thread.sleep(4000);
-//				Verifications.elementIsVisible(ODAdminUser.colorPrinting);
-//				click(ODAdminUser.colorPrinting);
-//				updateText(ODAdminUser.userEmail, getData("userEmail"));
-//				scrollToElement(ODAdminUser.plusBtn);
-//				
-//				click(ODAdminUser.plusBtn);
-//				click(ODAdminUser.plusBtn);
-//				click(ODAdminUser.plusBtn);
-//				
-				Thread.sleep(5000);
-			}
-			
-		}
-		
-		
-		System.out.println();
-		
-		Thread.sleep(5000);
-		
-		
-		
-		//AdminFlows.logoutOfODDashboard();
-    }
-
+*/
 	
 	@Test(description = "Test05 - Verify User is able to select shop - postpaid.")
 	@Description("This test verifies that User is able to select shop - Postpaid.")
 	public void test05_shopSelectionPostpaid() throws InterruptedException 
 	{
 		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShopType("Postpaid Events");
 		AdminFlows.selectShopForPostPaid("Postpaid Events" ,getData("eventType"), getData("loc1"), getData("price"),  getData("userEmail"),getData("name"), getData("GSTN"));
 		AdminFlows.logoutOfODDashboard();
-	}*/
+	}
 	
+	/*		
 	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.")
 	@Description("This test verifies that User is able to select shop - ODE purchase.")
 	public void test06_shopSelectionODEPurchase() throws InterruptedException 
 	{
 		AdminFlows.loginToODDashboard();
-		
-		AdminFlows.selectShopForODEPurchases("ODE purchases");
-		
-		
-		
-		
+		AdminFlows.selectShopType("ODE purchases");
+		AdminFlows.selectShopForODEPurchases();
 		AdminFlows.logoutOfODDashboard();
 	}
-	
+	*/
 }

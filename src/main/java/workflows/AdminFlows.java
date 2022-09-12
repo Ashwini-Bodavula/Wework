@@ -255,19 +255,19 @@ public class AdminFlows extends CommonOps {
 	
 	
 	@Step ("Select shop")
-    public static void selectShop(String optService, String location, String option, String count, String email, String GSTN) throws InterruptedException
+    public static void selectShopForPrinting(String location, String option, String count, String email, String GSTN) throws InterruptedException
     {
-		click(ODAdminUser.shopTab);
-		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
-		for (int i = 0; i < shopList.size(); i++)
-		{
-			String itemInList = shopList.get(i).getText();
-			
-			if (itemInList.contains(optService)) // optService
-			{
-					int j = 0;
-					j = i + 1;
-					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();	
+//		click(ODAdminUser.shopTab);
+//		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
+//		for (int i = 0; i < shopList.size(); i++)
+//		{
+//			String itemInList = shopList.get(i).getText();
+//			
+//			if (itemInList.contains(optService)) // optService
+//			{
+//					int j = 0;
+//					j = i + 1;
+//					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();	
 					click(ODAdminUser.buildingDrpdwn);
 					updateText(ODAdminUser.selectBuilding, location);
 					scrollToElement(ODAdminUser.select(location));
@@ -283,38 +283,39 @@ public class AdminFlows extends CommonOps {
 					boolean orderDetailsValidated = AdminFlows.validateOrderDetails("Color", count, location, email, GSTN);
 					if(orderDetailsValidated == true)
 					{
+						System.out.println("inside priniting loop ");
 						//click(ODAdminUser.placeOrderBtn);
-						Verifications.elementIsVisible(ODAdminUser.closeBtn);
-						if(ODAdminUser.closeBtn.isDisplayed())
-						{
-							click(ODAdminUser.closeBtn);
-							waitForLoad();
-						}
-						break;
+//						Verifications.elementIsVisible(ODAdminUser.closeBtn);
+//						if(ODAdminUser.closeBtn.isDisplayed())
+//						{
+//							click(ODAdminUser.closeBtn);
+//							waitForLoad();
+//						}
+						
 					}
 					else
 					{
 						Assert.assertTrue(false, "Order Details not Validated");
 					}
-			}
-		}
+//			}
+//		}
 		
     }
 	
 	@Step ("Select shop - Postpaid ")
     public static void selectShopForPostPaid(String optService, String postpaidEvent, String location, String price, String email, String name,String GSTN) throws InterruptedException
     {
-		click(ODAdminUser.shopTab);
-		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
-		for (int i = 0; i < shopList.size(); i++)
-		{
-			String itemInList = shopList.get(i).getText();
-			
-			if (itemInList.contains(optService)) // optService
-			{
-					int j = 0;
-					j = i + 1;
-					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();
+//		click(ODAdminUser.shopTab);
+//		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
+//		for (int i = 0; i < shopList.size(); i++)
+//		{
+//			String itemInList = shopList.get(i).getText();
+//			
+//			if (itemInList.contains(optService)) // optService
+//			{
+//					int j = 0;
+//					j = i + 1;
+//					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();
 					click(ODAdminUser.postPaidEventDropdown);
 					updateText(ODAdminUser.postPaidEventDropdown, postpaidEvent);
 					scrollToElement(ODAdminUser.select(postpaidEvent));
@@ -333,6 +334,7 @@ public class AdminFlows extends CommonOps {
 					boolean orderDetailsValidated = AdminFlows.validateOrderDetailsForPostPaid(postpaidEvent,location, email,  name, GSTN, price);
 					if(orderDetailsValidated == true)
 					{
+						System.out.println("inside postpaid loop");
 //						click(ODAdminUser.placeOrderBtn);
 //						Verifications.elementIsVisible(ODAdminUser.closeBtn);
 //						if(ODAdminUser.closeBtn.isDisplayed())
@@ -340,15 +342,14 @@ public class AdminFlows extends CommonOps {
 //							click(ODAdminUser.closeBtn);
 //							waitForLoad();
 //						}
-						break;
 					}
 					else
 					{
 						Assert.assertTrue(false, "Order Details not Validated");
 					}
 				
-			}
-		}	
+//			}
+//		}	
     }  
 	
 	@Step ("Validate the order details for Postpaid")
@@ -389,29 +390,27 @@ public class AdminFlows extends CommonOps {
     }
 	
 	@Step ("Select shop - ODE purchases")
-    public static void selectShopForODEPurchases(String optService) throws InterruptedException
-    {
-//					
-		            AdminFlows.selectShopType(optService);
+    public static void selectShopForODEPurchases() throws InterruptedException
+    {				
 					AdminFlows.selectEnterpriseProductBuilding(getData("enterprise"), getData("productType1"), getData("loc1")); 
 					Thread.sleep(2000);
 					String dateSelected  = AdminFlows.selectDate(getData("month3"),getData("date1"));
 					String monthName = AdminFlows.trimMonth(dateSelected);
 					AdminFlows.selectSlot(getData("time1"),getData("time2"));
 					String timeSlot = AdminFlows.meetingTime(getData("time1"),getData("time2"));
-					System.out.println(timeSlot);
-					AdminFlows.selectRoomSizeAndCredits(getData("manager"));
+					AdminFlows.selectRoomSizeAndCredits(getData("conferenceRoomSize"),getData("creditsSize"),getData("manager"));
 					 
-					boolean validationResult = AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("count"),monthName,  "9:00 a.m.-10:00 a.m.", "Test" ,getData("manager"));
+					boolean validationResult = AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("conferenceRoomSize"),monthName, timeSlot, "Test" ,getData("manager"));
 					
 					if(validationResult == true)
 					{
-						//Thread.sleep(2000);
-						//click(ODAdminUser.placeOrderBtn);
-						//break;
-					}
+						System.out.println("inside val loop");
+//						click(ODAdminUser.placeOrderBtn);
+//						Thread.sleep(3000);
+//						click(ODAdminUser.viewDetailsButton);
+//						Thread.sleep(5000);
 					
-					Thread.sleep(4000);
+					}
 
     }
 	
@@ -421,31 +420,33 @@ public class AdminFlows extends CommonOps {
 		boolean detailsValidated = false;
 
 		String totalAmount = ODAdminUser.total.getText().split("₹")[1];
-		String bookingDetailsinFrame = ODAdminUser.billingDetailsList.getText();
-		String[] bookingDetails = bookingDetailsinFrame.split("\r?\n|\r");
-		
-		
-		int k=6;
-		if(bookingDetails[k].equalsIgnoreCase(location))
+		int totalAmountCalculated = Integer.parseInt(getData("creditsSize")) * 1000;
+		int  finalAmount = WebFlows.priceValueInt(totalAmount);
+		if(totalAmountCalculated==finalAmount)
 		{
-			if(bookingDetails[k+1].equalsIgnoreCase(noOfGuests))
+			String bookingDetailsinFrame = ODAdminUser.billingDetailsList.getText();
+			String[] bookingDetails = bookingDetailsinFrame.split("\r?\n|\r");
+			
+			
+			int k=6;
+			if(bookingDetails[k].equalsIgnoreCase(location))
 			{
-				
-				if(bookingDetails[k+2].equalsIgnoreCase(meetingDate))
+				if(bookingDetails[k+1].equalsIgnoreCase(noOfGuests))
 				{
-					if(bookingDetails[k+3].equalsIgnoreCase(meetingTime))
+					if(bookingDetails[k+2].equalsIgnoreCase(meetingDate))
 					{
-						if(bookingDetails[k+4].equalsIgnoreCase(conferenceRoom))
+						if(bookingDetails[k+3].equalsIgnoreCase(meetingTime))
 						{
-							if(bookingDetails[k+5].equalsIgnoreCase(email))
-							{	
-								
-										detailsValidated = true;				
-									
-							}	
+							if(bookingDetails[k+4].equalsIgnoreCase(conferenceRoom))
+							{
+								if(bookingDetails[k+5].equalsIgnoreCase(email))
+								{	
+									detailsValidated = true;					
+								}	
+							}
 						}
-					}
-				}	
+					}	
+				}
 			}
 		}
 		return detailsValidated;
@@ -539,10 +540,10 @@ public class AdminFlows extends CommonOps {
 	}
 	
 	@Step("Select conference room size and credits")
-	public static void selectRoomSizeAndCredits(String email) throws InterruptedException
-	{
-		click(ODAdminUser.plusBtnToincreaseCredits);
-		click(ODAdminUser.plusBtnToincreaseRoomSize);
+	public static void selectRoomSizeAndCredits(String conferenceRoomSize, String creditsSize,String email) throws InterruptedException
+	{	
+		AdminFlows.increaseConferenceRoomSize(Integer.parseInt(conferenceRoomSize));
+		AdminFlows.increaseCredits(Integer.parseInt(creditsSize));
 		updateText(ODAdminUser.conferenceRoom, "Test");
 		updateText(ODAdminUser.customerEmail, email);	
 	}
@@ -589,9 +590,41 @@ public class AdminFlows extends CommonOps {
 	
 	@Step ("Convert meeting time")
     public static String meetingTime(String startTime, String endTime)
-    {
+    {	
+		startTime = startTime.toLowerCase();
+		int len1 = startTime.length();
+		StringBuffer stringBuffer = new StringBuffer(startTime);
+		stringBuffer.insert(len1 - 1, ".");
+		stringBuffer.insert(len1 + 1, ".");
+		String newStartTime = stringBuffer.toString();
+
+		endTime = endTime.toLowerCase();
+		int len2 = endTime.length();
+		StringBuffer stringBuffer2 = new StringBuffer(endTime);
+		stringBuffer2.insert(len2 - 1, ".");
+		stringBuffer2.insert(len2 + 1, ".");
+		String newEndTime = stringBuffer2.toString();
 		
-		return startTime +"-"+ endTime;
+		return newStartTime + "-" + newEndTime;
     }
+	
+	@Step("Increase ConferenceRoom Size")
+	public static void increaseConferenceRoomSize(int size)
+	{
+		for(int i=0; i<size-2; i++)
+		{
+			click(ODAdminUser.plusBtnToincreaseRoomSize);
+		}
+	}
+	
+	@Step("Increase credits")
+	public static void increaseCredits(int size)
+	{
+		for(int i=0; i<size-1; i++)
+		{
+			click(ODAdminUser.plusBtnToincreaseCredits);
+		}
+	}
+	
 	
 }
