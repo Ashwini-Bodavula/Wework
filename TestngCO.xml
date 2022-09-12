@@ -21,6 +21,19 @@
         </classes>
     </test>   --> 
     
+
+        <test name="firefox Tests">
+        <parameter name="platformName" value="web" />
+        <parameter name="browser" value="chrome"></parameter>        
+        <parameter name="URL" value="CO"></parameter>
+        <classes>
+          
+           <class name="sanity.CompareworkspaceTest"/>  
+                 
+      
+
+	<!--  <class name="sanity.SelectPrivateOfficeTest"/> 
+
   <test name="firefox Tests">
 <parameter name="platformName" value="web"/>
 <parameter name="browser" value="chrome"/>
@@ -28,6 +41,7 @@
 <classes>
 <class name="sanity.SelectPrivateOfficeTest"/>
 <!--  
+
 		<class name="sanity.SelectHotDeskTest"/> 
 		<class name="sanity.SelectAllAccessWrkspaceTest"/> 
 		<class name="sanity.WeWorkWebAppTest"/> 

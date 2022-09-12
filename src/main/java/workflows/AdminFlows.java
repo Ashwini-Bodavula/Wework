@@ -389,60 +389,30 @@ public class AdminFlows extends CommonOps {
     }
 	
 	@Step ("Select shop - ODE purchases")
-    public static void selectShopForODEPurchases(String optService,String enterprise, String productType, String location, String email) throws InterruptedException
+    public static void selectShopForODEPurchases(String optService) throws InterruptedException
     {
-		
-		click(ODAdminUser.shopTab);
-		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
-		for (int i = 0; i < shopList.size(); i++)
-		{
-			String itemInList = shopList.get(i).getText();
-			
-			if (itemInList.contains(optService)) // optService
-			{
-					int j = 0;
-					j = i + 1;
-					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();
+//					
+		            AdminFlows.selectShopType(optService);
+					AdminFlows.selectEnterpriseProductBuilding(getData("enterprise"), getData("productType1"), getData("loc1")); 
+					Thread.sleep(2000);
+					String dateSelected  = AdminFlows.selectDate(getData("month3"),getData("date1"));
+					String monthName = AdminFlows.trimMonth(dateSelected);
+					AdminFlows.selectSlot(getData("time1"),getData("time2"));
+					String timeSlot = AdminFlows.meetingTime(getData("time1"),getData("time2"));
+					System.out.println(timeSlot);
+					AdminFlows.selectRoomSizeAndCredits(getData("manager"));
+					 
+					boolean validationResult = AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("count"),monthName,  "9:00 a.m.-10:00 a.m.", "Test" ,getData("manager"));
 					
-					
-					click(ODAdminUser.selectEnterprise);
-					updateText(ODAdminUser.selectEnterprise, enterprise);
-					scrollToElement(ODAdminUser.select(enterprise));
-					click(ODAdminUser.select(enterprise));
-					
-					click(ODAdminUser.selectproductType);
-					updateText(ODAdminUser.selectproductType, productType);
-					scrollToElement(ODAdminUser.select(productType));
-					click(ODAdminUser.select(productType));
+					if(validationResult == true)
+					{
+						//Thread.sleep(2000);
+						//click(ODAdminUser.placeOrderBtn);
+						//break;
+					}
 					
 					Thread.sleep(4000);
-//					loadTime(4);
-//					waitForLoad();
-//					WebDriverWait wait = new WebDriverWait(driver,30);
-//					wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class='MuiIconButton-label'])[2]")));
-					
-					Verifications.elementIsVisible(ODAdminUser.buildingDrpdwn);
-					
-					click(ODAdminUser.buildingDrpdwn);
-					updateText(ODAdminUser.selectBuilding, location);
-					scrollToElement(ODAdminUser.select(location));
-					click(ODAdminUser.select(location));
-					
-					//click(ODAdminUser.bookinStartDate);w
-					//WebFlows.selectDate("October", "29");
-					
-					click(ODAdminUser.plusBtnToincreaseCredits);
-					click(ODAdminUser.plusBtnToincreaseRoomSize);
-					
-					updateText(ODAdminUser.conferenceRoom, "Test");
-					
-					updateText(ODAdminUser.customerEmail, email);
-					//
-					Thread.sleep(9000);
-					break;
-		
-			}
-		}	
+
     }
 	
 	@Step ("Validate the order details for ODE purchases")
@@ -454,21 +424,21 @@ public class AdminFlows extends CommonOps {
 		String bookingDetailsinFrame = ODAdminUser.billingDetailsList.getText();
 		String[] bookingDetails = bookingDetailsinFrame.split("\r?\n|\r");
 		
-		System.out.println(bookingDetails[6]);
 		
 		int k=6;
 		if(bookingDetails[k].equalsIgnoreCase(location))
 		{
 			if(bookingDetails[k+1].equalsIgnoreCase(noOfGuests))
 			{
+				
 				if(bookingDetails[k+2].equalsIgnoreCase(meetingDate))
-				{	
+				{
 					if(bookingDetails[k+3].equalsIgnoreCase(meetingTime))
 					{
 						if(bookingDetails[k+4].equalsIgnoreCase(conferenceRoom))
 						{
 							if(bookingDetails[k+5].equalsIgnoreCase(email))
-							{
+							{	
 								
 										detailsValidated = true;				
 									
@@ -481,5 +451,147 @@ public class AdminFlows extends CommonOps {
 		return detailsValidated;
 		
     }	
+	
+	
+	@Step ("Select date in Calander UI")
+    public static String selectDate(String month, String date) throws InterruptedException
+    {
+		String dateSelected= "";
+    	while(!ODAdminUser.monthName.getText().contains(month))
+		{
+    		mouseHover(ODAdminUser.rightArrowBtn);
+    		loadTime(1);
+		}
+
+		List<WebElement> dates = driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiPickersDay-day']"));
+		int count = dates.size();
+		for (int j = 0; j < count; j++)
+		{
+			String currentDate = dates.get(j).getText();
+			if (currentDate.contains(date))
+			{
+				
+					mouseHover(dates.get(j));
+					loadTime(2);
+					dateSelected = ODAdminUser.bookingDate.getAttribute("value");
+					break;
+			}
+		}
+		return dateSelected;
+    }
+	
+	
+	@Step ("Select time")
+    public static void selectTime(String time) throws InterruptedException
+    {
+		
+		List<WebElement> slotsList = driver.findElements(By.xpath("//li[contains(@class,'react-datepicker__time-list-item ')]"));
+		for(int k=0;k<slotsList.size();k++)
+		{
+			if(!slotsList.get(k).getAttribute("class").contains("react-datepicker__time-list-item--disabled"))
+			{
+				if(slotsList.get(k).getText().equals(time))
+				{
+					slotsList.get(k).click();
+					break;
+				}
+			}
+		}
+		
+    }
+	
+	
+	
+	@Step("Select time slot")
+	public static void selectSlot(String fromTime, String toTime) throws InterruptedException
+	{
+		mouseHover(ODAdminUser.total);
+		click(ODAdminUser.selectSlotTime(1));
+		AdminFlows.selectTime(fromTime);		
+		click(ODAdminUser.selectSlotTime(2));
+		AdminFlows.selectTime(toTime);
+	}
+	
+	
+	@Step("Select enterprise, product and building")
+	public static void selectEnterpriseProductBuilding(String enterprise, String productType, String building) throws InterruptedException
+	{
+		click(ODAdminUser.selectEnterprise);
+		updateText(ODAdminUser.selectEnterprise, enterprise);
+		scrollToElement(ODAdminUser.select(enterprise));
+		click(ODAdminUser.select(enterprise));
+		click(ODAdminUser.selectproductType);
+		updateText(ODAdminUser.selectproductType, productType);
+		scrollToElement(ODAdminUser.select(productType));
+		click(ODAdminUser.select(productType));
+		Thread.sleep(4000);
+//		loadTime(4);
+//		waitForLoad();
+//		WebDriverWait wait = new WebDriverWait(driver,30);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[@class='MuiIconButton-label'])[2]")));
+		Verifications.elementIsVisible(ODAdminUser.buildingDrpdwn);
+		click(ODAdminUser.buildingDrpdwn);
+		updateText(ODAdminUser.selectBuilding, building);
+		scrollToElement(ODAdminUser.select(building));
+		click(ODAdminUser.select(building));
+		click(ODAdminUser.bookingDate);
+		
+	}
+	
+	@Step("Select conference room size and credits")
+	public static void selectRoomSizeAndCredits(String email) throws InterruptedException
+	{
+		click(ODAdminUser.plusBtnToincreaseCredits);
+		click(ODAdminUser.plusBtnToincreaseRoomSize);
+		updateText(ODAdminUser.conferenceRoom, "Test");
+		updateText(ODAdminUser.customerEmail, email);	
+	}
+	
+	@Step("Select conference room size and credits")
+	public static void selectShopType(String optService) throws InterruptedException
+	{
+		click(ODAdminUser.shopTab);
+		List<WebElement> shopList = driver.findElements(By.xpath("//div[@class='MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-md-3']"));
+		for (int i = 0; i < shopList.size(); i++)
+		{
+			String itemInList = shopList.get(i).getText();
+			
+			if (itemInList.contains(optService)) 
+			{
+					int j = 0;
+					j = i + 1;
+					driver.findElement(By.xpath("(//div[@class='ray-card__content']//a[1])["+j+"]")).click();
+					break;
+			}
+		}	
+		
+	}
+	
+	@Step ("Convert String value of price to integer")
+    public static String trimMonth(String monthName)
+    {
+			String date = monthName.split(" ")[0];
+			String input = monthName.split(" ")[1];
+    	    String year = monthName.split(" ")[2];
+    	    String finalMonthName = "";
+    	    String firstThreeChars = "" ;
+    	    if (input.length() > 3 )
+    	    {
+    	    firstThreeChars = input.substring( 0 , 3 );
+    	    }
+    	    else
+    	    {
+    	    firstThreeChars = input;
+    	    }
+    	    finalMonthName = date +" "+ firstThreeChars+" " + year;
+    	    return finalMonthName;
+    }
+	
+	@Step ("Convert meeting time")
+    public static String meetingTime(String startTime, String endTime)
+    {
+		
+		return startTime +"-"+ endTime;
+    }
 	
 }

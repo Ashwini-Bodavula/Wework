@@ -63,6 +63,7 @@ public class ManagePages extends Base {
         ODElogin = PageFactory.initElements(driver,LoginODE.class);
         day_ODE =  PageFactory.initElements(driver, DaypassODE.class);
         AccODE   = PageFactory.initElements(driver, MyAccPageODE.class);
+        
     }
 
 
