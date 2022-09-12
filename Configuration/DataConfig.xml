@@ -61,6 +61,9 @@
      <COS>https://wework-co-in-dot-wework-staging.el.r.appspot.com/</COS>>
     <ImageRepo>System.getProperty("user.dir")
         + "\\src\\test\\resources\\"</ImageRepo>
+    <office1>Conference room</office1>
+        <office2>Day pass</office2>
+
 
    <!-- OD -->
 

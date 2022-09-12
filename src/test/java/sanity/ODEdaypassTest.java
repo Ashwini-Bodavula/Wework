@@ -1,6 +1,7 @@
 package sanity;
 
 import static extensions.UIActions.click;
+
 import static extensions.UIActions.getWindowHandel;
 import static extensions.UIActions.getWindowHandels;
 import static extensions.UIActions.scrollToElement;

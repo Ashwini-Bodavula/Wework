@@ -8,7 +8,7 @@
     <classes>
       <class name="sanity.CompareworkspaceTest">
         <methods>
-          <include name="test01_Selectworkspace" invocation-numbers="0"/>
+          <include name="test01_Selectworkspace" invocation-numbers="0 2"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>

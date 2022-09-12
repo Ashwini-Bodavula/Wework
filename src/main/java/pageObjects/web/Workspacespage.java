@@ -52,9 +52,23 @@ public class Workspacespage extends CommonOps {
 	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'Find a Workspace')]")
     public WebElement findworkspace;
 	
+	
+	
+	//@FindBy(how = How.XPATH, using = "//*[@id='__next']/div[1]/div[4]/div[5]/div/div[2]/div/div/div/div[2]/div/div/button")
+	@FindBy(how = How.XPATH, using = "/html/body/div[1]/div[1]/div[4]/div[5]/div/div[2]/div/div/div/div[2]/div/div/button")
+	public WebElement findworkspace22;
+	
+	
+	
+	
 	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'cancel-btn')]")
     public WebElement closeicon;
 
+	@FindBy(how = How.XPATH, using = "//p[@class='form_title']")
+    public WebElement formtitle;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='workspace_title']")
+    public WebElement name;
 
 	
 	

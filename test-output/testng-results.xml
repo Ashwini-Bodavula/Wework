@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Web Suite" duration-ms="89824" started-at="2022-09-08T04:06:21 IST" finished-at="2022-09-08T04:07:51 IST">
+  <suite name="Web Suite" duration-ms="103494" started-at="2022-09-12T23:05:42 IST" finished-at="2022-09-12T23:07:25 IST">
     <groups>
       <group name="CO">
-        <method signature="CompareworkspaceTest.test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" class="sanity.CompareworkspaceTest"/>
+        <method signature="CompareworkspaceTest.test01_Selectworkspace(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" class="sanity.CompareworkspaceTest"/>
       </group> <!-- CO -->
     </groups>
-    <test name="chrome Tests" duration-ms="89824" started-at="2022-09-08T04:06:21 IST" finished-at="2022-09-08T04:07:51 IST">
+    <test name="chrome Tests" duration-ms="103494" started-at="2022-09-12T23:05:42 IST" finished-at="2022-09-12T23:07:25 IST">
       <class name="sanity.CompareworkspaceTest">
-        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="10669" started-at="2022-09-08T04:06:22 IST" finished-at="2022-09-08T04:06:32 IST">
+        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="10341" started-at="2022-09-12T23:05:42 IST" finished-at="2022-09-12T23:05:52 IST">
           <params>
             <param index="0">
               <value>
@@ -31,166 +31,32 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="16117" started-at="2022-09-08T04:06:32 IST" description="Test01 - Verify User is able to select workspace hotdesk. (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-08T04:06:48 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Ready-to-move-in private offices]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test01_Selectworkspace -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="234" started-at="2022-09-08T04:06:48 IST" finished-at="2022-09-08T04:06:49 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="6887" started-at="2022-09-08T04:06:49 IST" finished-at="2022-09-08T04:06:56 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[web]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[CO]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="9291" started-at="2022-09-08T04:06:56 IST" description="Test01 - Verify User is able to select workspace hotdesk. (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-08T04:07:05 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Hot desk]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test01_Selectworkspace -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="215" started-at="2022-09-08T04:07:05 IST" finished-at="2022-09-08T04:07:05 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="4053" started-at="2022-09-08T04:07:05 IST" finished-at="2022-09-08T04:07:09 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[web]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[CO]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="8652" started-at="2022-09-08T04:07:09 IST" description="Test01 - Verify User is able to select workspace hotdesk. (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-08T04:07:18 IST">
+        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="92729" started-at="2022-09-12T23:05:52 IST" description="Test01 - Verify User is able to select workspace . (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-12T23:07:25 IST">
           <params>
             <param index="0">
               <value>
                 <![CDATA[All Access]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test01_Selectworkspace -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="212" started-at="2022-09-08T04:07:18 IST" finished-at="2022-09-08T04:07:18 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="7817" started-at="2022-09-08T04:07:18 IST" finished-at="2022-09-08T04:07:26 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[web]]>
-              </value>
-            </param>
             <param index="1">
               <value>
-                <![CDATA[Chrome]]>
+                <![CDATA[Conference room]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[CO]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="8833" started-at="2022-09-08T04:07:26 IST" description="Test01 - Verify User is able to select workspace hotdesk. (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-08T04:07:35 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Office suite]]>
+                <![CDATA[Day pass]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test01_Selectworkspace -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="415" started-at="2022-09-08T04:07:35 IST" finished-at="2022-09-08T04:07:35 IST">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="304" started-at="2022-09-12T23:07:25 IST" finished-at="2022-09-12T23:07:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="startSession" is-config="true" duration-ms="7287" started-at="2022-09-08T04:07:35 IST" finished-at="2022-09-08T04:07:42 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[web]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[CO]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startSession -->
-        <test-method status="PASS" signature="test01_Selectworkspace(java.lang.String)[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="test01_Selectworkspace" duration-ms="8725" started-at="2022-09-08T04:07:42 IST" description="Test01 - Verify User is able to select workspace hotdesk. (Scroll down in home page and select workspaces)" data-provider="Subscriptions" finished-at="2022-09-08T04:07:51 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Virtual Office]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test01_Selectworkspace -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="afterMethod" is-config="true" duration-ms="223" started-at="2022-09-08T04:07:51 IST" finished-at="2022-09-08T04:07:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeSession()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="closeSession" is-config="true" duration-ms="1" started-at="2022-09-08T04:07:51 IST" finished-at="2022-09-08T04:07:51 IST">
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:sanity.CompareworkspaceTest@235834f2]" name="closeSession" is-config="true" duration-ms="1" started-at="2022-09-12T23:07:25 IST" finished-at="2022-09-12T23:07:25 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
