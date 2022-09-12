@@ -163,10 +163,11 @@ public class CompareworkspaceTest extends CommonOps {
           public Object[][] subscriptions()
          {
 	     return new Object[][] {
-	//{"Ready-to-move-in private offices","Conference room","Day pass"},
-	  //  {"Hot desk","Conference room","Day pass"},
+	  {"Ready-to-move-in private offices","Conference room","Day pass"},
+	    {"Hot desk","Conference room","Day pass"},
 		{"All Access","Conference room","Day pass"},
-//		{"Office suite",Conference room","Day pass"},
+		{"Office suite","Conference room","Day pass"},
+		{"Virtual Office","Conference room","Day pass"},
 //		
 		};
 
