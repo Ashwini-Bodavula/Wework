@@ -169,11 +169,5 @@ public class ODAdminUsersPage  extends CommonOps{
 		return driver.findElement(By.xpath("(//div[@class='ray-text-field RayInput__InputWrapper-u27a6p-0 kNsHaQ'])["+locator+"]"));
 	}
 	
-	
-	
-	
-	
-}
-
 }
 
