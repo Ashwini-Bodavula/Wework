@@ -14,7 +14,14 @@ public class ODAdminUsersPage  extends CommonOps{
 	{
 		return driver.findElement(By.xpath("//div[contains(text(),'"+locator+"')]"));
 	}
-	
+	public WebElement opt(String locator)
+	{
+		return driver.findElement(By.xpath("//span[contains(text(),'"+locator+"')]"));
+	}
+	public WebElement getPrice(String locator)
+	{
+		return driver.findElement(By.xpath("//span[contains(text(),'"+locator+"')]/following-sibling::span"));
+	}
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='user-email']")
     public WebElement Email;
