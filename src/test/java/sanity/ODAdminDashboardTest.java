@@ -85,9 +85,10 @@ public class ODAdminDashboardTest extends CommonOps
 	{
 		AdminFlows.loginToODDashboard();
 		
-		AdminFlows.selectShopForODEPurchases("ODE purchases","5th-main","Conference room",getData("loc1"),getData("userEmail") );
+		AdminFlows.selectShopForODEPurchases("ODE purchases");
 		
-		AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("count"), getData("date"),  getData("time"),getData("conference room"), getData("userEmail"));
+		
+		
 		
 		AdminFlows.logoutOfODDashboard();
 	}

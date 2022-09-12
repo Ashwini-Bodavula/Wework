@@ -133,8 +133,8 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='product type-select']")
     public WebElement selectproductType;
 	
-	@FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiInput-formControl')]")
-    public WebElement bookinStartDate;
+	@FindBy(how = How.XPATH, using = "//input[contains(@class,'MuiInputBase-input MuiInput-input')]")
+    public WebElement bookingDate;
 	
 	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'+')])[1]")
     public WebElement plusBtnToincreaseRoomSize;
@@ -145,6 +145,16 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
     public WebElement conferenceRoom;	
 	
+	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
+    public WebElement rightArrowBtn;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiPickersCalendarHeader-transitionContainer')]")
+    public WebElement monthName;
+	
+	public WebElement selectSlotTime(int locator)
+	{
+		return driver.findElement(By.xpath("(//div[@class='ray-text-field RayInput__InputWrapper-u27a6p-0 kNsHaQ'])["+locator+"]"));
+	}
 	
 	
 	

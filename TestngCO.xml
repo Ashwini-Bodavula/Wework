@@ -28,10 +28,11 @@
         <parameter name="URL" value="CO"></parameter>
         <classes>
           
+           <class name="sanity.CompareworkspaceTest"/>  
                  
-       <class name="sanity.SelectPrivateOfficeTest"/> 
+      
 
-	<!-- 
+	<!--  <class name="sanity.SelectPrivateOfficeTest"/> 
 		<class name="sanity.SelectHotDeskTest"/> 
 		<class name="sanity.SelectAllAccessWrkspaceTest"/> 
 		<class name="sanity.WeWorkWebAppTest"/> 

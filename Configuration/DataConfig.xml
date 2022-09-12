@@ -52,8 +52,11 @@
 	<count>3</count>
 	<GSTN>29AACCF8045D1ZM</GSTN>
 	<eventType>Cloud services</eventType>
-       <price>10</price>
-    
+    <price>10</price>
+    <time1>1:00 PM</time1>
+    <time2>2:00 PM</time2>
+    <enterprise>1st Main Pvt Ltd</enterprise>
+    <productType1>Conference room</productType1>
     <TS>https://wework.co.in/terms-and-conditions/</TS>
 <!-- CO -->
     <!-- Web -->
