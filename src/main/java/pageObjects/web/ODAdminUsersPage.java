@@ -157,7 +157,6 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
     public WebElement conferenceRoom;	
 	
-
 	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
     public WebElement rightArrowBtn;
 	
@@ -168,12 +167,11 @@ public class ODAdminUsersPage  extends CommonOps{
 	{
 		return driver.findElement(By.xpath("(//div[@class='ray-text-field RayInput__InputWrapper-u27a6p-0 kNsHaQ'])["+locator+"]"));
 	}
-	
-	
-	
-	
-	
-}
 
+	@FindBy(how = How.XPATH, using = "//tbody/tr[1]/td[6]/button[1]")
+    public WebElement viewDetailsButton;
+	
+	
+	
 }
 

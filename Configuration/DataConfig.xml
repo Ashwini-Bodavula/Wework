@@ -58,7 +58,8 @@
     <time2>2:00 PM</time2>
     <enterprise>1st Main Pvt Ltd</enterprise>
     <productType1>Conference room</productType1>
-    <price>10</price>
+    <conferenceRoomSize>6</conferenceRoomSize>
+    <creditsSize>4</creditsSize>
     <TS>https://wework.co.in/terms-and-conditions/</TS>
     <!-- CO -->
     <!-- Web -->
