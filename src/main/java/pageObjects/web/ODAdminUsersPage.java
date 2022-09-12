@@ -15,15 +15,6 @@ public class ODAdminUsersPage  extends CommonOps{
 		return driver.findElement(By.xpath("//div[contains(text(),'"+locator+"')]"));
 	}
 	
-	public WebElement opt(String locator)
-	{
-		return driver.findElement(By.xpath("//span[contains(text(),'"+locator+"')]"));
-	}
-	public WebElement getPrice(String locator)
-	{
-		return driver.findElement(By.xpath("//span[contains(text(),'"+locator+"')]/following-sibling::span"));
-	}
-	
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='user-email']")
     public WebElement Email;
@@ -73,6 +64,10 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "(//button[contains(text(),'Add')])[2]")
     public WebElement addBtn;
 	
+//	@FindBy(how = How.XPATH, using = "//div[contains(text(),'User Created Successfully')]")
+//    public WebElement userCreatedMessage;
+	
+	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[2]/div[1]")
     public WebElement userCreatedMessage;
 	
@@ -94,18 +89,27 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "(//span[@class='MuiIconButton-label'])[2]")
     public WebElement buildingDrpdwn;
 	
+
 	@FindBy(how = How.XPATH, using = "//input[@id='select-building-select']")  
     public WebElement selectBuilding;
+
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Color')]")
+    public WebElement colorPrinting;
+	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Black & White')]")
+    public WebElement blackAndwhitePrinting;
+
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='email__id']")
     public WebElement customerEmail;
 	
+
 	@FindBy(how = How.XPATH, using = "//input[@id='name']")
     public WebElement customerName;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='gstin__customer']")
     public WebElement customerGSTN;
-	
+
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Place Order')]")
     public WebElement placeOrderBtn;
 	
@@ -114,6 +118,7 @@ public class ODAdminUsersPage  extends CommonOps{
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'-')]")
     public WebElement minusBtn;
+
 	
 	@FindBy(how = How.XPATH, using = "//h4[contains(text(),'Total:')]")
     public WebElement total;
@@ -145,6 +150,7 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
     public WebElement conferenceRoom;	
 	
+
 	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
     public WebElement rightArrowBtn;
 	
@@ -161,3 +167,6 @@ public class ODAdminUsersPage  extends CommonOps{
 	
 	
 }
+
+}
+

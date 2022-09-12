@@ -44,6 +44,7 @@ public class WebFlows extends CommonOps
         updateText(WebLogin.emailTestField, getData("Username"));
         updateText(WebLogin.passwordTestField, getData("Password"));
         click(WebLogin.submitButton);
+        System.out.println("logged in successfully");
         switchToParentWindow(currentWindow);
         waitForLoad();
      //   Verifications.verifyTextInElement(WebLogin.userName, getData("user"));
@@ -167,11 +168,11 @@ public class WebFlows extends CommonOps
 		if(!value1)
 		{
 			click(Enterprise.enterpriseBtn);
-	    	click(Enterprise.selectDropdown(1));
+	    	click(Enterprise.locationDropdown);
 	        loadTime(1);
 	    	click(Enterprise.selectCity(city));
 	    	click(Enterprise.selectLocation(location));
-	    	click(Enterprise.selectDropdown(2));
+	    	click(Enterprise.noOfPplDrpdwn);
 	    	click(Enterprise.selectNoOfPeople(noOfPpl));
 	    	boolean value2 = WebLoading.exploreBtn.isEnabled();
 			if(value2)
@@ -271,12 +272,12 @@ public class WebFlows extends CommonOps
     @Step("Fill the form")
     public static void fillTheFormDetails() throws InterruptedException
     {
-    	updateText(WebLoading.enter("Full name"), getData("Username"));
-		updateText(WebLoading.enter("Email"), getData("email"));
-		updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
+    	updateText(WebLoading.username, getData("Username"));
+		updateText(WebLoading.userEmail, getData("email"));
+		updateText(WebLoading.userPhnNumber, getData("phoneNumber"));
 		scrollToElement(WebLoading.plusIcon);
 		selectNoOfPeople(4);
-		selectDate(getData("year"), getData("month3"), getData("date1"));
+		selectDate("2024", "September", "26");
 //		Verifications.elementIsVisible(WebLoading.continueBtn);
 //		click(WebLoading.continueBtn);
 //		Verifications.elementIsVisible(WebLoading.thankyouText);
@@ -286,27 +287,25 @@ public class WebFlows extends CommonOps
 //		click(WebLoading.backToHomePageBtn);
 		mouseHover(WebLoading.closeIcon); //as the form is not submited and msg is not validated, clicking on close icon
 
-		
     }
 
     @Step("Fill the Enterprise form")
     public static void fillEnterpriseFormDetails() throws InterruptedException
     {
-    	click(Enterprise.getInTouchBtnForSoln);
-    	updateText(Enterprise.enter("Full Name"), getData("Username"));
-        updateText(Enterprise.enter("Work Email"), getData("email"));
-        updateText(Enterprise.enter("Phone Number"), getData("phoneNumber"));
+    	click(Enterprise.getInTouchBtn);
+    	updateText(Enterprise.fullName, getData("Username"));
+        updateText(Enterprise.workEmail, getData("email"));
+        updateText(Enterprise.phoneNumber, getData("phoneNumber"));
     	scrollToElement(Enterprise.companySizeDrpdwn);
     	click(Enterprise.companySizeDrpdwn);
     	click(Enterprise.selectCompanySize("100+"));
     	loadTime(1);
-    	scrollToElement(Enterprise.selectRadioButton("No"));
-    	mouseHover(Enterprise.selectRadioButton("No"));
-//    	click(Enterprise.getInTouchButtonForSumbtn);
+    	mouseHover(Enterprise.noRadioBtn);
+//    	click(Enterprise.getInTouchButton);
 //    	loadTime(1);
 //    	Verifications.elementIsVisible(WebLoading.FormSubbmittedMsg);
-//        String actualText = WebLoading.FormSubbmittedMsg.getText();
-//        Verifications.verifyText(actualText,"Form Submitted Successfully");
+//      String actualText = WebLoading.FormSubbmittedMsg.getText();
+//      Verifications.verifyText(actualText,"Form Submitted Successfully");
 
     }
 
@@ -315,34 +314,35 @@ public class WebFlows extends CommonOps
     @Step ("Select date in Calander UI")
 	public static void selectDate(String year, String month, String date) throws InterruptedException
 	{
+
     	scrollToElement(WebLoading.calendarIcon);
     	click(WebLoading.calendarIcon);
+
+		click(WebLoading.calendarIcon);
 		loadTime(2);
-		Verifications.elementIsVisible(WebLoading.yearDropdown);
-		click(WebLoading.yearDropdown);
+		mouseHover(WebLoading.yearDropdown);
 		loadTime(1);
 		int yearINT = Integer.parseInt(year);
 
 		if(yearINT < 2022)
 			Assert.assertTrue(false, "Invalid year selection");
 
-		List<WebElement> yearsList = driver.findElements(By.xpath("//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']//button"));
+		List<WebElement> yearsList = driver.findElements(
+				By.xpath("//div[@class='PrivatePickersYear-root PrivatePickersYear-modeDesktop css-j9zntq']//button"));
 		loadTime(1);
-		for (WebElement yearFromList : yearsList) 
-		{
-			String currentyear = yearFromList.getText();
+		for (WebElement selectedYear : yearsList) {
+			String currentyear = selectedYear.getText();
 			if (currentyear.equals(year))
 			{
-				if (yearFromList.isEnabled())
+				if (selectedYear.isEnabled())
 				{
 					loadTime(1);
-					mouseHover(yearFromList);
-					loadTime(2);
+					mouseHover(selectedYear);
 					break;
 				}
 			}
 		}
-		while(!WebLoading.monthName.getText().equals(month))
+		while (!WebLoading.monthName.getText().equals(month))
 		{
 			click(WebLoading.rightArrowBtn);
 		}
@@ -370,6 +370,7 @@ public class WebFlows extends CommonOps
 
 			}
 		}
+
 	}
 
 	@Step ("Select date in Calander UI for Daypass")
@@ -378,7 +379,7 @@ public class WebFlows extends CommonOps
     	while (!WebLoading.monthName.getText().contains(month))
 		{
     		click(WebLoading.rightArrowBtn);
-			
+			//WebLoading.rightArrowBtn.click();
     		loadTime(1);
 		}
 
@@ -852,12 +853,10 @@ public class WebFlows extends CommonOps
 	@Step("Select time")
 	public static void selectTime(String hours, String minutes) throws InterruptedException 
 	{
-		click(Events.select("ClockIcon"));
+		click(Events.clockIcon);
 		loadTime(3);
-		//scrollToElement(Events.selectHour(hours));
 		mouseHover(Events.selectHour(hours));
 		loadTime(3);
-		Verifications.elementIsVisible(Events.selectMinute(minutes));
 		mouseHover(Events.selectMinute(minutes));
 		loadTime(3);
 	}
@@ -869,12 +868,12 @@ public class WebFlows extends CommonOps
 		Verifications.elementIsVisible(WebLoading.WBS);
 		mouseHover(WebLoading.WBS);
 		loadTime(2);
-		scrollToElement(Wbs.select("Full name"));
-		Verifications.elementIsVisible(Wbs.select("Full name"));
-		updateText(Wbs.select("Full name"), getData("name"));
-		updateText(Wbs.select("Company name"), getData("companyName"));
-		updateText(Wbs.select("Company email"), getData("companyEmail"));
-		updateText(Wbs.select("Phone number"), getData("phoneNumber"));
+		scrollToElement(Wbs.fullName);
+		Verifications.elementIsVisible(Wbs.fullName);
+		updateText(Wbs.fullName, getData("name"));
+		updateText(Wbs.companyName, getData("companyName"));
+		updateText(Wbs.companyEmail, getData("companyEmail"));
+		updateText(Wbs.phoneNumber, getData("phoneNumber"));
 		click(Wbs.locationDropdwon);
 		click(Wbs.selectCity("Mumbai"));
 		click(Wbs.selectService("Hardware rentals"));
@@ -889,131 +888,34 @@ public class WebFlows extends CommonOps
 	public static void fillGetInTouchForm() throws InterruptedException
 	{
 		click(WebLoading.contactUsBtn);
-    	scrollToElement(GetInTouch.enter("First Name"));
-    	Verifications.elementIsVisible(GetInTouch.enter("First Name"));
-    	updateText(GetInTouch.enter("First Name"), getData("name"));
-        updateText(GetInTouch.enter("Last Name"), getData("lastName"));
-        updateText(GetInTouch.enter("Company Name"), getData("companyName"));
-        updateText(GetInTouch.enter("Company E-mail address"), getData("companyEmail"));
-        updateText(GetInTouch.enter("Phone number"), getData("phoneNumber"));
-        click(GetInTouch.selectDropdown(1));
+    	scrollToElement(GetInTouch.firstName);
+    	Verifications.elementIsVisible(GetInTouch.firstName);
+    	updateText(GetInTouch.firstName, getData("name"));
+        updateText(GetInTouch.lastName, getData("lastName"));
+        updateText(GetInTouch.companyName, getData("companyName"));
+        updateText(GetInTouch.companyEmail, getData("companyEmail"));
+        updateText(GetInTouch.phoneNumber, getData("phoneNumber"));
+        click(GetInTouch.locationsDrpdwn);
         click(GetInTouch.select("Pune"));
-        click(GetInTouch.selectDropdown(2));
+        click(GetInTouch.micromarketDrpdwn);
         click(GetInTouch.select("Kharadi"));
-        click(GetInTouch.selectDropdown(3));
+        click(GetInTouch.buildingsDropdown);
         click(GetInTouch.select("World Trade Center"));
-        click(GetInTouch.selectDropdown(4));
+        click(GetInTouch.workspaceTypedrpdwn);
         click(GetInTouch.select("Private Office"));
-        WebFlows.selectNoOfDesks(3);
+        click(GetInTouch.increaseNoOfDesk);
+        click(GetInTouch.increaseNoOfDesk);
+        click(GetInTouch.decreaseNoOfDesk);
         //click(GetInTouch.getInTouchBtn);
 	}
 	
-	@Step("Fill referral form")
-	public static void fillReferralForm() throws InterruptedException
-	{
-		
-		scrollToElement(WebLoading.referralsLink);
-		click(WebLoading.referralsLink);
-		loadTime(4);
-		Thread.sleep(2000);
-		scrollToElement(Referral.FAQ1);
-		loadTime(4);
-		Verifications.elementIsVisible(Referral.FAQ1);
-		loadTime(4);
-		click(Referral.FAQ1);
-		scrollToElement(Referral.referralLinkInFAQ1);
-		String referralLinkText = Referral.referralLinkInFAQ1.getText();
-		String actualReferralLinkText = "https://wework.co.in/referrals";
-		Assert.assertEquals(referralLinkText, actualReferralLinkText);
-		scrollToElement(Referral.getStartedBtn);
-		click(Referral.getStartedBtn);
-		scrollToElement(Referral.select("Full Name"));
-		updateText(Referral.select("Full Name"), getData("name"));
-		updateText(Referral.select("Email"), getData("email"));
-		updateText(Referral.select("Phone Number"), getData("phoneNumber"));
-		updateText(Referral.select("Company Name"), getData("companyName"));
-		click(Referral.preferredOfficeLocationDropdwon);
-		click(Referral.selectLocation("Pune"));
-		click(Referral.workspaceIntrestedInDrpdwn);
-		click(Referral.selectWorkspace("All Access"));
-		scrollToElement(Referral.increaseNoOfDesk);
-		click(Referral.addReferralBtn);
-		boolean errormessageDisplayed = Referral.errorMessage.isDisplayed();
-		Assert.assertTrue(errormessageDisplayed);
-		click(Referral.increaseNoOfDesk);
-		click(Referral.increaseNoOfDesk);
-		updateText(Referral.select("Referrer Name"), getData("name"));
-		updateText(Referral.select("Referrer Email"), getData("email"));
-		updateText(Referral.select("Referrer Phone"), getData("phoneNumber"));
-//		click(referral.addReferralBtn);
-	}
-
-	@Step("Validate careers link")
-	public static void validateCareersLink() throws InterruptedException
-	{
-		scrollToElement(WebLoading.CareersLink);
-		click(WebLoading.CareersLink);
-		loadTime(3);
-		Thread.sleep(1000);
-		waitForLoad();
-		click(Careers.joinUsBtn);
-		loadTime(4);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();
-	}
 	
-	@Step("Validate careers link by clicking on contact us butoon")
-	public static void selectCareersfromContactUsBtn() throws InterruptedException
-	{ 
-		click(WebLoading.contactUsBtn);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnBfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnBfrSelectingChkBox, "Get in touch");
-		boolean nameEnabled = Careers.firstName.isEnabled();
-		Assert.assertTrue(nameEnabled);
-		scrollToElement(Careers.jobOportunitiescheckBox);
-		mouseHover(Careers.jobOportunitiescheckBox);
-		waitForLoad();
-		boolean nameDisabledled = Careers.firstName.isEnabled();
-		Assert.assertFalse(nameDisabledled);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnAfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnAfrSelectingChkBox, "Explore Now");
-		click(Careers.submitButton);
-		waitForLoad();
-		Thread.sleep(1000);
-		click(Careers.joinUsBtn);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();
-	}	
-	
-	@Step ("Select number of Desks")
-    public static void selectNoOfDesks(int count)
-    {
-    	if(count == 1)
-    	{
-    		return;
-    	}
 
-    	for(int i=1;i<=count;i++)
-    	{
-    		click(GetInTouch.increaseNoOfDesk);
-    	}
 
-    }
-	
-	@Step("verify profile")
-	public static void profile() throws InterruptedException
-	{
-		if(MyAcc.MyAccount.isDisplayed()) {
+@Step("verify profile")
+public static void profile() throws InterruptedException
+{
+	if(MyAcc.MyAccount.isDisplayed()) {
     	click(MyAcc.MyAccount);
         click(MyAcc.profile);
         Boolean email=MyAcc.Email.isEnabled();
@@ -1033,9 +935,9 @@ public class WebFlows extends CommonOps
         Assert.assertEquals(phone, "8905641237");
         click(WebODLogin.msg_close);
         
-		}
-
 	}
+
+ }
 }
 
 
