@@ -173,8 +173,6 @@ public class ODAdminUsersPage  extends CommonOps{
 
 	@FindBy(how = How.XPATH, using = "//tbody/tr[1]/td[6]/button[1]")
     public WebElement viewDetailsButton;
-	
-	
-	
+
 }
 
