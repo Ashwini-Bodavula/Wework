@@ -70,7 +70,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.selectShopForPrinting(getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
 		AdminFlows.logoutOfODDashboard();
 	}
-*/
+
 	
 	@Test(description = "Test05 - Verify User is able to select shop - postpaid.")
 	@Description("This test verifies that User is able to select shop - Postpaid.")
@@ -82,7 +82,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
 	}
 	
-	/*		
+			
 	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.")
 	@Description("This test verifies that User is able to select shop - ODE purchase.")
 	public void test06_shopSelectionODEPurchase() throws InterruptedException 
@@ -93,4 +93,17 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
 	}
 	*/
+	
+	@Test(description = "Test07 - Verify User is able to select shop - Parking.")
+	@Description("This test verifies that User is able to select shop - Parking.")
+	public void test07_shopSelectionParking() throws InterruptedException 
+	{
+		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShopType("Parking");
+		Thread.sleep(3000);
+		AdminFlows.selectShopForParking(getData("loc1"),"Car",getData("count"), getData("userEmail"), getData("GSTN"));
+		AdminFlows.logoutOfODDashboard();
+	}
+	
+	
 }

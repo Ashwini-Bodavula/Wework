@@ -157,7 +157,10 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
     public WebElement conferenceRoom;	
 	
-	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
+//	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
+//    public WebElement rightArrowBtn;
+	
+	@FindBy(how = How.XPATH, using = "(//button[contains(@class,'MuiPickersCalendarHeader-iconButton')])[2]")
     public WebElement rightArrowBtn;
 	
 	@FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiPickersCalendarHeader-transitionContainer')]")

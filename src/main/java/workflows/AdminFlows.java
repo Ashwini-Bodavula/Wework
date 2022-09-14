@@ -411,7 +411,6 @@ public class AdminFlows extends CommonOps {
 //						Thread.sleep(5000);
 					
 					}
-
     }
 	
 	@Step ("Validate the order details for ODE purchases")
@@ -556,7 +555,6 @@ public class AdminFlows extends CommonOps {
 		for (int i = 0; i < shopList.size(); i++)
 		{
 			String itemInList = shopList.get(i).getText();
-			
 			if (itemInList.contains(optService)) 
 			{
 					int j = 0;
@@ -626,5 +624,77 @@ public class AdminFlows extends CommonOps {
 		}
 	}
 	
+	@Step ("Select shop - Parking")
+    public static void selectShopForParking(String location, String option, String count, String email, String GSTN) throws InterruptedException
+    {					
+			
+			click(ODAdminUser.buildingDrpdwn);
+			updateText(ODAdminUser.selectBuilding, location);
+			scrollToElement(ODAdminUser.select(location));
+			click(ODAdminUser.select(location));
+			click(ODAdminUser.opt(option));
+			scrollToElement(ODAdminUser.plusBtn);
+			AdminFlows.increaseQuantity(count);
+			Verifications.elementIsVisible(ODAdminUser.opt(option));
+			click(ODAdminUser.opt(option));
+			updateText(ODAdminUser.customerEmail, email);
+			click(ODAdminUser.bookingDate);
+			String dateSelected  = AdminFlows.selectDate(getData("month3"),getData("date1"));
+			String monthName = AdminFlows.trimMonth(dateSelected);
+			updateText(ODAdminUser.customerGSTN,GSTN);
+			Thread.sleep(4000);
+			
+			boolean orderDetailsValidated = AdminFlows.validateOrderDetailsForParking("Car", count, location, monthName, email, GSTN);
+			if(orderDetailsValidated == true)
+			{
+//				click(ODAdminUser.placeOrderBtn);
+//				Verifications.elementIsVisible(ODAdminUser.closeBtn);
+//				if(ODAdminUser.closeBtn.isDisplayed())
+//				{
+//					click(ODAdminUser.closeBtn);
+//					waitForLoad();
+//				}
+			}
+			else
+			{
+				Assert.assertTrue(false, "Order Details not Validated");
+			}
+			
+    }
+	
+	@Step ("Validate the order details - Parking")
+    public static boolean validateOrderDetailsForParking(String shopType, String count, String location, String monthName, String userEmail, String GSTN )
+    {
+		boolean detailsValidated = false;
+		String printingPrice = ODAdminUser.getPrice(shopType).getText();
+		String price = 	printingPrice.split("₹")[1];
+		int priceInInt = AdminFlows.priceValueInt(price);
+		int totalAmount = Integer.parseInt(ODAdminUser.total.getText().split("₹")[1]);
+		String bookingDetailsinFrame = ODAdminUser.billingDetailsList.getText();
+		String[] bookingDetails = bookingDetailsinFrame.split("\r?\n|\r");
+		int finalPrice = priceInInt*Integer.parseInt(count);
+		int k=5;
+		if(bookingDetails[k].equalsIgnoreCase(location))
+		{
+			if(bookingDetails[k+1].equals(count))
+			{
+				if(bookingDetails[k+2].equalsIgnoreCase(monthName))
+				{
+					if(bookingDetails[k+3].equals(userEmail))
+					{
+						if(bookingDetails[k+4].equals(GSTN))
+						{
+							if(totalAmount==finalPrice)
+							{
+								detailsValidated = true;
+							}
+						}
+					}
+				}
+			}
+		}
+		return detailsValidated;
+		
+    }
 	
 }

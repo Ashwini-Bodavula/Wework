@@ -9,9 +9,9 @@
       <class name="sanity.ODAdminDashboardTest">
         <methods>
           <include name="afterMethod"/>
+          <include name="test07_shopSelectionParking"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="test05_shopSelectionPostpaid"/>
         </methods>
       </class> <!-- sanity.ODAdminDashboardTest -->
     </classes>
