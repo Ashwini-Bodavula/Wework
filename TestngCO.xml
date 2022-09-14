@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Web Suite" parallel="true" thread-count = "2">
-   <!--     <test name="chrome Tests">
+        <test name="chrome Tests">
         <parameter name="platformName" value="web" />
         <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="CO"></parameter>
@@ -19,28 +19,15 @@
           <class name="sanity.SelectVirtualOfficeTest"/> 
           <class name="selectConferenceRoomTest"/>        
         </classes>
-    </test>   --> 
-    
-
-        <test name="firefox Tests">
-        <parameter name="platformName" value="web" />
-        <parameter name="browser" value="chrome"></parameter>        
-        <parameter name="URL" value="CO"></parameter>
-        <classes>
-          
-           <class name="sanity.CompareworkspaceTest"/>  
-                 
-      
-
-	<!--  <class name="sanity.SelectPrivateOfficeTest"/> 
-
-  <test name="firefox Tests">
+    </test>   
+   
+<!--    <test name="firefox Tests">
 <parameter name="platformName" value="web"/>
 <parameter name="browser" value="chrome"/>
 <parameter name="URL" value="CO"/>
 <classes>
 <class name="sanity.SelectPrivateOfficeTest"/>
-<!--  
+
 
 		<class name="sanity.SelectHotDeskTest"/> 
 		<class name="sanity.SelectAllAccessWrkspaceTest"/> 
@@ -52,7 +39,7 @@
 		<class name="sanity.SelectSubscriptionTest"/> 
 		<class name="sanity.SelectDayPassTest"/> 
 		<class name="sanity.SelectVirtualOfficeTest"/> 
-		<class name="selectConferenceRoomTest"/>  -->
+		<class name="selectConferenceRoomTest"/> 
 </classes>
-    </test> 
+    </test>  -->
 </suite>
