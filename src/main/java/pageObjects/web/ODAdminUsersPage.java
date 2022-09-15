@@ -157,9 +157,6 @@ public class ODAdminUsersPage  extends CommonOps{
 	@FindBy(how = How.XPATH, using = "//input[@id='conference_room__id']")
     public WebElement conferenceRoom;	
 	
-//	@FindBy(how = How.XPATH, using = "(//*[name()='svg'][@class='MuiSvgIcon-root'])[5]")
-//    public WebElement rightArrowBtn;
-	
 	@FindBy(how = How.XPATH, using = "(//button[contains(@class,'MuiPickersCalendarHeader-iconButton')])[2]")
     public WebElement rightArrowBtn;
 	
@@ -173,6 +170,21 @@ public class ODAdminUsersPage  extends CommonOps{
 
 	@FindBy(how = How.XPATH, using = "//tbody/tr[1]/td[6]/button[1]")
     public WebElement viewDetailsButton;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Shop Purchases')]")
+    public WebElement shopPurchase;
+	
+	@FindBy(how = How.XPATH, using = "//div //h5[contains(text(),'Building Name:')]/following-sibling::p")
+    public WebElement buildingNameInDetails;
+	
+	@FindBy(how = How.XPATH, using = "//div //h5[contains(text(),'Customer Email:')]/following-sibling::p")
+    public WebElement customerEmailInDetails;
+	
+	@FindBy(how = How.XPATH, using = "//div //h5[contains(text(),'Product Name:')]/following-sibling::p")
+    public WebElement productNameInDetails;
+	
+	@FindBy(how = How.XPATH, using = "//button[@aria-label='close']")
+    public WebElement closeShopPurchase;
 
 }
 
