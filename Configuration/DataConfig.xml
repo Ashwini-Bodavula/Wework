@@ -11,7 +11,7 @@
     <newName>VarshaR</newName>
     <email>testers@geekyants.com</email>
     <phoneNumber>9999999999</phoneNumber>
-    <lastName>R</lastName>
+    <lastName>R</lastName>\
     <userEmail>varshar@geekyants.com</userEmail>
     <userPassword>Varsha@123</userPassword>
 
@@ -25,8 +25,7 @@
     <date2>22</date2>
     <month2>September</month2>
     <date3>5</date3>
-    <month3>December</month3>
-    <year>2022</year>
+    <month3>October</month3>
     <teamMember1>Anusha</teamMember1>
     <teamMember1Email>anusha@abc.com</teamMember1Email>
     <teamMember2>Bhuvan</teamMember2>
@@ -41,6 +40,7 @@
     <validEmail>testers@geekyants.com</validEmail>
     <invalidPassword>invalidPassword</invalidPassword>
 
+
 	<!-- admin dashboard -->
 	<adminD>https://dashboard.wod2.1stmain.dev/admin-users</adminD>
 	<ODUserEmail>rahul@geekyants.com</ODUserEmail>
@@ -52,10 +52,16 @@
 	<count>3</count>
 	<GSTN>29AACCF8045D1ZM</GSTN>
 	<eventType>Cloud services</eventType>
-       <price>10</price>
-    
+
+    <price>10</price>
+    <time1>1:00 PM</time1>
+    <time2>2:00 PM</time2>
+    <enterprise>1st Main Pvt Ltd</enterprise>
+    <productType1>Conference room</productType1>
+    <conferenceRoomSize>6</conferenceRoomSize>
+    <creditsSize>4</creditsSize>
     <TS>https://wework.co.in/terms-and-conditions/</TS>
-<!-- CO -->
+    <!-- CO -->
     <!-- Web -->
     <BrowserName>chrome</BrowserName>
     <CO>https://wework.co.in/</CO>

@@ -6,7 +6,6 @@ import static extensions.UIActions.updateText;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import extensions.UIActions;
@@ -17,7 +16,7 @@ import workflows.AdminFlows;
 import workflows.WebFlows;
 public class ODAdminDashboardTest extends CommonOps
 {
-	/*@Test(description = "Test01 - Verify User is able to add Admin user")
+	@Test(description = "Test01 - Verify User is able to add Admin user")
     @Description("This test verifies that User is able to add Admin user")
     public void test01_AddAdminUser() throws InterruptedException
     {
@@ -65,8 +64,8 @@ public class ODAdminDashboardTest extends CommonOps
 	@Description("This test verifies that User is able to select shop - printing.")
 	public void test04_shopSelectionPrinting() throws InterruptedException 
 	{
-		AdminFlows.loginToODDashboard();		
-		AdminFlows.selectShop("Printing", getData("loc1"),"Color",getData("count"), getData("userEmail"), getData("GSTN"));
+		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShop("Printing");	
 		AdminFlows.logoutOfODDashboard();
 	}
 	
@@ -75,21 +74,26 @@ public class ODAdminDashboardTest extends CommonOps
 	public void test05_shopSelectionPostpaid() throws InterruptedException 
 	{
 		AdminFlows.loginToODDashboard();
-		AdminFlows.selectShopForPostPaid("Postpaid Events" ,getData("eventType"), getData("loc1"), getData("price"),  getData("userEmail"),getData("name"), getData("GSTN"));
+		AdminFlows.selectShop("Postpaid Events");
 		AdminFlows.logoutOfODDashboard();
-	}*/
-	
+	}
+		
 	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.")
 	@Description("This test verifies that User is able to select shop - ODE purchase.")
 	public void test06_shopSelectionODEPurchase() throws InterruptedException 
 	{
 		AdminFlows.loginToODDashboard();
-		
-		AdminFlows.selectShopForODEPurchases("ODE purchases","5th-main","Conference room",getData("loc1"),getData("userEmail") );
-		
-		AdminFlows.validateOrderDetailsForODE(getData("loc1"),getData("count"), getData("date"),  getData("time"),getData("conference room"), getData("userEmail"));
-		
+		AdminFlows.selectShop("ODE purchases");
 		AdminFlows.logoutOfODDashboard();
 	}
 	
+	@Test(description = "Test07 - Verify User is able to select shop - Parking.")
+	@Description("This test verifies that User is able to select shop - Parking.")
+	public void test07_shopSelectionParking() throws InterruptedException 
+	{
+		AdminFlows.loginToODDashboard();
+		AdminFlows.selectShop("Parking");
+		AdminFlows.logoutOfODDashboard();
+	}
+
 }
