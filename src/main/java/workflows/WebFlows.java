@@ -278,7 +278,7 @@ public class WebFlows extends CommonOps
 			updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
 			scrollToElement(WebLoading.plusIcon);
 			selectNoOfPeople(4);
-			selectDate(getData("year"), getData("month3"), getData("date1"));
+//			selectDate(getData("year"), getData("month3"), getData("date1"));
 			WebFlows.enterDate(getData("date1"),getData("month"),getData("year"));
 //			Verifications.elementIsVisible(WebLoading.continueBtn);
 //			click(WebLoading.continueBtn);
