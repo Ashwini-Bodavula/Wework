@@ -35,7 +35,7 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "(//button[contains(@class,'fullWidthBtn')])[2]")
     public WebElement skipAndPayBtn;
 
-    @FindBy(how = How.XPATH, using = "(//button[contains(@class,'fullWidthBtn')])[2]")
+    @FindBy(how = How.XPATH, using = "//button[contains(@class,'continue_btn')]")
     public WebElement confirmAndPayBtn;
 
     @FindBy(how = How.XPATH, using = "//h4[contains(text(),'Day Pass at')]")
@@ -68,9 +68,21 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "//button[contains(@class,'proceedButton')]")
     public WebElement addConferenceRoomBtn;
 
-public void addconference(String proceed)
-{
-    addConferenceRoomBtn.click();
+    public void addconference(String proceed)
+    {
+    	addConferenceRoomBtn.click();
 
-}
+    }
+    
+    @FindBy(how = How.XPATH, using = "//input[@id='date']")
+    public WebElement selectDates;
+    
+    @FindBy(how = How.XPATH, using = "//div[contains(text(),'Apply')]")
+    public WebElement applyButton;
+  
+    @FindBy(how = How.XPATH, using = "(//button[contains(@class,'action_btns')])[1]")
+    public WebElement editButton;
+    
+  
+  
 }

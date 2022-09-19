@@ -23,14 +23,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.AllAccessOptn.getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.AllAccessOptn);
+			click(WebLoading.selectWorkspace(3));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))
@@ -52,14 +52,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.AllAccessOptn.getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.AllAccessOptn);
+			click(WebLoading.selectWorkspace(3));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))
@@ -81,14 +81,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	//	WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.AllAccessOptn.getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.AllAccessOptn);
+			click(WebLoading.selectWorkspace(3));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))
@@ -110,14 +110,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	//	WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.AllAccessOptn.getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.AllAccessOptn);
+			click(WebLoading.selectWorkspace(3));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))
@@ -139,14 +139,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	//	WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.AllAccessOptn.getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.AllAccessOptn);
+			click(WebLoading.selectWorkspace(3));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))
@@ -163,8 +163,8 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 	@DataProvider(name = "PuneAllAccessWorkspace")
 	public Object[][] puneAllAccessWorkspace() {
 		return new Object[][] {
-//					{ "Pune", "Kharadi", "World Trade Center" },
-				    {"Pune","Magarpatta","Panchshil Futura"}
+					{ "Pune", "Kharadi", "World Trade Center" },
+//				    {"Pune","Magarpatta","Panchshil Futura"}
 					};
 
 	}
