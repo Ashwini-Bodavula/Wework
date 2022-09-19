@@ -23,42 +23,22 @@ public class SelectSubscriptionsTest extends CommonOps
 
 	@Test(description = "Test01 - Verify User is able to select subscriptions" ,dataProvider = "Subscriptions", groups= {"CO"})
     @Description("This test verifies that User is able to select subscriptions")
-    public void test01_SelectSubscriptions(String officeType , String selectOption, String textInHeader) throws InterruptedException
+    public void test01_SelectSubscriptions(String workspaceType , String headerText) throws InterruptedException
     {
-		//WebFlows.loadWebsite();
     	WebFlows.loginToApplication();
     	click(WebLoading.workspaceDrpdwn);
-    	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    	click(WebLoading.opt(officeType));
-    	String subscriptionType = WebLoading.subscriptionType.getText();
-    	if(subscriptionType.contains(textInHeader))
+    	click(WebLoading.opt(workspaceType));
+    	String headerTextBox = WebLoading.subscriptionType.getText();
+    	if(headerTextBox.contains(headerText))
     	{
-    		click(WebLoading.loctnDropdown2);
-        	click(WebLoading.selectloc("Delhi-NCR"));
-        	click(WebLoading.buildingDropdown);
-        	click(WebLoading.select("Blue One Square"));
-        	Verifications.elementIsVisible(WebLoading.select(selectOption));
-        	click(WebLoading.select(selectOption));
-        	Verifications.elementIsVisible(WebLoading.nameField);
-        	updateText(WebLoading.nameField, getData("name"));
-            updateText(WebLoading.emailField, getData("email"));
-            updateText(WebLoading.phonenNumberField, getData("phoneNumber"));
-            scrollToElement(WebLoading.plusIcon);
-			WebFlows.selectNoOfPeople(3);
-			WebFlows.selectDate("2024", "September", "26");
-//            click(WebLoading.continueBtn);
-//            String actualText = WebLoading.thankyouText.getText();
-//            Verifications.verifyText(actualText,"Thank you for contacting WeWork");
-//            click(WebLoading.backToHomePageBtn);
-			mouseHover(WebLoading.closeIcon);
-            WebFlows.logoutOfApplication();
+    		WebFlows.selectLocationAndBuilding();
+        	WebFlows.fillTheFormDetails();
     	}
     	else
     	{
     		Assert.assertTrue(false, "Subscription type mismatch");
-
     	}
-
+    	WebFlows.logoutOfApplication();
 
     }
 
@@ -66,10 +46,10 @@ public class SelectSubscriptionsTest extends CommonOps
 	public Object[][] subscriptions()
 	{
 		return new Object[][] {
-			{"Ready-to-move-in private offices","Know more","Private Office Space"},
-			{"Hot desk", "Book a workspace","Hot Desk"},
-			{"All Access","Book a workspace","All Access"},
-			{"Office suite","Enquire now","Office Suite"}
+			{"Ready-to-move-in private offices","Private Office Space"},
+//			{"Hot desk","Hot Desk"},
+//			{"All Access","All Access"},
+//			{"Office suite","Office Suite"}
 			};
 
 	}

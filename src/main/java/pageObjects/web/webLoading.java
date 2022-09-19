@@ -29,7 +29,7 @@ public class webLoading extends CommonOps{
 
 	public WebElement selectLocation(String locator)
 	{
-		return driver.findElement(By.xpath("(//div[contains(@class,'building_container')] //p[contains(text(),'"+locator+"')])"));
+		return driver.findElement(By.xpath("(//div[contains(@class,'building_container')] //p[contains(text(),'"+locator+"')])[2]"));
 
 	}
 	public WebElement selectBuilding(String locator)
@@ -89,24 +89,30 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//button[text()='Explore Solutions']")
     public WebElement exploreBtn;
+    
+    public WebElement selectWorkspace(int locator)
+   	{
+   		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])["+locator+"]"));
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
-    public WebElement privateOfficeOptn;
+   	}
 
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
-    public WebElement hotDeskOptn;
-
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
-    public WebElement AllAccessOptn;
-
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
-    public WebElement VirtualOfficeOptn;
-
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
-    public WebElement dayPassBtn;
-
-    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
-    public WebElement conferenceRoomOptn;
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
+//    public WebElement privateOfficeOptn;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
+//    public WebElement hotDeskOptn;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
+//    public WebElement AllAccessOptn;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
+//    public WebElement VirtualOfficeOptn;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
+//    public WebElement dayPassBtn;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
+//    public WebElement conferenceRoomOptn;
 
    // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
    // public WebElement VirtualOfficeOptn;
@@ -190,7 +196,7 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Back to homepage')]")
     public  WebElement backToHomePageBtn;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(text(),'Logout')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(text(),'Log out')]")
     public  WebElement logout;
 
     @FindBy(how = How.XPATH, using = "//p[contains(text(),'Thank you for contacting WeWork')]")
@@ -357,4 +363,16 @@ public class webLoading extends CommonOps{
   
     @FindBy(how = How.XPATH, using = "//a[contains(text(),'Careers')]")
     public  WebElement CareersLink;
+    
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='dd/mm/yyyy']")
+    public  WebElement dateField;
+  
+    @FindBy(how = How.XPATH, using = "//button[contains(@class,'sc-gsDKAQ jRuFlm button')]")
+    public  WebElement bookAWorkspaceBtn;
+    
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'headerAccountDrpdwn')]")
+    public  WebElement accountDropdown;
+  
+  
+    
 }

@@ -14,8 +14,8 @@ import workflows.WebFlows;
 
 public class WeWorkWebAppTest extends CommonOps
 {
-/*
-	    @Test(description = "Test01 - Verify User is able to select multiple options in subscriptions",dataProvider = "PuneWorkspaces", groups= {"CO"})
+
+	/*    @Test(description = "Test01 - Verify User is able to select multiple options in subscriptions",dataProvider = "PuneWorkspaces", groups= {"CO"})
 	    @Description("This test verifies that User is able to select multiple options in subscriptions")
 	    public void test01_selectMultipleOptionsInSubscriptions(String city, String location, String buildingName) throws InterruptedException
 	    {
@@ -23,7 +23,7 @@ public class WeWorkWebAppTest extends CommonOps
 	    //	WebFlows.loadWebsite();
 			WebFlows.loginToApplication();
 			WebFlows.selectWorkspace(city, location, buildingName);
-			String privateOfficeBtn = WebLoading.privateOfficeOptn.getAttribute("class");
+			String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
 			if (privateOfficeBtn.contains("disabled"))
 			{
 				mouseHover(WebLoading.closeIcon);
@@ -31,22 +31,22 @@ public class WeWorkWebAppTest extends CommonOps
 			} else
 			{
 				//selecting multiple subscriptions (private office, Hot desk and All access)
-				click(WebLoading.hotDeskOptn);
-				click(WebLoading.AllAccessOptn);
-				click(WebLoading.privateOfficeOptn);
-				String hotDeskSelected = WebLoading.hotDeskOptn.getAttribute("class");
+				click(WebLoading.selectWorkspace(2));
+				click(WebLoading.selectWorkspace(3));
+				click(WebLoading.selectWorkspace(1));
+				String hotDeskSelected = WebLoading.selectWorkspace(2).getAttribute("class");
 				if(hotDeskSelected.contains("card_selected"))
 				{
 					Assert.assertTrue(false, "Wrong subscription selected");
 				}
 
-				String allAccessSelected = WebLoading.AllAccessOptn.getAttribute("class");
+				String allAccessSelected = WebLoading.selectWorkspace(3).getAttribute("class");
 				if(allAccessSelected.contains("card_selected"))
 				{
 					Assert.assertTrue(false, "Wrong subscription selected");
 				}
 
-				String privateOfficeSelected = WebLoading.privateOfficeOptn.getAttribute("class");
+				String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
 				if(privateOfficeSelected.contains("card_selected"))
 				{
 					Assert.assertTrue(true, "Correct subscription selected");
@@ -73,22 +73,22 @@ public class WeWorkWebAppTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
+		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.conferenceRoomOptn);
-			click(WebLoading.dayPassBtn);
-			String conferenceRoomSelected = WebLoading.conferenceRoomOptn.getAttribute("class");
+			click(WebLoading.selectWorkspace(6));
+			click(WebLoading.selectWorkspace(5));
+			String conferenceRoomSelected = WebLoading.selectWorkspace(6).getAttribute("class");
 			if(conferenceRoomSelected.contains("card_selected"))
 			{
 				Assert.assertTrue(false, "Wrong On-Demand option selected");
 			}
 
-			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
+			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -113,11 +113,8 @@ public class WeWorkWebAppTest extends CommonOps
 		}
 		WebFlows.logoutOfApplication();
     }
+*/
 
-
-	
-	
-	
 	@Test(description = "Test03 - Verify User is able to fill WBS form.")
     @Description("This test verifies that User is able to fill WBS form.")
     public void test03_SelectWBS() throws InterruptedException
@@ -129,48 +126,13 @@ public class WeWorkWebAppTest extends CommonOps
 		WebFlows.logoutOfApplication();
     }	
 	
-	
-
-@Test(description = "Test04 - Verify User is able to fill referrals form.")
+	@Test(description = "Test04 - Verify User is able to fill referrals form.")
     @Description("This test verifies that User is able to fill referrals form")
     public void test04_SelectRefferals() throws InterruptedException
     {
 		//WebFlows.loadWebsite(getData("CO"));
 	    WebFlows.loginToApplication();
-		scrollToElement(WebLoading.referralsLink);
-		click(WebLoading.referralsLink);
-		loadTime(4);
-		Thread.sleep(2000);
-		scrollToElement(Referral.FAQ1);
-		loadTime(4);
-		Verifications.elementIsVisible(Referral.FAQ1);
-		loadTime(4);
-		click(Referral.FAQ1);
-		scrollToElement(Referral.referralLinkInFAQ1);
-		String referralLinkText = Referral.referralLinkInFAQ1.getText();
-		String actualReferralLinkText = "https://wework.co.in/referrals";
-		Assert.assertEquals(referralLinkText, actualReferralLinkText);
-		scrollToElement(Referral.getStartedBtn);
-		click(Referral.getStartedBtn);
-		scrollToElement(Referral.fullName);
-		updateText(Referral.fullName, getData("name"));
-		updateText(Referral.Email, getData("email"));
-		updateText(Referral.phoneNumber, getData("phoneNumber"));
-		updateText(Referral.companyName, getData("companyName"));
-		click(Referral.preferredOfficeLocationDropdwon);
-		click(Referral.selectLocation("Pune"));
-		click(Referral.workspaceIntrestedInDrpdwn);
-		click(Referral.selectWorkspace("All Access"));
-		scrollToElement(Referral.increaseNoOfDesk);
-		click(Referral.addReferralBtn);
-		boolean errormessageDisplayed = Referral.errorMessage.isDisplayed();
-		Assert.assertTrue(errormessageDisplayed);
-		click(Referral.increaseNoOfDesk);
-		click(Referral.increaseNoOfDesk);
-		updateText(Referral.referrerName, getData("name"));
-		updateText(Referral.referrerEmail, getData("email"));
-		updateText(Referral.referrerPhone, getData("phoneNumber"));
-//		click(referral.addReferralBtn);
+	    WebFlows.fillReferralForm();
 		WebFlows.logoutOfApplication();
 		
     }
@@ -182,22 +144,10 @@ public class WeWorkWebAppTest extends CommonOps
     {
 		//WebFlows.loadWebsite(getData("CO"));
 		WebFlows.loginToApplication();
-		scrollToElement(WebLoading.CareersLink);
-		click(WebLoading.CareersLink);
-		loadTime(3);
-		Thread.sleep(1000);
-		waitForLoad();
-		click(Careers.joinUsBtn);
-		loadTime(4);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();	
+		WebFlows.validateCareersLink();	
 		WebFlows.logoutOfApplication();
 	
-    }*/
+    }
 	
 	
 	
@@ -207,32 +157,8 @@ public class WeWorkWebAppTest extends CommonOps
     {
 		//WebFlows.loadWebsite(getData("CO"));
 		WebFlows.loginToApplication();
-		click(WebLoading.contactUsBtn);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnBfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnBfrSelectingChkBox, "Get in touch");
-		boolean nameEnabled = Careers.firstName.isEnabled();
-		Assert.assertTrue(nameEnabled);
-		scrollToElement(Careers.jobOportunitiescheckBox);
-		mouseHover(Careers.jobOportunitiescheckBox);
-		waitForLoad();
-		boolean nameDisabledled = Careers.firstName.isEnabled();
-		Assert.assertFalse(nameDisabledled);
-		scrollToElement(Careers.submitButton);
-		String textInSubmitBtnAfrSelectingChkBox = Careers.submitButton.getText();
-		Assert.assertEquals(textInSubmitBtnAfrSelectingChkBox, "Explore Now");
-		click(Careers.submitButton);
-		waitForLoad();
-		Thread.sleep(1000);
-		click(Careers.joinUsBtn);
-		boolean openingsBtnPresent = Careers.viewopeningsBtn.isDisplayed();
-		Assert.assertTrue(openingsBtnPresent, "Button present");
-		String currentURL = driver.getCurrentUrl();
-		Assert.assertEquals(currentURL, "https://weworkindia.hire.trakstar.com/");
-		driver.navigate().back();
-		waitForLoad();
+		WebFlows.selectCareersfromContactUsBtn();
 		WebFlows.logoutOfApplication();
-		loadTime(4);
 		
     }
 	

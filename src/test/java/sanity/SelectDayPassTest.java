@@ -32,7 +32,7 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
+		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
@@ -43,8 +43,8 @@ public class SelectDayPassTest extends CommonOps
 			Assert.assertEquals(bookNowBtnBeforeClick, false);
 			loadTime(1);
 
-			click(WebLoading.dayPassBtn);
-			String DayPassSelected = WebLoading.dayPassBtn.getAttribute("class");
+			click(WebLoading.selectWorkspace(5));
+			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				loadTime(1);
@@ -52,34 +52,51 @@ public class SelectDayPassTest extends CommonOps
 				Assert.assertEquals(bookNowBtnAfterClick, true);
 				click(WebLoading.bookNowBtn);
 
-				String daypaassHeader = DayPass.dayPassHeader.getText();
-				if(daypaassHeader.contains(buildingName))
-				{
+//				String daypaassHeader = DayPass.dayPassHeader.getText();
+//				if(daypaassHeader.contains(buildingName))
+//				{
+
 					Assert.assertTrue(true, "Building name is matching");
 					boolean ContinuebtnBeforeClick = DayPass.continueBtn.isEnabled();
 					Assert.assertEquals(ContinuebtnBeforeClick, false);
+					
+					 click(DayPass.selectDates);
+					WebFlows.selectDate(getData("month3"),getData("date3"));
+					click(DayPass.applyButton);
 
-					WebFlows.selectDate(getData("month1"),getData("date1"));
-//					WebFlows.selectDate(getData("month2"),getData("date2"));
-//					WebFlows.selectDate(getData("month2"),getData("date1"));
-//					WebFlows.selectDate(getData("month3"),getData("date3"));
+					WebFlows.addTeamMemberForDayPass(getData("teamMember1"),getData("teamMember1Email"));
+					if(DayPass.errorMsgForAddingSameMember.isDisplayed())
+			    	{
+				    	String errorMsg = DayPass.errorMsgForAddingSameMember.getText();
+				    	Assert.assertEquals("Team member with this email ID already exists in this team", errorMsg);
+				    	click(DayPass.closeMemberBtn);
+				    	loadTime(4);
+			    	}
 					loadTime(1);
 					boolean ContinuebtnAfterClick = DayPass.continueBtn.isEnabled();
 					Assert.assertEquals(ContinuebtnAfterClick, true);
-					WebFlows.verifyPriceBreakupForDayPass();
-			        WebFlows.proceedWithPayment();
-			        UIActions.closeCurrentWindow();
-			        switchToParentWindow(currentWindow);
-			        Verifications.elementIsVisible(WebLoading.closeIcon);
-			        click(WebLoading.closeIcon);
-				}
-				else
-				{
-					Assert.assertTrue(false, "Building name is not matching");
-				}
+					click(DayPass.continueBtn);
+					click(DayPass.editButton);
+					WebFlows.selectUser(getData("teamMember1"));
+					click(DayPass.continueBtn);
+					WebFlows.deleteUser(getData("teamMember1"));
+					scrollToElement(DayPass.confirmAndPayBtn);
+			       	click(DayPass.confirmAndPayBtn);
+			       	Thread.sleep(4000);
+//					WebFlows.verifyPriceBreakupForDayPass();
+//			        WebFlows.proceedWithPayment();
+//			        UIActions.closeCurrentWindow();
+//			        switchToParentWindow(currentWindow);
+//			        Verifications.elementIsVisible(WebLoading.closeIcon);
+//			        click(WebLoading.closeIcon);
+//				}
+//				else
+//				{
+//					Assert.assertTrue(false, "Building name is not matching");
+//				}
 			}
 		}
-		WebFlows.logoutOfApplication();
+//		WebFlows.logoutOfApplication();
     }
 
 

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Web Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Web Tests(failed)">
+<suite thread-count="2" parallel="methods" name="Failed suite [Web Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="methods" name="chrome Tests(failed)">
     <parameter name="browser" value="Chrome"/>
     <parameter name="platformName" value="web"/>
-    <parameter name="URL" value="adminD"/>
+    <parameter name="URL" value="CO"/>
     <classes>
-      <class name="sanity.ODAdminDashboardTest">
+      <class name="sanity.SelectDayPassTest">
         <methods>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="test05_shopSelectionPostpaid"/>
+          <include name="test01_SelectDayPassInPune" invocation-numbers="0"/>
         </methods>
-      </class> <!-- sanity.ODAdminDashboardTest -->
+      </class> <!-- sanity.SelectDayPassTest -->
     </classes>
-  </test> <!-- Web Tests(failed) -->
+  </test> <!-- chrome Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->
