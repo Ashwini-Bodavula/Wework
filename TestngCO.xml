@@ -7,8 +7,8 @@
           <parameter name="URL" value="CO"></parameter>
         <classes>
            
-             <class name="sanity.SelectDayPassTest"/> 
           
+           <class name="sanity.SelectEventsAndWorkspacesTest"/>  
                
         </classes>
     </test>   
@@ -20,7 +20,7 @@
 <classes>
 <class name="sanity.SelectPrivateOfficeTest"/>
 
-
+   <class name="sanity.SelectDayPassTest"/> 
 
 <class name="sanity.SelectEventsAndWorkspacesTest"/>           
           

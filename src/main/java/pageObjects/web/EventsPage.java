@@ -61,4 +61,11 @@ public class EventsPage extends CommonOps
     @FindBy(how = How.XPATH, using = "//li[contains(text(),'Workshops')]")
     public WebElement selectWorkshops;
     
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='dd/mm/yyyy']")
+    public WebElement dateField;
+    
+    @FindBy(how = How.XPATH, using = "//input[@placeholder='hh:mm (a|p)m']")
+    public WebElement timeField;
+   
+    
 }

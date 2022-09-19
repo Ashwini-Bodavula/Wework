@@ -2,6 +2,8 @@ package sanity;
 
 import static extensions.UIActions.*;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -28,29 +30,23 @@ public class SelectEventsAndWorkspacesTest extends CommonOps
 		        updateText(Events.opt("Company name*"), getData("companyName"));
 		        updateText(Events.opt("Phone*"), getData("phoneNumber"));
 		        mouseHover(Events.selectRadioBtn(2));
-		        Thread.sleep(2000);
-		        click(Events.select("CalendarIcon"));
-		        Thread.sleep(2000);
-		        WebFlows.selectDate(getData("month2"),getData("date2"));
-		        WebFlows.selectTime("2 hours", "20 minutes");
+		        click(Events.dateField);
+		        updateText(Events.dateField, "22/10/2022");
+		        click(Events.timeField);
+		        updateText(Events.timeField, "06:50 AM");
 		        click(Events.plusIcon);
-		        Thread.sleep(2000);
+		        scrollToElement(Events.selectdropDown(1));
 		        mouseHover(Events.selectdropDown(1));
-		        Thread.sleep(1000);
 		        mouseHover(Events.selectlocation("Pune"));
-		        Thread.sleep(2000);
+		        scrollToElement(Events.selectdropDown(2));
 		        mouseHover(Events.selectdropDown(2));
 		        mouseHover(Events.selectlocation("Panchshil Futura"));
-		        Thread.sleep(2000);
 		        mouseHover(Events.selectRadioBtn(4));
-		        Thread.sleep(2000);
+		        scrollToElement(Events.selectdropDown(3));
 		        mouseHover(Events.selectdropDown(3));
 		        mouseHover(Events.selectWorkshops);
-		        Thread.sleep(2000);
 		        mouseHover(Events.selectRadioBtn(6));
 		        mouseHover(Events.selectRadioBtn(9));
-		        Thread.sleep(4000);
-		        //mouseHover(Events.productionRadioBtn);
 		        //mouseHover(Events.select("Submit Enquiry"));
 
     }

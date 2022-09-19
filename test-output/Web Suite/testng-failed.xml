@@ -6,14 +6,14 @@
     <parameter name="platformName" value="web"/>
     <parameter name="URL" value="CO"/>
     <classes>
-      <class name="sanity.SelectDayPassTest">
+      <class name="sanity.SelectEventsAndWorkspacesTest">
         <methods>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
-          <include name="test01_SelectDayPassInPune" invocation-numbers="0"/>
+          <include name="test01_SelectEventsAndWorkspaces"/>
         </methods>
-      </class> <!-- sanity.SelectDayPassTest -->
+      </class> <!-- sanity.SelectEventsAndWorkspacesTest -->
     </classes>
   </test> <!-- chrome Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->
