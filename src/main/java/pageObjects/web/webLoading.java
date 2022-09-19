@@ -119,6 +119,18 @@ public class webLoading extends CommonOps{
 
 
 
+    public WebElement enter(String locator)
+   	{
+       	if(locator.equals("Phone number"))
+       	{
+       		return driver.findElement(By.xpath("(//input[@placeholder='"+locator+"*'])[2]"));
+       	}
+       	else
+       	{
+       		return driver.findElement(By.xpath("(//input[@placeholder='"+locator+"*'])"));
+       	}
+   	}
+    
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
     public  WebElement bookNowBtn;
 
