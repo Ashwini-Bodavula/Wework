@@ -2,12 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-14T21:33:50 IST" name="Web Suite" finished-at="2022-09-14T21:34:33 IST" duration-ms="43043">
+  <suite started-at="2022-09-18T21:26:19 IST" name="Web Suite" finished-at="2022-09-18T21:27:09 IST" duration-ms="49746">
     <groups>
+      <group name="CO">
+        <method signature="SelectDayPassTest.test01_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@363a52f]" name="test01_SelectDayPassInPune" class="sanity.SelectDayPassTest"/>
+      </group> <!-- CO -->
     </groups>
-    <test started-at="2022-09-14T21:33:50 IST" name="Web Tests" finished-at="2022-09-14T21:34:33 IST" duration-ms="43043">
-      <class name="sanity.ODAdminDashboardTest">
-        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-14T21:33:50 IST" name="startSession" finished-at="2022-09-14T21:33:55 IST" duration-ms="5468" status="PASS">
+    <test started-at="2022-09-18T21:26:19 IST" name="chrome Tests" finished-at="2022-09-18T21:27:09 IST" duration-ms="49746">
+      <class name="sanity.SelectDayPassTest">
+        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@363a52f]" started-at="2022-09-18T21:26:19 IST" name="startSession" finished-at="2022-09-18T21:26:28 IST" duration-ms="8927" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,26 +24,43 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[adminD]]>
+                <![CDATA[CO]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method signature="test05_shopSelectionPostpaid()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-14T21:33:55 IST" name="test05_shopSelectionPostpaid" description="Test05 - Verify User is able to select shop - postpaid." finished-at="2022-09-14T21:34:32 IST" duration-ms="37182" status="PASS">
+        <test-method signature="test01_SelectDayPassInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectDayPassTest@363a52f]" started-at="2022-09-18T21:26:29 IST" name="test01_SelectDayPassInPune" description="Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)" data-provider="PuneDayPassWorkspaces" finished-at="2022-09-18T21:27:08 IST" duration-ms="39566" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pune]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Magarpatta]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Panchshil Futura]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test05_shopSelectionPostpaid -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-14T21:34:32 IST" name="afterMethod" finished-at="2022-09-14T21:34:33 IST" duration-ms="251" status="PASS">
+        </test-method> <!-- test01_SelectDayPassInPune -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectDayPassTest@363a52f]" started-at="2022-09-18T21:27:08 IST" name="afterMethod" finished-at="2022-09-18T21:27:09 IST" duration-ms="894" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.ODAdminDashboardTest@6cce16f4]" started-at="2022-09-14T21:34:33 IST" name="closeSession" finished-at="2022-09-14T21:34:33 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectDayPassTest@363a52f]" started-at="2022-09-18T21:27:09 IST" name="closeSession" finished-at="2022-09-18T21:27:09 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.ODAdminDashboardTest -->
-    </test> <!-- Web Tests -->
+      </class> <!-- sanity.SelectDayPassTest -->
+    </test> <!-- chrome Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Web_Suite" class="navigator-link ">
-                    <span>TestngODAdmin.xml</span>
+                    <span>TestngCO.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Web_Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Web_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Web_Suite" title="sanity.ODAdminDashboardTest" class="method navigator-link" hash-for-method="test05_shopSelectionPostpaid">test05_shopSelectionPostpaid</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.SelectDayPassTest" class="method navigator-link" hash-for-method="test01_SelectDayPassInPune(Pune, Magarpatta, Panchshil Futura)">test01_SelectDayPassInPune(Pune, Magarpatta, Panchshil Futura)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Web_Suite -->
@@ -122,16 +122,17 @@
           <div class="suite-Web_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">sanity.ODAdminDashboardTest</span>
+              <span class="class-name">sanity.SelectDayPassTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test05_shopSelectionPostpaid">
-                  </a> <!-- test05_shopSelectionPostpaid -->
-                  <span class="method-name">test05_shopSelectionPostpaid</span>
+                  <a name="test01_SelectDayPassInPune(Pune, Magarpatta, Panchshil Futura)">
+                  </a> <!-- test01_SelectDayPassInPune(Pune, Magarpatta, Panchshil Futura) -->
+                  <span class="method-name">test01_SelectDayPassInPune</span>
+                  <span class="parameters">(Pune, Magarpatta, Panchshil Futura)</span>
                   <em>
-(Test05 - Verify User is able to select shop - postpaid.)                  </em>
+(Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass))                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -139,21 +140,21 @@
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/varsharyattinahalli/gitFolder/NewWework/Wework/TestngODAdmin.xml</span>
+            <span class="header-content">/Users/varsharyattinahalli/gitFolder/NewWework/Wework/TestngCO.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Web Tests&quot;&gt;
+&lt;suite thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;2&quot; parallel=&quot;methods&quot; name=&quot;chrome Tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;web&quot;/&gt;
-    &lt;parameter name=&quot;URL&quot; value=&quot;adminD&quot;/&gt;
+    &lt;parameter name=&quot;URL&quot; value=&quot;CO&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.ODAdminDashboardTest&quot;/&gt;
+      &lt;class name=&quot;sanity.SelectDayPassTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Web Tests --&gt;
+  &lt;/test&gt; &lt;!-- chrome Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -165,7 +166,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Web Tests (1 class)</span>
+                <span class="test-name">chrome Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -175,6 +176,14 @@
             <span class="header-content">Groups for Web Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">CO</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">test01_SelectDayPassInPune</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Web_Suite" class="panel">
@@ -193,14 +202,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test05_shopSelectionPostpaid')
-data.setCell(0, 2, 'sanity.ODAdminDashboardTest')
-data.setCell(0, 3, 37182);
+data.setCell(0, 1, 'test01_SelectDayPassInPune')
+data.setCell(0, 2, 'sanity.SelectDayPassTest')
+data.setCell(0, 3, 39566);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 37 seconds</span>
+              <span class="suite-total-time">Total running time: 39 seconds</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -226,22 +235,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.ODAdminDashboardTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.SelectDayPassTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">startSession(web, Chrome, adminD)</span>
+                <span class="method-name">startSession(web, Chrome, CO)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test05_shopSelectionPostpaid</span>
-                <span class="method-start">5538 ms</span>
+                <span class="method-name">test01_SelectDayPassInPune(Pune, Magarpatta, Panchshil Futura)</span>
+                <span class="method-start">9210 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">42757 ms</span>
+                <span class="method-start">48795 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">43010 ms</span>
+                <span class="method-start">49694 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

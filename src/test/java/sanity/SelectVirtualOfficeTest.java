@@ -23,15 +23,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.VirtualOfficeOptn);
+			click(WebLoading.selectWorkspace(4));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
@@ -56,15 +56,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.VirtualOfficeOptn);
+			click(WebLoading.selectWorkspace(4));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
@@ -88,15 +88,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.VirtualOfficeOptn);
+			click(WebLoading.selectWorkspace(4));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
@@ -120,15 +120,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.VirtualOfficeOptn);
+			click(WebLoading.selectWorkspace(4));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
@@ -152,15 +152,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.VirtualOfficeOptn);
+			click(WebLoading.selectWorkspace(4));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
@@ -190,8 +190,8 @@ public class SelectVirtualOfficeTest extends CommonOps
         click(WebLoading.select("Galaxy"));
         click(WebLoading.exploreBtn);
         String currentWindow = getWindowHandel();
-		scrollToElement(WebLoading.VirtualOfficeOptn);
-		String virtualOfficeBtn = WebLoading.VirtualOfficeOptn.getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace(4));
+		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
 		if(virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
@@ -247,8 +247,8 @@ public class SelectVirtualOfficeTest extends CommonOps
 	        click(WebLoading.closeIcon);
 	        WebFlows.logoutOfApplication();
 		}
-    }
-*/
+    }*/
+
 	@DataProvider(name="PuneVirtualOfficeWorkspaces")
 	public Object[][] puneVirtualOfficeWorkspaces()
 	{
