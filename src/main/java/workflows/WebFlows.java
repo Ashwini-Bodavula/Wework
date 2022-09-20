@@ -270,15 +270,39 @@ public class WebFlows extends CommonOps
 
 
 
+	 @Step("Fill the form going from header")
+	    public static void header_fillTheFormDetails() throws InterruptedException
+	    {
+	    	updateText(WebLoading.enter("Full name"), getData("Username"));
+			updateText(WebLoading.enter("Email"), getData("email"));
+			updateText(WebLoading.phnNumber, getData("phoneNumber"));
+			scrollToElement(WebLoading.adding("header"));
+			selectNoOfPeople(4,"header");
+//			selectDate(getData("year"), getData("month3"), getData("date1"));
+			scrollToElement(WebLoading.dateField);
+			WebFlows.enterDate(getData("date1"),getData("month"),getData("year"));
+//			Verifications.elementIsVisible(WebLoading.continueBtn);
+//			click(WebLoading.continueBtn);
+//			Verifications.elementIsVisible(WebLoading.thankyouText);
+//			String actualText = WebLoading.thankyouText.getText();
+//			Verifications.elementIsVisible(WebLoading.thankyouText);
+//			Verifications.verifyText(actualText, "Thank you for contacting WeWork");
+//			click(WebLoading.backToHomePageBtn);
+			mouseHover(WebLoading.closeIcon); //as the form is not submited and msg is not validated, clicking on close icon
+
+			
+	    }
+	 
 	 @Step("Fill the form")
 	    public static void fillTheFormDetails() throws InterruptedException
 	    {
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
 			updateText(WebLoading.enter("Email"), getData("email"));
 			updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
-			scrollToElement(WebLoading.plusIcon);
-			selectNoOfPeople(4);
+			scrollToElement(WebLoading.adding(""));
+			selectNoOfPeople(4,"");
 //			selectDate(getData("year"), getData("month3"), getData("date1"));
+			scrollToElement(WebLoading.dateField);
 			WebFlows.enterDate(getData("date1"),getData("month"),getData("year"));
 //			Verifications.elementIsVisible(WebLoading.continueBtn);
 //			click(WebLoading.continueBtn);
@@ -424,17 +448,24 @@ public class WebFlows extends CommonOps
 	   }
 
 	@Step ("Select number of people")
-    public static void selectNoOfPeople(int count)
+    public static void selectNoOfPeople(int count, String form)
     {
     	if(count == 1)
     	{
     		return;
     	}
-
+    	else{
+    		
     	for(int i=0;i<count;i++)
     	{
-    		click(WebLoading.plusIcon);
+    		click(WebLoading.adding(form));
     	}
+    	}
+//       else
+//    	   for(int i=0;i<count;i++)
+//       	{
+//       		click(WebLoading.plusIcon);
+//       	}   
 
     }
 

@@ -18,7 +18,7 @@ public class SelectConferenceRoomTest extends CommonOps
 {
 
 
-	@Test(description = "Test01 - Verify User is able to select conference room in Pune",dataProvider= "PuneConferenceRoomWorkspaces", groups= {"CO"})
+	@Test(description = "Test01 - Verify User is able to select conference room in Pune",dataProvider= "PuneConferenceRoomWorkspaces", groups= {"COD"})
     @Description("This test verifies that User is able to select conference room in Pune")
     public void test01_SelectConferenceRoomInPune(String city , String location, String buildingName) throws InterruptedException
 	{
