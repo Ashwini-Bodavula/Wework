@@ -268,9 +268,7 @@ public class WebFlows extends CommonOps
 
     }
 
-
-
-	 @Step("Fill the form going from header")
+ @Step("Fill the form going from header")
 	    public static void header_fillTheFormDetails() throws InterruptedException
 	    {
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
@@ -299,13 +297,10 @@ public class WebFlows extends CommonOps
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
 			updateText(WebLoading.enter("Email"), getData("email"));
 			updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
-			scrollToElement(WebLoading.plusIcon);
-			selectNoOfPeople(4);
-//			selectDate(getData("year"), getData("month3"), getData("date1"));
 			scrollToElement(WebLoading.adding(""));
 			selectNoOfPeople(4,"");
 //			selectDate(getData("year"), getData("month3"), getData("date1"));
-			scrollToElement(WebLoading.dateField); 
+			scrollToElement(WebLoading.dateField);
 			WebFlows.enterDate(getData("date1"),getData("month"),getData("year"));
 //			Verifications.elementIsVisible(WebLoading.continueBtn);
 //			click(WebLoading.continueBtn);
@@ -318,6 +313,8 @@ public class WebFlows extends CommonOps
 
 			
 	    }
+
+	 
 
     @Step("Fill the Enterprise form")
     public static void fillEnterpriseFormDetails() throws InterruptedException
