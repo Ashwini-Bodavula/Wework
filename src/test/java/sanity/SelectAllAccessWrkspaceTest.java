@@ -15,7 +15,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectAllAccessWrkspaceTest extends CommonOps
 {
-	@Test(priority = 0, description = "Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneAllAccessWorkspace", groups= {"CO"})
+	@Test(priority = 0, description = "Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneAllAccessWorkspace", groups= {"COD"})
 	//@Description("This test verifies that User is able to select all access in Pune. (Scroll down in home page and select workspaces)")
 	public void test01_SelectAllAccessInPune(String city, String location, String buildingName)
 			throws InterruptedException
