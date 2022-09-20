@@ -14,7 +14,7 @@ import workflows.WebFlows;
 public class SelectEventsAndWorkspacesTest extends CommonOps
 {
 
-	@Test(description = "Test01 - Verify User is able to select Events and workspaces", groups= {"CO"})
+	@Test(description = "Test01 - Verify User is able to select Events and workspaces", groups= {"COD"})
     @Description("This test verifies that User is able to select Events and workspaces")
     public void test01_SelectEventsAndWorkspaces() throws InterruptedException
     {	

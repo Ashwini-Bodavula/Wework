@@ -21,7 +21,7 @@ import workflows.WebFlows;
 public class SelectSubscriptionsTest extends CommonOps
 {
 
-	@Test(description = "Test01 - Verify User is able to select subscriptions" ,dataProvider = "Subscriptions", groups= {"CO"})
+	@Test(description = "Test01 - Verify User is able to select subscriptions" ,dataProvider = "Subscriptions", groups= {"COD"})
     @Description("This test verifies that User is able to select subscriptions")
     public void test01_SelectSubscriptions(String workspaceType , String headerText) throws InterruptedException
     {
