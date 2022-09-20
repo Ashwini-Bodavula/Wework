@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-19T17:12:02 IST" name="Web Suite" finished-at="2022-09-19T17:12:44 IST" duration-ms="42645">
+  <suite name="Web Suite" duration-ms="65834" started-at="2022-09-20T11:56:00 IST" finished-at="2022-09-20T11:57:05 IST">
     <groups>
       <group name="CO">
-        <method signature="SelectEventsAndWorkspacesTest.test01_SelectEventsAndWorkspaces()[pri:0, instance:sanity.SelectEventsAndWorkspacesTest@ca30bc1]" name="test01_SelectEventsAndWorkspaces" class="sanity.SelectEventsAndWorkspacesTest"/>
+        <method signature="SelectAllAccessWrkspaceTest.test01_SelectAllAccessInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@799f10e1]" name="test01_SelectAllAccessInPune" class="sanity.SelectAllAccessWrkspaceTest"/>
       </group> <!-- CO -->
     </groups>
-    <test started-at="2022-09-19T17:12:02 IST" name="chrome Tests" finished-at="2022-09-19T17:12:44 IST" duration-ms="42645">
-      <class name="sanity.SelectEventsAndWorkspacesTest">
-        <test-method is-config="true" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectEventsAndWorkspacesTest@ca30bc1]" started-at="2022-09-19T17:12:02 IST" name="startSession" finished-at="2022-09-19T17:12:12 IST" duration-ms="10599" status="PASS">
+    <test name="chrome Tests" duration-ms="65834" started-at="2022-09-20T11:56:00 IST" finished-at="2022-09-20T11:57:05 IST">
+      <class name="sanity.SelectAllAccessWrkspaceTest">
+        <test-method status="PASS" signature="startSession(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@799f10e1]" name="startSession" is-config="true" duration-ms="17227" started-at="2022-09-20T11:56:00 IST" finished-at="2022-09-20T11:56:17 IST">
           <params>
             <param index="0">
               <value>
@@ -31,19 +31,36 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startSession -->
-        <test-method signature="test01_SelectEventsAndWorkspaces()[pri:0, instance:sanity.SelectEventsAndWorkspacesTest@ca30bc1]" started-at="2022-09-19T17:12:12 IST" name="test01_SelectEventsAndWorkspaces" description="Test01 - Verify User is able to select Events and workspaces" finished-at="2022-09-19T17:12:43 IST" duration-ms="30785" status="PASS">
+        <test-method status="PASS" signature="test01_SelectAllAccessInPune(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@799f10e1]" name="test01_SelectAllAccessInPune" duration-ms="48238" started-at="2022-09-20T11:56:17 IST" description="Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces)" data-provider="PuneAllAccessWorkspace" finished-at="2022-09-20T11:57:05 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Pune]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kharadi]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[World Trade Center]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test01_SelectEventsAndWorkspaces -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sanity.SelectEventsAndWorkspacesTest@ca30bc1]" started-at="2022-09-19T17:12:43 IST" name="afterMethod" finished-at="2022-09-19T17:12:44 IST" duration-ms="973" status="PASS">
+        </test-method> <!-- test01_SelectAllAccessInPune -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@799f10e1]" name="afterMethod" is-config="true" duration-ms="165" started-at="2022-09-20T11:57:05 IST" finished-at="2022-09-20T11:57:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="closeSession()[pri:0, instance:sanity.SelectEventsAndWorkspacesTest@ca30bc1]" started-at="2022-09-19T17:12:44 IST" name="closeSession" finished-at="2022-09-19T17:12:44 IST" duration-ms="1" status="PASS">
+        <test-method status="PASS" signature="closeSession()[pri:0, instance:sanity.SelectAllAccessWrkspaceTest@799f10e1]" name="closeSession" is-config="true" duration-ms="1" started-at="2022-09-20T11:57:05 IST" finished-at="2022-09-20T11:57:05 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeSession -->
-      </class> <!-- sanity.SelectEventsAndWorkspacesTest -->
+      </class> <!-- sanity.SelectAllAccessWrkspaceTest -->
     </test> <!-- chrome Tests -->
   </suite> <!-- Web Suite -->
 </testng-results>

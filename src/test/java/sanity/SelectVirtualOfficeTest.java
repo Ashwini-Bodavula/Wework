@@ -15,7 +15,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectVirtualOfficeTest extends CommonOps
 {
-	@Test(description = "Test01 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces",groups= {"CO"})
+	@Test(description = "Test01 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces",groups= {"COD"})
     @Description("This test verifies that User is able to Select virtual office in Pune")
     public void test01_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName , String workspaceLocation) throws InterruptedException
     {

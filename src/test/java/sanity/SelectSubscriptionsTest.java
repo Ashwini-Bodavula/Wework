@@ -32,7 +32,7 @@ public class SelectSubscriptionsTest extends CommonOps
     	if(headerTextBox.contains(headerText))
     	{
     		WebFlows.selectLocationAndBuilding();
-        	WebFlows.fillTheFormDetails();
+        	WebFlows.header_fillTheFormDetails();
     	}
     	else
     	{
