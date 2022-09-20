@@ -128,7 +128,7 @@ public class webLoading extends CommonOps{
        	else
        	{
        		return driver.findElement(By.xpath("(//input[@placeholder='"+locator+"*'])"));
-       	}
+      	}
    	}
     
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Book Now')]")
@@ -161,9 +161,24 @@ public class webLoading extends CommonOps{
     @FindBy(how = How.XPATH, using = "//input[@placeholder='Phone number*']")
     public WebElement phnNumber;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
-    public WebElement plusIcon;
+//    @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
+//    public WebElement HeaderplusIcon;
+//
+//    @FindBy(how = How.XPATH, using = "(//div[contains(text(),'+')])[2]")
+//    public WebElement plusIcon;
 
+    public WebElement adding(String locator)
+   	{
+       	if(locator.equals("header"))
+       	{
+       		return driver.findElement(By.xpath("//div[contains(text(),'+')]"));
+       	}
+       	else
+       	{
+       		return driver.findElement(By.xpath("(//div[contains(text(),'+')])[2]"));
+      	}
+   	}
+    
     @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='CalendarIcon']")
     public WebElement calendarIcon;
 

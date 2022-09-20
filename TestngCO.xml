@@ -6,9 +6,9 @@
         <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="CO"></parameter>
         <classes>
-           
-          
-           <class name="sanity.SelectEventsAndWorkspacesTest"/>  
+                   
+              
+          <class name="sanity.SelectAllAccessWrkspaceTest"/>
                
         </classes>
     </test>   
