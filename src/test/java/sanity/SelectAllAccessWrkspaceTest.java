@@ -23,14 +23,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace("All Access").getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(3));
+			click(WebLoading.selectWorkspace("All Access"));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))

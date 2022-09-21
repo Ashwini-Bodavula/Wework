@@ -23,15 +23,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.selectWorkspace(4));
-		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace("Virtual Office"));
+		String virtualOfficeBtn = WebLoading.selectWorkspace("Virtual Office").getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(4));
+			click(WebLoading.selectWorkspace("Virtual Office"));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();

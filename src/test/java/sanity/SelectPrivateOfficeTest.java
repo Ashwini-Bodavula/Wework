@@ -3,6 +3,10 @@ package sanity;
 import static extensions.UIActions.click;
 import static extensions.UIActions.mouseHover;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
@@ -23,15 +27,18 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+//		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		
+		String privateOfficeBtn = WebLoading.selectWorkspace("Ready-to-move-in private offices").getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.selectWorkspace("Ready-to-move-in private offices"));
+//			click(WebLoading.selectWorkspace(1));
+			String privateOfficeSelected = WebLoading.selectWorkspace("Ready-to-move-in private offices").getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);

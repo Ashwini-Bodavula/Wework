@@ -26,13 +26,13 @@ public class SelectConferenceRoomTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String conferenceRoomOptn = WebLoading.selectWorkspace(6).getAttribute("class");
+		String conferenceRoomOptn = WebLoading.selectWorkspace("Conference room").getAttribute("class");
 		if (conferenceRoomOptn.contains("disabled")) {
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(6));
+			click(WebLoading.selectWorkspace("Conference room"));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = ConferenceRoom.conferenceRoomHeader.getText();
 			if (subscriptionType.contains("Conference Room"))

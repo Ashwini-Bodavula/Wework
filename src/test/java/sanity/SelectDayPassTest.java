@@ -23,7 +23,7 @@ public class SelectDayPassTest extends CommonOps
 {
 
 
-	@Test(description = "Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
+/*	@Test(description = "Test01 - Verify User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)",dataProvider = "PuneDayPassWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to select day pass in Pune. (In  home page navigate to workspaces and select day pass)")
 	@Step("Test steps")
     public void test01_SelectDayPassInPune(String city , String location, String buildingName) throws InterruptedException
@@ -32,7 +32,7 @@ public class SelectDayPassTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.selectWorkspace(5).getAttribute("class");
+		String DayPassOptnBtn = WebLoading.selectWorkspace("Day pass").getAttribute("class");
 		if (DayPassOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
@@ -43,61 +43,126 @@ public class SelectDayPassTest extends CommonOps
 			Assert.assertEquals(bookNowBtnBeforeClick, false);
 			loadTime(1);
 
-			click(WebLoading.selectWorkspace(5));
-			String DayPassSelected = WebLoading.selectWorkspace(5).getAttribute("class");
+			click(WebLoading.selectWorkspace("Day pass"));
+			String DayPassSelected = WebLoading.selectWorkspace("Day pass").getAttribute("class");
 			if(DayPassSelected.contains("card_selected"))
 			{
 				loadTime(1);
 				boolean bookNowBtnAfterClick = WebLoading.bookNowBtn.isEnabled();
 				Assert.assertEquals(bookNowBtnAfterClick, true);
 				click(WebLoading.bookNowBtn);
-
-//				String daypaassHeader = DayPass.dayPassHeader.getText();
-//				if(daypaassHeader.contains(buildingName))
-//				{
-
-					Assert.assertTrue(true, "Building name is matching");
-					boolean ContinuebtnBeforeClick = DayPass.continueBtn.isEnabled();
-					Assert.assertEquals(ContinuebtnBeforeClick, false);
-					
-					 click(DayPass.selectDates);
-					WebFlows.selectDate(getData("month3"),getData("date3"));
-					click(DayPass.applyButton);
+				Verifications.elementIsVisible(DayPass.selectDates);
+				scrollToElement(DayPass.selectDates);
+				mouseHover(DayPass.selectDates);
+				WebFlows.selectDate(getData("month3"),getData("date3"));
+				click(DayPass.applyButton);
 
 					WebFlows.addTeamMemberForDayPass(getData("teamMember1"),getData("teamMember1Email"));
 					if(DayPass.errorMsgForAddingSameMember.isDisplayed())
 			    	{
 				    	String errorMsg = DayPass.errorMsgForAddingSameMember.getText();
 				    	Assert.assertEquals("Team member with this email ID already exists in this team", errorMsg);
+				    	loadTime(4);
+				    	Thread.sleep(1000);
+				    	Verifications.elementIsVisible(DayPass.closeMemberBtn);
+				    	scrollToElement(DayPass.closeMemberBtn);
 				    	click(DayPass.closeMemberBtn);
 				    	loadTime(4);
 			    	}
 					loadTime(1);
-					boolean ContinuebtnAfterClick = DayPass.continueBtn.isEnabled();
-					Assert.assertEquals(ContinuebtnAfterClick, true);
+					Thread.sleep(2000);
+					scrollToElement(DayPass.continueBtn);
 					click(DayPass.continueBtn);
 					click(DayPass.editButton);
 					WebFlows.selectUser(getData("teamMember1"));
 					click(DayPass.continueBtn);
 					WebFlows.deleteUser(getData("teamMember1"));
-					scrollToElement(DayPass.confirmAndPayBtn);
-			       	click(DayPass.confirmAndPayBtn);
-			       	Thread.sleep(4000);
-//					WebFlows.verifyPriceBreakupForDayPass();
-//			        WebFlows.proceedWithPayment();
-//			        UIActions.closeCurrentWindow();
-//			        switchToParentWindow(currentWindow);
-//			        Verifications.elementIsVisible(WebLoading.closeIcon);
-//			        click(WebLoading.closeIcon);
-//				}
-//				else
-//				{
-//					Assert.assertTrue(false, "Building name is not matching");
-//				}
+					
+					boolean pricebreakupVerified = WebFlows.verifyPriceBreakupForDayPass();
+					
+					if(pricebreakupVerified == true)
+					{
+						scrollToElement(DayPass.confirmAndPayBtn);
+						click(DayPass.confirmAndPayBtn);
+						String PaymentWindow = getWindowHandels();
+						switchToParentWindow(PaymentWindow);
+//						WebFlows.proceedWithPayment();
+				        UIActions.closeCurrentWindow();
+				        switchToParentWindow(currentWindow);
+				        Verifications.elementIsVisible(WebLoading.closeIcon);
+				        click(WebLoading.closeIcon);
+					}
+				}
+				else
+				{
+					Assert.assertTrue(false, "Building name is not matching");
+				}
 			}
-		}
-//		WebFlows.logoutOfApplication();
+		
+		WebFlows.logoutOfApplication();
     }
+*/    
+    
+ 	@Test(description = "Test06 - Verify User is able to select day pass for others. (In  home page navigate to workspaces and select day pass)",dataProvider = "MumbaiWorkspaces", groups= {"CO"})
+    @Description("This test verifies that User is able to select day pass for others. (In  home page navigate to workspaces and select day pass)")
+    public void test06_SelectDayPassForTeamMember(String city , String location, String buildingName) throws InterruptedException
+    {
+ 		//WebFlows.loadWebsite();
+ 				WebFlows.loginToApplication();
+ 				WebFlows.selectWorkspace(city, location, buildingName);
+ 				String currentWindow = getWindowHandel();
+ 				String DayPassOptnBtn = WebLoading.selectWorkspace("Day pass").getAttribute("class");
+ 				if (DayPassOptnBtn.contains("disabled"))
+ 				{
+ 					mouseHover(WebLoading.closeIcon);
+
+ 				} else
+ 				{
+ 					boolean bookNowBtnBeforeClick = WebLoading.bookNowBtn.isEnabled();
+ 					Assert.assertEquals(bookNowBtnBeforeClick, false);
+ 					loadTime(1);
+
+ 					click(WebLoading.selectWorkspace("Day pass"));
+ 					String DayPassSelected = WebLoading.selectWorkspace("Day pass").getAttribute("class");
+ 					if(DayPassSelected.contains("card_selected"))
+ 					{
+ 						loadTime(1);
+ 						boolean bookNowBtnAfterClick = WebLoading.bookNowBtn.isEnabled();
+ 						Assert.assertEquals(bookNowBtnAfterClick, true);
+ 						click(WebLoading.bookNowBtn);
+ 						Verifications.elementIsVisible(DayPass.selectDates);
+ 						scrollToElement(DayPass.selectDates);
+ 						mouseHover(DayPass.selectDates);
+ 						WebFlows.selectDate(getData("month3"),getData("date3"));
+ 						click(DayPass.applyButton);
+ 							scrollToElement(DayPass.continueBtn);
+ 							click(DayPass.continueBtn);
+ 							click(DayPass.editButton);
+ 							WebFlows.selectUser(getData("teamMember1"));
+ 							click(DayPass.continueBtn);
+ 							boolean pricebreakupVerified = WebFlows.verifyPriceBreakupforTeamMember();
+ 							if(pricebreakupVerified == true)
+ 							{
+ 								scrollToElement(DayPass.confirmAndPayBtn);
+ 								click(DayPass.confirmAndPayBtn);
+ 								String PaymentWindow = getWindowHandels();
+ 								switchToParentWindow(PaymentWindow);
+// 								WebFlows.proceedWithPayment();
+ 						        UIActions.closeCurrentWindow();
+ 						        switchToParentWindow(currentWindow);
+ 						        Verifications.elementIsVisible(WebLoading.closeIcon);
+ 						        click(WebLoading.closeIcon);
+ 							}
+ 						}
+ 						else
+ 						{
+ 							Assert.assertTrue(false, "Building name is not matching");
+ 						}
+ 					}
+ 				
+ 				WebFlows.logoutOfApplication();
+    }
+
 
 
 /*	@Test(description = "Test02 - Verify User is able to select day pass in Hyderabad. (In  home page navigate to workspaces and select day pass)",dataProvider = "HyderabadDayPassWorkspaces",groups= {"CO"})
@@ -267,80 +332,11 @@ public class SelectDayPassTest extends CommonOps
 		}
 		WebFlows.logoutOfApplication();
     }
+*/
 
 
-	@Test(description = "Test06 - Verify User is able to select day pass for others. (In  home page navigate to workspaces and select day pass)",dataProvider = "MumbaiWorkspaces", groups= {"CO"})
-    @Description("This test verifies that User is able to select day pass for others. (In  home page navigate to workspaces and select day pass)")
-    public void test06_SelectDayPassForTeamMember(String city , String location, String buildingName) throws InterruptedException
-    {
-		//WebFlows.loadWebsite();
-		WebFlows.loginToApplication();
-		WebFlows.selectWorkspace(city, location, buildingName);
-		String currentWindow = getWindowHandel();
-		String DayPassOptnBtn = WebLoading.dayPassBtn.getAttribute("class");
-		if (DayPassOptnBtn.contains("disabled"))
-		{
-			mouseHover(WebLoading.closeIcon);
 
-		} else
-		{
-			click(WebLoading.dayPassBtn);
-			click(WebLoading.bookNowBtn);
-			String daypaassHeader = DayPass.dayPassHeader.getText();
-			if(daypaassHeader.contains(buildingName))
-			{
-				Assert.assertTrue(true, "Building name is matching");
-				WebFlows.selectDate(getData("month1"), getData("date1"));
-				click(DayPass.continueBtn);
-				loadTime(2);
-
-				//delete the existing member
-				click(DayPass.deleteMemberBtn);
-				loadTime(4);
-
-				//add same member twice and validate for error message
-				WebFlows.addTeamMemberForDayPass(getData("teamMember1"),getData("teamMember1Email"));
-				WebFlows.addTeamMemberForDayPass(getData("teamMember1"),getData("teamMember1Email"));
-		    	Verifications.elementIsVisible(DayPass.errorMsgForAddingSameMember);
-		    	if(DayPass.errorMsgForAddingSameMember.isDisplayed())
-		    	{
-			    	String errorMsg = DayPass.errorMsgForAddingSameMember.getText();
-			    	Assert.assertEquals("Team member with this email ID already exists in this team", errorMsg);
-			    	click(DayPass.closeMemberBtn);
-			    	loadTime(4);
-		    	}
-		    	click(DayPass.deleteMemberBtn);
-		    	loadTime(4);
-
-				//Add new member
-				WebFlows.addTeamMemberForDayPass(getData("teamMember2"),getData("teamMember2Email"));
-				List<WebElement> members = driver.findElements(By.xpath("//label[contains(@class,'checkbox')]"));
-				loadTime(2);
-				for (WebElement member : members) {
-					if(member.getText().contains(getData("user")))
-					{
-						mouseHover(member); //deselect the user
-						break;
-					}
-				}
-				loadTime(2);
-				WebFlows.verifyPriceBreakupforTeamMember(getData("teamMember2"));
-				WebFlows.proceedWithPayment();
-				UIActions.closeCurrentWindow();
-				switchToParentWindow(currentWindow);
-				Verifications.elementIsVisible(WebLoading.closeIcon);
-				click(WebLoading.closeIcon);
-			}
-			else
-			{
-				Assert.assertTrue(false, "Building name is not matching");
-			}
-		}
-		WebFlows.logoutOfApplication();
-    }
-
-
-	@Test(description = "Test07 - Verify User is able to select day pass and Conference room for Team. (In  home page navigate to workspaces and select day pass)",dataProvider = "MumbaiWorkspaces", groups= {"CO"})
+/*	@Test(description = "Test07 - Verify User is able to select day pass and Conference room for Team. (In  home page navigate to workspaces and select day pass)",dataProvider = "MumbaiWorkspaces", groups= {"CO"})
     @Description("This test verifies that User is able to select day pass and Conference room for Team (In  home page navigate to workspaces and select day pass)")
     public void test07_SelectDayPassAndConferenceRoomForTeam(String city , String location, String buildingName) throws InterruptedException
     {

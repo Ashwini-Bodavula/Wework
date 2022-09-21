@@ -1,5 +1,7 @@
 package pageObjects.web;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,7 +44,7 @@ public class EventsPage extends CommonOps
 	
 	public WebElement selectlocation(String locator) 
 	{
-		return driver.findElement(By.xpath("//li[contains(text(),'"+locator+"')]"));
+		return driver.findElement(By.xpath("//li[@data-value='"+locator+"']"));
 	}
 	
 	public WebElement selectRadioBtn(int index) 
@@ -53,11 +55,16 @@ public class EventsPage extends CommonOps
     @FindBy(how = How.XPATH, using = "//div[contains(text(),'+')]")
     public WebElement plusIcon;
     
-    public WebElement selectdropDown(int index) 
-	{
-		return driver.findElement(By.xpath("(//div[@aria-haspopup='listbox'])["+index+"]"));
+    public WebElement selectdropDown(String locator) 
+	{		
+		return driver.findElement(By.xpath("//label[contains(text(),'"+locator+"')]/following-sibling::div//*[name()='svg'][@data-testid='ArrowDropDownIcon']"));		
 	}
-   
+    
+    public WebElement selectRadioButton(String locator, String value)
+   	{
+    	return driver.findElement(By.xpath("//div/p[contains(text(),'"+locator+"')]/following-sibling::div/div/label/span/input[@value='"+value+"']/following-sibling::span//*[name()='svg'][1]"));  		
+   	}
+    
     @FindBy(how = How.XPATH, using = "//li[contains(text(),'Workshops')]")
     public WebElement selectWorkshops;
     

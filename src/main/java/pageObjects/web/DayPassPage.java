@@ -41,7 +41,7 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "//h4[contains(text(),'Day Pass at')]")
     public WebElement dayPassHeader;
 
-    @FindBy(how = How.XPATH, using = "//div[contains(@class,'priceBreakupContainer')]")
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'MuiGrid-grid-xs-12 sc-iJKOTD fjqLWR css-15j76c0')]")
     public WebElement priceBreakupContainer;
 
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'+ Add Member')]")
@@ -56,7 +56,7 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Save')]")
     public WebElement saveBtn;
 
-    @FindBy(how = How.XPATH, using = "(//button[contains(@class,'ray-button--compact')])[3]")
+    @FindBy(how = How.XPATH, using = "//button[contains(text(),'Save')]/following-sibling::button")
     public WebElement closeMemberBtn;
 
     @FindBy(how = How.XPATH, using = "(//button[contains(@class,'ray-button--compact')])[1]")
@@ -83,6 +83,8 @@ public class DayPassPage  extends CommonOps
     @FindBy(how = How.XPATH, using = "(//button[contains(@class,'action_btns')])[1]")
     public WebElement editButton;
     
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'total_price')] //div[2]")
+    public WebElement totalPrice;
   
   
 }

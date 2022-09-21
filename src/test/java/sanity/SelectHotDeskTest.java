@@ -24,14 +24,14 @@ public class SelectHotDeskTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String hotdeskOptnBtn = WebLoading.selectWorkspace(2).getAttribute("class");
+		String hotdeskOptnBtn = WebLoading.selectWorkspace("Hot desk").getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(2));
+			click(WebLoading.selectWorkspace("Hot desk"));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 	    	if(subscriptionType.equals("Hot Desk"))
