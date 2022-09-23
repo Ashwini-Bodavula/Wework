@@ -16,7 +16,7 @@ import static extensions.UIActions.*;
 public class WebODMyAccountTest extends CommonOps {
 
 
-		/* @Test(description = "Test01 - Verify User is able to change profile data", groups= {"OD"})
+		 @Test(description = "Test01 - Verify User is able to change profile data", groups= {"OD"})
 			 
 	    @Description("This test verifies that User chnages and profile ")
 	    public void test01_Changeprofile() throws InterruptedException{
@@ -174,5 +174,5 @@ public void test05_NavRefer() throws InterruptedException{
         Day_flt=MyAcc.Daypass_filter.getAttribute("value");
         Assert.assertEquals(Day_flt, "CONFERENCE_ROOM");
          WebFlows.ODlogout();
-   }  	*/ 
+   }  	 
 }
