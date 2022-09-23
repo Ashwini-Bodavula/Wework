@@ -268,9 +268,7 @@ public class WebFlows extends CommonOps
 
     }
 
-
-
-	 @Step("Fill the form going from header")
+ @Step("Fill the form going from header")
 	    public static void header_fillTheFormDetails() throws InterruptedException
 	    {
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
@@ -315,6 +313,8 @@ public class WebFlows extends CommonOps
 
 			
 	    }
+
+	 
 
     @Step("Fill the Enterprise form")
     public static void fillEnterpriseFormDetails() throws InterruptedException
