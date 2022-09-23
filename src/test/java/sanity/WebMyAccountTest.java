@@ -9,25 +9,40 @@ import org.testng.annotations.Test;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
+import workflows.MyAccount;
 import workflows.WebFlows;
 import static extensions.UIActions.*;
 
 @Listeners(utilities.Listeners.class)
-public class WebODMyAccountTest extends CommonOps {
+public class WebMyAccountTest extends CommonOps {
 
 
-		/* @Test(description = "Test01 - Verify User is able to change profile data", groups= {"OD"})
-			 
+	/*	@Test(description = "Test01 - Verify User is able to view all bookings", groups= {"OD"})			 
 	    @Description("This test verifies that User chnages and profile ")
-	    public void test01_Changeprofile() throws InterruptedException{
+	    public void test01_dashboardviewAll() throws InterruptedException{
 
-	    	WebFlows.ODLogin();
-         	click(WebODLogin.Hamberger);
-	    	WebFlows.profile();
-	        WebFlows.ODlogout();
-	    	}
+	    	WebFlows.loginToApplication();        	
+	    	MyAccount.dashboardViewAll();
+	        WebFlows.logoutOfApplication();
+	    	}*/
 
+		 @Test(description = "Test01 - Verify User is able to view all bookings", groups= {"OD"})		 
+		 @Description("This test verifies that User chnages and profile ")
+		 public void test01_dashboardviewdetails() throws InterruptedException{
 
+		    	WebFlows.loginToApplication();         	
+		    	MyAccount.dashboardViewdetails();
+		        WebFlows.logoutOfApplication();
+		    	}
+
+		 /*		 @Test(description = "Test01 - Verify User is able to view all bookings", groups= {"OD"})		 
+		 @Description("This test verifies that User chnages and profile ")
+		 public void test01_profile() throws InterruptedException{
+
+		    	WebFlows.loginToApplication();         	
+		    	MyAccount.profile();
+		        WebFlows.logoutOfApplication();
+		    	}
 	 @Test(description = "Test02 - Verify User profile details", groups= {"OD"})
 	    @Description("This test verifies that User details are as given")
 
@@ -174,5 +189,5 @@ public void test05_NavRefer() throws InterruptedException{
         Day_flt=MyAcc.Daypass_filter.getAttribute("value");
         Assert.assertEquals(Day_flt, "CONFERENCE_ROOM");
          WebFlows.ODlogout();
-   }  	*/ 
+   }  	 */
 }

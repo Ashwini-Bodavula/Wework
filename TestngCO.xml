@@ -4,12 +4,11 @@
         <test name="chrome Tests">
         <parameter name="platformName" value="web" />
         <parameter name="browser" value="Chrome"></parameter>        
-          <parameter name="URL" value="CO"></parameter>
+          <parameter name="URL" value="COD"></parameter>
         <classes>
-                   
-              
-          <class name="sanity.SelectAllAccessWrkspaceTest"/>
-               
+                                
+          
+           <class name="sanity.WebMyAccountTest"/>      
         </classes>
     </test>   
    

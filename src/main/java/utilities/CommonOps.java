@@ -141,12 +141,13 @@ public class CommonOps extends Base {
 //        WebDriver driver = new ChromeDriver();
 
         ChromeOptions options = new ChromeOptions();
-   
+
         options.setHeadless(true);
+
        	options.addArguments("disable-dev-shm-usage"); 
        	options.addArguments("no-sandbox");
         options.addArguments("--disable-gpu");
-    	options.addArguments("window-size=1800,1800");
+      	options.addArguments("window-size=1800,1800");
         WebDriver driver = new ChromeDriver(options);
         
 //       	options.addArguments("USER AGENT");
