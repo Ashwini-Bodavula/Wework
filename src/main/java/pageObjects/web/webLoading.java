@@ -1,5 +1,7 @@
 package pageObjects.web;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -89,35 +91,26 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//button[text()='Explore Solutions']")
     public WebElement exploreBtn;
+ 
     
-    public WebElement selectWorkspace(int locator)
+    public WebElement selectWorkspace(String locator)
    	{
-   		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])["+locator+"]"));
+    	int i=0;
+    	int j =0;
+    	 List<WebElement> workspaceList = driver.findElements(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])"));
+    		for(i =0; i<workspaceList.size();i++)
+    		{
+    			if(workspaceList.get(i).getText().contains(locator))
+    			{
+    				j = i+1;
+    				break;
+    			}
+    		}
+    	
+   		return driver.findElement(By.xpath("(//div[contains(@class,'MuiGrid-grid-md-3.7')])["+j+"]"));
 
    	}
-
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[1]")
-//    public WebElement privateOfficeOptn;
-//
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[2]")
-//    public WebElement hotDeskOptn;
-//
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[3]")
-//    public WebElement AllAccessOptn;
-//
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[4]")
-//    public WebElement VirtualOfficeOptn;
-//
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[5]")
-//    public WebElement dayPassBtn;
-//
-//    @FindBy(how = How.XPATH, using = "(//div[contains(@class,'MuiGrid-grid-md-3.7')])[6]")
-//    public WebElement conferenceRoomOptn;
-
-   // @FindBy(how = How.XPATH, using = "//p[contains(text(),'Virtual Office')]")
-   // public WebElement VirtualOfficeOptn;
-
-
+    
 
     public WebElement enter(String locator)
    	{
@@ -178,7 +171,7 @@ public class webLoading extends CommonOps{
        		return driver.findElement(By.xpath("(//div[contains(text(),'+')])[2]"));
       	}
    	}
-    
+  
     @FindBy(how = How.XPATH, using = "//*[name()='svg'][@data-testid='CalendarIcon']")
     public WebElement calendarIcon;
 
@@ -197,8 +190,6 @@ public class webLoading extends CommonOps{
 
     @FindBy(how = How.XPATH, using = "//button[@title='Next month']")
     public WebElement rightArrowBtn;
-
-
 
     @FindBy(how = How.XPATH, using = "//button[text()='30']")
     public WebElement clickOnDate;
