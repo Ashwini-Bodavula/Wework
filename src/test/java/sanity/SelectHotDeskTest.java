@@ -16,7 +16,7 @@ import workflows.WebFlows;
 
 public class SelectHotDeskTest extends CommonOps
 {
-	@Test(description = "Test01 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces",groups= {"COD"})
+	@Test(description = "Test01 - Verify User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneHotdeskWorkspaces",groups= {"CO"})
 	@Description("This test verifies that User is able to select Hotdesk in Pune. (Scroll down in home page and select workspaces)")
 	public void test01_SelectHotdeskInPune(String city, String location, String buildingName)
 			throws InterruptedException
@@ -24,14 +24,14 @@ public class SelectHotDeskTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String hotdeskOptnBtn = WebLoading.selectWorkspace(2).getAttribute("class");
+		String hotdeskOptnBtn = WebLoading.selectWorkspace("Hot desk").getAttribute("class");
 		if (hotdeskOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(2));
+			click(WebLoading.selectWorkspace("Hot desk"));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 	    	if(subscriptionType.equals("Hot Desk"))
