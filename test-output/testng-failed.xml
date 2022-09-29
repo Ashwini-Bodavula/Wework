@@ -8,9 +8,9 @@
     <classes>
       <class name="sanity.WebMyAccountTest">
         <methods>
-          <include name="test01_dashboardviewdetails"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
+          <include name="test05_TeamMember"/>
           <include name="startSession"/>
         </methods>
       </class> <!-- sanity.WebMyAccountTest -->

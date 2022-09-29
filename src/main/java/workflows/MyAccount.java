@@ -5,6 +5,7 @@ import static extensions.UIActions.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -61,22 +62,20 @@ public class MyAccount extends CommonOps
 	
 	@Step("Dashboard subscriptions")
 	public static void dashboard_active() throws InterruptedException
-	{   String title;
+	{   String title, text;
 		scrollToElement(WebLoading.accountDropdown);
     	click(WebLoading.accountDropdown);
     	click(MyAcc.MyAccount);
     	title=MyAcc.pagetitle.getText();
     	Assert.assertEquals(title,"Dashboard");	
     	
-    	title=MyAcc.activesub.getText();
-   		Assert.assertEquals(title,"No active subscriptions yet!");	
-   		if(title.equals("No active subscriptions yet!"))  
+    	text=MyAcc.activesub.getText();
+   		Assert.assertEquals(text,"No active subscriptions yet!");	
+   		if(text.equals("No active subscriptions yet!"))  
    		{
    			click(MyAcc.buyNow);
    		}
-   		scrollToElement(WebLoading.accountDropdown);
-    	click(WebLoading.accountDropdown);
-    	click(MyAcc.MyAccount);
+   		
 	}
 	
 	@Step("verify profile")
@@ -88,17 +87,17 @@ public class MyAccount extends CommonOps
         click(MyAcc.profile);
         title=MyAcc.pagetitle.getText();
         Assert.assertEquals(title,"Profile");
-        clearTextBox(MyAcc.Name);
+        deleteText(MyAcc.Name);       
         updateText(MyAcc.Name, getData("Name"));
-        clearTextBox(MyAcc.Phone);
+        deleteText(MyAcc.Phone);      
         updateText(MyAcc.Phone, getData("Phone"));
-        clearTextBox(MyAcc.GSTIN);
+        deleteText(MyAcc.GSTIN);
         updateText(MyAcc.GSTIN, getData("GSTIN"));
-        click(MyAcc.save);
-  //    loadTime(3);
+        loadTime(3);
+        scrollToElement(MyAcc.save); 
+        click(MyAcc.save);     
         String msg=MyAcc.save_msg.getText();
         Assert.assertEquals(msg,"Details Updated Successfully");
-        click(WebODLogin.msg_close);
         String pname= MyAcc.Name.getAttribute("value");
         Assert.assertEquals(pname,getData("Name") );
         String phone=MyAcc.Phone.getAttribute("value");
@@ -107,4 +106,78 @@ public class MyAccount extends CommonOps
         Assert.assertEquals(gstin,getData("GSTIN") );        
 
 	}
+	
+	@Step("verify adding team member")
+	public static void add_TeamMember() throws InterruptedException
+	{
+		String title, email, add;
+		click(WebLoading.accountDropdown);
+    	click(MyAcc.MyAccount);
+    	click(MyAcc.ondemand);
+    	click(MyAcc.Team);
+    	title=MyAcc.pagetitle.getText();
+        Assert.assertEquals(title,"Team");
+    	updateText(MyAcc.Name, getData("Name"));
+    	String generatedString = RandomStringUtils.randomAlphabetic(10);
+    	email= generatedString+"@gmail.com";    	
+    	updateText(MyAcc.MemberEmail, email);
+    	click(MyAcc.save);
+    	loadTime(2);
+       //click(MyAcc.Name);
+    	Verifications.elementIsVisible(MyAcc.save_msg);
+        add=MyAcc.save_msg.getText();
+        Assert.assertEquals(add,"Added member successfully");
+    	    	
+	}
+	
+	@Step("verify removing team member team member")
+	public static void remove_TeamMember() throws InterruptedException
+	{
+		String  remove;
+		add_TeamMember();
+        driver.navigate().refresh();
+        click(MyAcc.ondemand);
+    	click(MyAcc.Team);
+        click(MyAcc.remove);
+        remove=MyAcc.remove_msg.getText();
+        Verifications.elementIsVisible(MyAcc.remove_msg);
+        Assert.assertEquals(remove,"Member Deleted from the Team Successfully");           	    	
+	}
+	
+	@Step("verify removing team member team member")
+	public static void credits_Reedem() throws InterruptedException
+	{
+	
+		String title;
+		click(WebLoading.accountDropdown);
+    	click(MyAcc.MyAccount);
+    	click(MyAcc.ondemand);
+    	click(MyAcc.Credits);
+    	title=MyAcc.pagetitle.getText();
+        Assert.assertEquals(title,"Credits");
+        String bulding_name=MyAcc.cred_building.getText();
+        click(MyAcc.Reedem);
+        title=MyAcc.poptitle.getText();
+        Assert.assertEquals(title, bulding_name);
+        WebFlows.selectDate("October", "15");
+    //    webflows.daypassBooking();
+        
+	}
+	
+	@Step("verify removing team member team member")
+	public static void credits_Bundle() throws InterruptedException
+	{
+	
+		String title;
+		click(WebLoading.accountDropdown);
+    	click(MyAcc.MyAccount);
+    	click(MyAcc.ondemand);
+    	click(MyAcc.Credits);
+    	title=MyAcc.pagetitle.getText();
+        Assert.assertEquals(title,"Credits");
+        click(MyAcc.buyBundle);
+        
+	}
+	
+	
 }

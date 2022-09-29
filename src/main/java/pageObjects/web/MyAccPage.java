@@ -27,7 +27,7 @@ public class MyAccPage extends CommonOps
 	  public WebElement MyAccount; 
 
 	//div[@class='MuiGrid-root MuiGrid-item sidebarTitle css-1wxaqej'])[2]
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Profile')]")
+	@FindBy(how = How.XPATH, using = "//div[text()='Profile']")
 	  public WebElement profile; 
 
 	
@@ -54,7 +54,8 @@ public class MyAccPage extends CommonOps
 	  public WebElement pagetitle;
 	
 	//dashboard
-	@FindBy(how = How.XPATH, using = "//button[contains(@class,'viewBtn')]")
+	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'View details')]")
+	//"//button[contains(@class,'viewBtn')]")
 	  public WebElement viewdetails;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-item link css-1wxaqej']")
@@ -63,7 +64,7 @@ public class MyAccPage extends CommonOps
 	@FindBy(how = How.XPATH, using = "//h3")
 	  public WebElement poptitle;
 	
-	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-item noSubsTitle css-1wxaqej']")
+	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'No active')]")
 	  public WebElement activesub;
 	
 	@FindBy(how = How.XPATH, using = "//button[text()='Buy now']")
@@ -77,7 +78,7 @@ public class MyAccPage extends CommonOps
 	@FindBy(how = How.XPATH, using = "//input[@name='name']")
 	  public WebElement Name;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='mui-2']")
+	@FindBy(how = How.XPATH, using = "(//input[@class='MuiInputBase-input MuiOutlinedInput-input css-1x5jdmq'])[2]")
 	  public WebElement Phone;
 
 	@FindBy(how = How.XPATH, using = "//input[@name='gstin']")
@@ -90,6 +91,8 @@ public class MyAccPage extends CommonOps
 	@FindBy(how = How.XPATH, using = "//*[contains(@class, 'MuiAlert-message')]")
 	  public WebElement save_msg;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='MuiSnackbar-root MuiSnackbar-anchorOriginTopRight css-2ibgt4']")
+	  public WebElement remove_msg;
 	//Team page
 	@FindBy(how = How.XPATH, using = "//input[@name='email']")
     public WebElement MemberEmail;
