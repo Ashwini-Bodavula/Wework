@@ -268,9 +268,7 @@ public class WebFlows extends CommonOps
 
     }
 
-
-
-	 @Step("Fill the form going from header")
+ @Step("Fill the form going from header")
 	    public static void header_fillTheFormDetails() throws InterruptedException
 	    {
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
@@ -299,13 +297,10 @@ public class WebFlows extends CommonOps
 	    	updateText(WebLoading.enter("Full name"), getData("Username"));
 			updateText(WebLoading.enter("Email"), getData("email"));
 			updateText(WebLoading.enter("Phone number"), getData("phoneNumber"));
-			scrollToElement(WebLoading.plusIcon);
-			selectNoOfPeople(4);
-//			selectDate(getData("year"), getData("month3"), getData("date1"));
 			scrollToElement(WebLoading.adding(""));
 			selectNoOfPeople(4,"");
 //			selectDate(getData("year"), getData("month3"), getData("date1"));
-			scrollToElement(WebLoading.dateField); 
+			scrollToElement(WebLoading.dateField);
 			WebFlows.enterDate(getData("date1"),getData("month"),getData("year"));
 //			Verifications.elementIsVisible(WebLoading.continueBtn);
 //			click(WebLoading.continueBtn);
@@ -318,6 +313,8 @@ public class WebFlows extends CommonOps
 
 			
 	    }
+
+	 
 
     @Step("Fill the Enterprise form")
     public static void fillEnterpriseFormDetails() throws InterruptedException
@@ -655,116 +652,101 @@ public class WebFlows extends CommonOps
 	   }
 
 @Step("Verify the price breakup after selecting day passes")
-   public static void verifyPriceBreakupForDayPass() throws InterruptedException
+   public static boolean verifyPriceBreakupForDayPass() throws InterruptedException
    {
-		String continueBtnAmount = DayPass.continueBtn.getText().split("₹")[1].trim();
-		int amountInContinueBtn = WebFlows.priceValueInt(continueBtnAmount);
-        click(DayPass.continueBtn);
+	boolean priceBreakupVerified = false;
+	String confirmAndPayBtnAmount = DayPass.confirmAndPayBtn.getText().split("₹")[1].trim();
+	System.out.println(confirmAndPayBtnAmount);
+	int amountInConfirmAndPayBtn = WebFlows.priceValueInt(confirmAndPayBtnAmount);
+	System.out.println(amountInConfirmAndPayBtn);
+	int finalPrice = 0;
+	int finalAmount = 0;
+	
+	boolean userNamePresent = false;
+	String[] value = DayPass.priceBreakupContainer.getText().split("\n");
+	String[] numArray = { WebFlows.month(getData("month3")), getData("date3") };
 
-        String skipAndPayBtnAmount = DayPass.skipAndPayBtn.getText().split("₹")[1].trim();
-		int amountInSkipAndPayBtn = WebFlows.priceValueInt(skipAndPayBtnAmount);
-        click(DayPass.skipAndPayBtn);
-
-        int finalPrice =0;
-        int finalAmount=0;
-        boolean userNamePresent = false;
-        String[] value = DayPass.priceBreakupContainer.getText().split("\n");
-        for(int i=0;i<value.length;i++)
-        {
-        	String[] numArray = {WebFlows.month(getData("month3")),getData("date2"),
-//       						 WebFlows.month(getData("month2")),getData("date2"),
-//       						 WebFlows.month(getData("month2")),getData("date1"),
-//       			             WebFlows.month(getData("month3")),getData("date3")
-       			             };
-
-       	for(int j=0;j<numArray.length-1;j++)
-       	{
-	        		if(value[i].contains(numArray[j]) && value[i].contains(numArray[j+1]))
-		        	{
-	        			String price = value[i+2].split("₹")[1].trim();
-		        		int amount = WebFlows.priceValueInt(price);
-		        		finalPrice = finalPrice + amount;
-		        		break;
-
-		        	}
-       	}
-       	if(value[i].contains(getData("user")))
-      	{
-       		userNamePresent = true;
-      		Assert.assertTrue(userNamePresent, "Selected DayPass for "+getData("user"));
-      	}
-       	if(value[i].contains("Total"))
-       	{
-       		String price = value[i].split("₹")[1].trim();
-       		finalAmount = WebFlows.priceValueInt(price);
-       	}
-
-       }
-        loadTime(3);
-       String confirmAndPayBtnAmount = DayPass.confirmAndPayBtn.getText().split("₹")[1].trim();
-       int amountInConfirmAndPayBtn = WebFlows.priceValueInt(confirmAndPayBtnAmount);
-
-
-       if(amountInContinueBtn == amountInSkipAndPayBtn && amountInContinueBtn == amountInConfirmAndPayBtn
-    		   && finalAmount == finalPrice && userNamePresent )
-       {
-       	scrollToElement(DayPass.confirmAndPayBtn);
-       	click(DayPass.confirmAndPayBtn);
-       	String PaymentWindow = getWindowHandels();
-	    switchToParentWindow(PaymentWindow);
-       }
+	for (int j = 0; j < numArray.length - 1; j++) 
+	{
+		if (value[2].contains(numArray[j]) && value[2].contains(numArray[j+1])) 
+		{
+			String price = value[4].split("₹")[1].trim();
+			int amount = WebFlows.priceValueInt(price);
+			finalPrice = finalPrice + amount;
+			break;
+		}
+	}
+	if (value[3].contains(getData("user"))) {
+		userNamePresent = true;
+		Assert.assertTrue(userNamePresent, "Selected DayPass for " + getData("user"));
+	}
+	String totalrice = DayPass.totalPrice.getText().split("₹")[1].trim();
+	finalAmount = WebFlows.priceValueInt(totalrice);
+	loadTime(3);
+	
+	if (amountInConfirmAndPayBtn == finalAmount && finalAmount == finalPrice) 
+	{
+		priceBreakupVerified = true;	
+	}
+	return priceBreakupVerified;
+		
 
    }
 
    @Step("Verify the price breakup for team member after selecting day passes")
-   public static void verifyPriceBreakupforTeamMember(String teamMemberName) throws InterruptedException
+   public static boolean verifyPriceBreakupforTeamMember() throws InterruptedException
    {
-	   String skipAndPayBtnAmount = DayPass.skipAndPayBtn.getText().split("₹")[1].trim();
-	   int amountInSkipAndPayBtn = WebFlows.priceValueInt(skipAndPayBtnAmount);
-       click(DayPass.skipAndPayBtn);
+	   boolean priceBreakupVerified = false;
+		String confirmAndPayBtnAmount = DayPass.confirmAndPayBtn.getText().split("₹")[1].trim();
+		int amountInConfirmAndPayBtn = WebFlows.priceValueInt(confirmAndPayBtnAmount);	
+		int finalPrice = 0;
+		int finalAmount = 0;
+		boolean userNamePresent = false;
+		boolean teamMemberPresent = false;
+		String[] value = DayPass.priceBreakupContainer.getText().split("\n");
+		String[] numArray = { WebFlows.month(getData("month3")), getData("date3") };
 
-       int finalPrice =0;
-       int finalAmount=0;
-       boolean teamMamberNameIsPresent = false;
-       String[] value = DayPass.priceBreakupContainer.getText().split("\n");
-       for(int i=0;i<value.length;i++)
-       {
-       	String[] numArray = {WebFlows.month(getData("month1")),getData("date1") };
-
-      	for(int j=0;j<numArray.length-1;j++)
-      	{
-	        		if(value[i].contains(numArray[j]) && value[i].contains(numArray[j+1]))
-		        	{
-	        			String price = value[i+2].split("₹")[1].trim();
-		        		int amount = WebFlows.priceValueInt(price);
-		        		finalPrice = finalPrice + amount;
-		        		break;
-
-		        	}
-      	}
-      	if(value[i].contains(teamMemberName))
-      	{
-      		teamMamberNameIsPresent = true;
-      		Assert.assertTrue(teamMamberNameIsPresent, "Selected DayPass for Team member "+teamMemberName);
-      	}
-      	if(value[i].contains("Total"))
-      	{
-      		String price = value[i].split("₹")[1].trim();
-      		finalAmount = WebFlows.priceValueInt(price);
-      		loadTime(3);
-      	}
-      }
-
-       String confirmAndPayBtnAmount = DayPass.confirmAndPayBtn.getText().split("₹")[1].trim();
-       int amountInConfirmAndPayBtn = WebFlows.priceValueInt(confirmAndPayBtnAmount);
-
-      if(amountInConfirmAndPayBtn == amountInSkipAndPayBtn  && finalAmount == finalPrice && teamMamberNameIsPresent)
-      {
-      	scrollToElement(DayPass.confirmAndPayBtn);
-      	click(DayPass.confirmAndPayBtn);
-      	String PaymentWindow = getWindowHandels();
-	    switchToParentWindow(PaymentWindow);
-      }
+		for (int j = 0; j < numArray.length - 1; j++) 
+		{
+			if (value[2].contains(numArray[j]) && value[2].contains(numArray[j+1])) 
+			{
+				String price = value[4].split("₹")[1].trim();
+				int amount = WebFlows.priceValueInt(price);
+				finalPrice = finalPrice + amount;
+				break;
+			}
+		}
+		if (value[3].contains(getData("user"))) {
+			userNamePresent = true;
+			Assert.assertTrue(userNamePresent, "Selected DayPass for " + getData("user"));
+		}
+		else {
+			Assert.assertTrue(false, "DayPass not selected for " + getData("user"));
+		}	
+		if (value[5].contains(getData("teamMember1"))) {
+			teamMemberPresent = true;
+			Assert.assertTrue(teamMemberPresent, "Selected DayPass for " + getData("teamMember1"));
+		}
+		else
+		{
+			Assert.assertTrue(false, "DayPass not selected for " + getData("teamMember1"));
+		}
+		
+		String amount1 = value[4].split("₹")[1].trim();
+		int user1Amount = WebFlows.priceValueInt(amount1);
+		String amount2 = value[6].split("₹")[1].trim();
+		int user2Amount = WebFlows.priceValueInt(amount2);
+		int totalPrice = user1Amount + user2Amount;
+		String totalrice = DayPass.totalPrice.getText().split("₹")[1].trim();
+		finalAmount = WebFlows.priceValueInt(totalrice);
+		loadTime(3);
+		
+		if (amountInConfirmAndPayBtn == finalAmount && finalAmount ==totalPrice) 
+		{
+			priceBreakupVerified = true;	
+		}
+		return priceBreakupVerified;
+	   
    }
 
 
@@ -1100,8 +1082,7 @@ public class WebFlows extends CommonOps
         Assert.assertEquals(pname, "tester2");
         String phone=MyAcc.Phone.getAttribute("value");
         Assert.assertEquals(phone, "8905641237");
-        click(WebODLogin.msg_close);
-        
+        click(WebODLogin.msg_close);    
 	}
 
 	}

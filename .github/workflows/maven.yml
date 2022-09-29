@@ -2,9 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop" ]
 
 jobs:
   build:
@@ -21,5 +21,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-            mvn clean test -Dsurefire.suiteXmlFiles=TestngCO.xml -DplatformName=web -Dbrowser=chrome -Dgroups=CO -DURL=COD;
+            mvn clean test -Dsurefire.suiteXmlFiles=TestngCO.xml -DplatformName=web -Dbrowser=chrome -Dgroups=CO -DURL=COD
             mvn clean test -Dsurefire.suiteXmlFiles=TestngCO.xml -DplatformName=web -Dbrowser=firefox -Dgroups=CO -DURL=COD

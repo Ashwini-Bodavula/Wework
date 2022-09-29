@@ -14,7 +14,7 @@ import workflows.WebFlows;
 
 @Listeners(utilities.Listeners.class)
 public class SelectAllAccessWrkspaceTest extends CommonOps
-{
+{	
 	@Test(priority = 0, description = "Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PuneAllAccessWorkspace", groups= {"CO"})
 	//@Description("This test verifies that User is able to select all access in Pune. (Scroll down in home page and select workspaces)")
 	public void test01_SelectAllAccessInPune(String city, String location, String buildingName)
@@ -23,14 +23,14 @@ public class SelectAllAccessWrkspaceTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String AllAccessOptnBtn = WebLoading.selectWorkspace(3).getAttribute("class");
+		String AllAccessOptnBtn = WebLoading.selectWorkspace("All Access").getAttribute("class");
 		if (AllAccessOptnBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(3));
+			click(WebLoading.selectWorkspace("All Access"));
 			click(WebLoading.bookNowBtn);
 			String subscriptionType = WebLoading.workspaceTitle.getText();
 			if (subscriptionType.equals("All Access"))

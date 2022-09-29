@@ -15,7 +15,7 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectVirtualOfficeTest extends CommonOps
 {
-	@Test(description = "Test01 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces",groups= {"COD"})
+	@Test(description = "Test01 - Verify User is able to Select virtual office in Pune", dataProvider = "PuneVirtualOfficeWorkspaces",groups= {"CO"})
     @Description("This test verifies that User is able to Select virtual office in Pune")
     public void test01_VerifySelectVirtualOfficeInPune(String city , String location, String buildingName , String workspaceLocation) throws InterruptedException
     {
@@ -23,15 +23,15 @@ public class SelectVirtualOfficeTest extends CommonOps
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
 		String homePageWindow = getWindowHandel();
-		scrollToElement(WebLoading.selectWorkspace(4));
-		String virtualOfficeBtn = WebLoading.selectWorkspace(4).getAttribute("class");
+		scrollToElement(WebLoading.selectWorkspace("Virtual Office"));
+		String virtualOfficeBtn = WebLoading.selectWorkspace("Virtual Office").getAttribute("class");
 		if (virtualOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(4));
+			click(WebLoading.selectWorkspace("Virtual Office"));
 			click(WebLoading.bookNowBtn);
 			loadTime(4);
 			String VirtualOfficeWindow = getWindowHandels();
