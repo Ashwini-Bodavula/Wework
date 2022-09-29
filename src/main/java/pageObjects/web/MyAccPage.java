@@ -23,63 +23,93 @@ public class MyAccPage extends CommonOps
 	}
 
 
-	@FindBy(how = How.XPATH, using = "//p[contains(text(), 'My Account')]")
-	  public WebElement MyAccount;
+	@FindBy(how = How.XPATH, using = " //div[text()=' My Account ']")
+	  public WebElement MyAccount; 
 
-	//(//div[@class='sidebar-accordion-list-item'])[1]
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Profile')]")
-	  public WebElement profile;
+	//div[@class='MuiGrid-root MuiGrid-item sidebarTitle css-1wxaqej'])[2]
+	@FindBy(how = How.XPATH, using = "//div[text()='Profile']")
+	  public WebElement profile; 
 
-	//(//div[@class='sidebar-accordion-list-item'])[2]
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Team')]")
+	
+	@FindBy(how = How.XPATH, using = "//div[text()= 'Team']")
 	  public WebElement Team;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Credits')]")
+	@FindBy(how = How.XPATH, using = "//div[text()='Credits']")
 	  public WebElement Credits;
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Bookings')]")
+	@FindBy(how = How.XPATH, using = "//div[text()='Bookings']")
 	  public WebElement Bookings;
+	
+	@FindBy(how = How.XPATH, using = "//div[text()='On Demand']")
+	  public WebElement ondemand;
+	
+	@FindBy(how = How.XPATH, using = "//div[text()= 'My Subscriptions']")
+	  public WebElement mySubscriptions;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Dashboard')]")
+	  public WebElement dashboard;
+	
+	//account page title	
+	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-item title css-1wxaqej']")
+	  public WebElement pagetitle;
+	
+	//dashboard
+	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'View details')]")
+	//"//button[contains(@class,'viewBtn')]")
+	  public WebElement viewdetails;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class='MuiGrid-root MuiGrid-item link css-1wxaqej']")
+	  public WebElement viewAll;
+	
+	@FindBy(how = How.XPATH, using = "//h3")
+	  public WebElement poptitle;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'No active')]")
+	  public WebElement activesub;
+	
+	@FindBy(how = How.XPATH, using = "//button[text()='Buy now']")
+	  public WebElement buyNow;
+	
+	@FindBy(how = How.XPATH, using = "//*[@data-testid='CloseIcon']")
+	  public WebElement close;
+	
+	//profile page	
 
-	@FindBy(how = How.XPATH, using = "//div[contains(text(), 'Refer')]")
-	  public WebElement Refer;
-
-	//profile page
-
-	@FindBy(how = How.XPATH, using = "//input[@id='email-user']")
-	  public WebElement Email;
-
-	@FindBy(how = How.XPATH, using = "//input[@id='user-fname']")
+	@FindBy(how = How.XPATH, using = "//input[@name='name']")
 	  public WebElement Name;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='phone-user']")
+	@FindBy(how = How.XPATH, using = "(//input[@class='MuiInputBase-input MuiOutlinedInput-input css-1x5jdmq'])[2]")
 	  public WebElement Phone;
 
-	@FindBy(how = How.XPATH, using = "//input[@id='gstin-user']")
+	@FindBy(how = How.XPATH, using = "//input[@name='gstin']")
 	  public WebElement GSTIN;
 
 	@FindBy(how = How.XPATH, using = "//button[@type='submit']")
 	  public WebElement save;
 
 
-	@FindBy(how = How.XPATH, using = "//div[@class=\"MuiAlert-message\"]")
+	@FindBy(how = How.XPATH, using = "//*[contains(@class, 'MuiAlert-message')]")
 	  public WebElement save_msg;
 
+	@FindBy(how = How.XPATH, using = "//div[@class='MuiSnackbar-root MuiSnackbar-anchorOriginTopRight css-2ibgt4']")
+	  public WebElement remove_msg;
 	//Team page
-	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'Add Member')]")
-    public WebElement AddMember;
-
-	@FindBy(how = How.XPATH, using = "//input[@placeholder='Enter Name']")
-    public WebElement MemberName;
-
 	@FindBy(how = How.XPATH, using = "//input[@name='email']")
     public WebElement MemberEmail;
 
-	@FindBy(how = How.XPATH, using = "//button[@type='submit']")
-    public WebElement Save;
-
-	@FindBy(how = How.XPATH, using = "(//button[@class='ray-button ray-button--tertiary ray-button--compact'])[2]")
+	@FindBy(how = How.XPATH, using = "(//span[@class= 'deleteBtn'])[2]")
     public WebElement remove;
-
+	
+	//credits
+	@FindBy(how = How.XPATH, using = "//button[contains(@class, 'registerBtn')]")
+    public WebElement buyBundle;
+	
+	@FindBy(how = How.XPATH, using = "//span[@class='deleteBtn']")
+    public WebElement Reedem;
+	
+	@FindBy(how = How.XPATH, using = "(//tr/td/div[@class='MuiGrid-root MuiGrid-item css-1wxaqej'])[2]")
+    public WebElement cred_building;
+	
 	//Refer
 
 	@FindBy(how = How.XPATH, using = "//div[@class=\"MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 MuiGrid-grid-sm-4\"]")
@@ -97,6 +127,7 @@ public class MyAccPage extends CommonOps
 
 	//booking
 
+	//span[contains(text(), 'View')][1]
 	@FindBy(how = How.XPATH, using = "//tbody[@class='MuiTableBody-root']/tr[1]")
     public WebElement orde_row1;
 
@@ -106,4 +137,7 @@ public class MyAccPage extends CommonOps
 	@FindBy(how = How.XPATH, using = "//tbody[@class='MuiTableBody-root']/tr[1]")
     public WebElement Book_table;
 
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='email-user']")
+	  public WebElement Email;
 }

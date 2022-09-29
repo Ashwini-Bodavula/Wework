@@ -9,49 +9,68 @@ import org.testng.annotations.Test;
 import extensions.Verifications;
 import io.qameta.allure.Description;
 import utilities.CommonOps;
+import workflows.MyAccount;
 import workflows.WebFlows;
 import static extensions.UIActions.*;
 
 @Listeners(utilities.Listeners.class)
-public class WebODMyAccountTest extends CommonOps {
+public class WebMyAccountTest extends CommonOps {
 
 
-		 @Test(description = "Test01 - Verify User is able to change profile data", groups= {"OD"})
-			 
+	/*	@Test(description = "Test01 - Verify User is able to view all bookings", groups= {"CO"})			 
 	    @Description("This test verifies that User chnages and profile ")
-	    public void test01_Changeprofile() throws InterruptedException{
+	    public void test01_dashboardviewAll() throws InterruptedException
+		{
 
-	    	WebFlows.ODLogin();
-         	click(WebODLogin.Hamberger);
-	    	WebFlows.profile();
-	        WebFlows.ODlogout();
-	    	}
-
-
-	 @Test(description = "Test02 - Verify User profile details", groups= {"OD"})
-	    @Description("This test verifies that User details are as given")
-
-	 public void test02_Account_details() throws InterruptedException{
-
-	    	WebFlows.ODLogin();
-	    	//loadTime(5);
-	    	click(WebODLogin.Hamberger);
-	    	if(MyAcc.MyAccount.isDisplayed()) {
-	        	click(MyAcc.MyAccount);
-	            click(MyAcc.profile);
-	            Boolean email=MyAcc.Email.isEnabled();
-	            Assert.assertEquals(false, false);
-	            //String name = "test";
-	            String pname= MyAcc.Name.getAttribute("value");
-	            Assert.assertEquals(pname, "tester2");
-	            String phone=MyAcc.Phone.getAttribute("value");
-	            Assert.assertEquals(phone, "8905641237");
-	            WebFlows.ODlogout();
-	    	}
+	    	WebFlows.loginToApplication();        	
+	    	MyAccount.dashboardViewAll();
+	        WebFlows.logoutOfApplication();
 	    }
 
-	 @Test(description = "Test03 - Verify User Team details", groups= {"OD"})
-@Description("This test verifies that User team details")
+		 @Test(description = "Test02 - Verify User is able to view all bookings", groups= {"CO"})		 
+		 @Description("This test verifies that User chnages and profile ")
+		 public void test02_dashboardviewdetails() throws InterruptedException
+		 {
+
+		    	WebFlows.loginToApplication();         	
+		    	MyAccount.dashboardViewdetails();
+		        WebFlows.logoutOfApplication();
+		 }
+
+		 @Test(description = "Test03 - Verify User is able to view all bookings", groups= {"CO"})		 
+		 @Description("This test verifies that User chnages and profile ")
+		 public void test03_profile() throws InterruptedException
+		 {
+
+		    	WebFlows.loginToApplication();         	
+		    	MyAccount.profile();
+		        WebFlows.logoutOfApplication();
+		 }
+	
+    	@Test(description = "Test02 - Verify User profile details", groups= {"OD"})
+	    @Description("This test verifies that User details are as given")
+
+    	 public void test04_Dashboard_subscription() throws InterruptedException
+    	 {
+    		WebFlows.loginToApplication();         	
+	    	MyAccount.dashboard_active();
+	        WebFlows.logoutOfApplication();
+	    		    	
+	     }*/
+    	
+    	@Test(description = "Test02 - Verify User profile details", groups= {"OD"})
+	    @Description("This test verifies that User details are as given")
+
+    	 public void test05_TeamMember() throws InterruptedException
+    	 {
+    		WebFlows.loginToApplication();         	
+	    	MyAccount.remove_TeamMember();
+	        WebFlows.logoutOfApplication();
+	    		    	
+	     }	
+
+	/* @Test(description = "Test03 - Verify User Team details", groups= {"OD"})
+       @Description("This test verifies that User team details")
 
      public void test03_Team() throws InterruptedException{
 
@@ -174,5 +193,5 @@ public void test05_NavRefer() throws InterruptedException{
         Day_flt=MyAcc.Daypass_filter.getAttribute("value");
         Assert.assertEquals(Day_flt, "CONFERENCE_ROOM");
          WebFlows.ODlogout();
-   }  	 
+   }  	 */
 }
