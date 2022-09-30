@@ -15,7 +15,8 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class SelectPrivateOfficeTest extends CommonOps
 {
-	@Test(description = "Test01 - Verify User is able to select private office in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PunePrivateOfficeWorkspaces",groups= {"COD"})
+	
+	@Test(description = "Test01 - Verify User is able to select private office in Pune. (Scroll down in home page and select workspaces)", dataProvider = "PunePrivateOfficeWorkspaces",groups= {"CO"})
 	@Description("This test verifies that User is able to select private office in Pune. (Scroll down in home page and select workspaces)")
 	public void test01_SelectPrivateOfficeInPune(String city, String location, String buildingName)
 			throws InterruptedException
@@ -23,15 +24,18 @@ public class SelectPrivateOfficeTest extends CommonOps
 		//WebFlows.loadWebsite();
 		WebFlows.loginToApplication();
 		WebFlows.selectWorkspace(city, location, buildingName);
-		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+//		String privateOfficeBtn = WebLoading.selectWorkspace(1).getAttribute("class");
+		
+		String privateOfficeBtn = WebLoading.selectWorkspace("Ready-to-move-in private offices").getAttribute("class");
 		if (privateOfficeBtn.contains("disabled"))
 		{
 			mouseHover(WebLoading.closeIcon);
 
 		} else
 		{
-			click(WebLoading.selectWorkspace(1));
-			String privateOfficeSelected = WebLoading.selectWorkspace(1).getAttribute("class");
+			click(WebLoading.selectWorkspace("Ready-to-move-in private offices"));
+//			click(WebLoading.selectWorkspace(1));
+			String privateOfficeSelected = WebLoading.selectWorkspace("Ready-to-move-in private offices").getAttribute("class");
 			if(privateOfficeSelected.contains("card_selected"))
 			{
 				click(WebLoading.bookNowBtn);
@@ -48,7 +52,7 @@ public class SelectPrivateOfficeTest extends CommonOps
 		}
 		WebFlows.logoutOfApplication();
 	}
-
+	
 /*	@Test(description = "Test02 - Verify User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)", dataProvider = "HyderabadPrivateOfficeWorkspaces", groups= {"CO"})
 	@Description("This test verifies that User is able to select private office in Hyderabad. (Scroll down in home page and select workspaces)")
 	public void test02_SelectPrivateOfficeInHyderabad(String city, String location, String buildingName)

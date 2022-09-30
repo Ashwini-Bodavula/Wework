@@ -16,7 +16,7 @@ import workflows.AdminFlows;
 import workflows.WebFlows;
 public class ODAdminDashboardTest extends CommonOps
 {
-	@Test(description = "Test01 - Verify User is able to add Admin user", groups= {"admin"})
+	@Test(description = "Test01 - Verify User is able to add Admin user")
     @Description("This test verifies that User is able to add Admin user")
     public void test01_AddAdminUser() throws InterruptedException
     {
@@ -26,7 +26,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
     }
 	
-	@Test(description = "Test02 - Verify User is able to edit Admin user", groups= {"admin"})
+	@Test(description = "Test02 - Verify User is able to edit Admin user")
     @Description("This test verifies that User is able to edit Admin user")
     public void test02_EditAdminUser() throws InterruptedException
     {
@@ -43,7 +43,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
     }
 	
-	@Test(description = "Test03 - Verify User is able to delete Admin user", groups= {"admin"})
+	@Test(description = "Test03 - Verify User is able to delete Admin user")
     @Description("This test verifies that User is able to delete Admin user")
     public void test03_DeleteAdminUser() throws InterruptedException
     {
@@ -60,7 +60,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
     }
 	
-	@Test(description = "Test04 - Verify User is able to select shop - printing.", groups= {"admin"})
+	@Test(description = "Test04 - Verify User is able to select shop - printing.")
 	@Description("This test verifies that User is able to select shop - printing.")
 	public void test04_shopSelectionPrinting() throws InterruptedException 
 	{
@@ -69,7 +69,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
 	}
 	
-	@Test(description = "Test05 - Verify User is able to select shop - postpaid.", groups= {"admin"})
+	@Test(description = "Test05 - Verify User is able to select shop - postpaid.")
 	@Description("This test verifies that User is able to select shop - Postpaid.")
 	public void test05_shopSelectionPostpaid() throws InterruptedException 
 	{
@@ -78,7 +78,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
 	}
 		
-	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.", groups= {"admin"})
+	@Test(description = "Test06 - Verify User is able to select shop - ODE purchase.")
 	@Description("This test verifies that User is able to select shop - ODE purchase.")
 	public void test06_shopSelectionODEPurchase() throws InterruptedException 
 	{
@@ -87,7 +87,7 @@ public class ODAdminDashboardTest extends CommonOps
 		AdminFlows.logoutOfODDashboard();
 	}
 	
-	@Test(description = "Test07 - Verify User is able to select shop - Parking.", groups= {"admin"})
+	@Test(description = "Test07 - Verify User is able to select shop - Parking.")
 	@Description("This test verifies that User is able to select shop - Parking.")
 	public void test07_shopSelectionParking() throws InterruptedException 
 	{

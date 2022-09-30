@@ -6,9 +6,10 @@
         <parameter name="browser" value="Chrome"></parameter>        
           <parameter name="URL" value="COD"></parameter>
         <classes>
-                                
-          
-           <class name="sanity.WebMyAccountTest"/>      
+                   
+              
+          <class name="sanity.WebMyAccountTest"/>
+               
         </classes>
     </test>   
    
