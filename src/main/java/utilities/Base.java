@@ -40,8 +40,9 @@ public class Base {
     protected static pageObjects.web.CareersPage Careers;
     protected static pageObjects.web.ODAdminUsersPage ODAdminUser;
     
+    //Bundles
+    protected static pageObjects.web.Bundle Bundles;
     
-
     //OD
     protected static pageObjects.web.LoginODPage WebODLogin;
     protected static pageObjects.web.Daypass_OD Day_OD;

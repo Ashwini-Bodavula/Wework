@@ -4,16 +4,16 @@
   <test thread-count="2" name="chrome Tests(failed)" parallel="methods">
     <parameter name="browser" value="Chrome"/>
     <parameter name="platformName" value="web"/>
-    <parameter name="URL" value="CO"/>
+    <parameter name="URL" value="COD"/>
     <classes>
-      <class name="sanity.SelectSubscriptionsTest">
+      <class name="sanity.WebMyAccountTest">
         <methods>
-          <include name="test01_SelectSubscriptions" invocation-numbers="0"/>
+          <include name="test07_creditBundle"/>
           <include name="afterMethod"/>
           <include name="closeSession"/>
           <include name="startSession"/>
         </methods>
-      </class> <!-- sanity.SelectSubscriptionsTest -->
+      </class> <!-- sanity.WebMyAccountTest -->
     </classes>
   </test> <!-- chrome Tests(failed) -->
 </suite> <!-- Failed suite [Web Suite] -->

@@ -1,5 +1,7 @@
   package pageObjects.web;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -140,4 +142,8 @@ public class MyAccPage extends CommonOps
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='email-user']")
 	  public WebElement Email;
+	
+	//bread crumb
+	@FindBy(how = How.XPATH, using = "//li[@class='MuiBreadcrumbs-li']")
+      public List<WebElement> bread_crumb;
 }

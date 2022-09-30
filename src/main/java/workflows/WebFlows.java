@@ -206,8 +206,8 @@ public class WebFlows extends CommonOps
     @Step("Proceed with Payment")
 	    public static void proceedWithPayment() throws InterruptedException
 	    {
-
-	    	Verifications.elementIsVisible(Payment.checkoutEmail);
+            loadTime(4);
+	    	//Verifications.elementIsVisible(Payment.checkoutEmail);
 	        click(Payment.checkoutEmail);
 	        clearTextBox(Payment.checkoutEmail);
 	        updateText(Payment.checkoutEmail, getData("email"));

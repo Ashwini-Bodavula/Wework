@@ -17,7 +17,7 @@ public class PaymentPage extends CommonOps
 	}
 
 
-	@FindBy(how = How.XPATH, using = "//inputcontains(@id, 'checkout_email')]")
+	@FindBy(how = How.XPATH, using = "//input[contains(@id, 'checkout_email')]")
     public WebElement checkoutEmail;
 
 	@FindBy(how = How.XPATH, using = "(//input[@class='input-checkbox'])[1]")

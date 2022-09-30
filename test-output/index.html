@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Web_Suite">
-              <span class="suite-name border-passed">Web Suite</span>
+              <span class="suite-name border-failed">Web Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods passed suite-Web_Suite"> (hide)</a> <!-- hide-methods passed suite-Web_Suite -->
-                      <a href="#" panel-name="suite-Web_Suite" class="show-methods passed suite-Web_Suite"> (show)</a> <!-- show-methods passed suite-Web_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods failed suite-Web_Suite"> (hide)</a> <!-- hide-methods failed suite-Web_Suite -->
+                      <a href="#" panel-name="suite-Web_Suite" class="show-methods failed suite-Web_Suite"> (show)</a> <!-- show-methods failed suite-Web_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Web_Suite">
+                    <div class="method-list-content failed suite-Web_Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.SelectAllAccessWrkspaceTest" hash-for-method="test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)">test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.WebMyAccountTest" hash-for-method="test07_creditBundle">test07_creditBundle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Web_Suite -->
+                    </div> <!-- method-list-content failed suite-Web_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,24 +119,65 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Web_Suite" class="panel Web_Suite">
-          <div class="suite-Web_Suite-class-passed">
+          <div class="suite-Web_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">sanity.SelectAllAccessWrkspaceTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">sanity.WebMyAccountTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)">
-                  </a> <!-- test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center) -->
-                  <span class="method-name">test01_SelectAllAccessInPune</span>
-                  <span class="parameters">(Pune, Kharadi, World Trade Center)</span>
+                  <a name="test07_creditBundle">
+                  </a> <!-- test07_creditBundle -->
+                  <span class="method-name">test07_creditBundle</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //input[contains(@id, &apos;checkout_email&apos;)]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at extensions.UIActions.click(UIActions.java:22)
+	at workflows.WebFlows.proceedWithPayment(WebFlows.java:211)
+	at workflows.MyAccount.credits_Bundle(MyAccount.java:191)
+	at sanity.WebMyAccountTest.test07_creditBundle(WebMyAccountTest.java:102)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[contains(@id, &apos;checkout_email&apos;)]&quot;}
+  (Session info: chrome=105.0.5195.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Ashwini-BodavulaB598-MacBook-Air.local&apos;, ip: &apos;192.168.29.9&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;1.8.0_262-internal&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.125, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: /var/folders/01/0ll7z60n7lb...}, goog:chromeOptions: {debuggerAddress: localhost:65386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ceeaec2de2da02d4412fcc9dc5b896b8
+*** Element info: {Using=xpath, value=//input[contains(@id, &apos;checkout_email&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy14.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 19 more
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces))                  </em>
+(Test08 - Verify User profile details)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_Suite-class-passed -->
+          </div> <!-- suite-Web_Suite-class-failed -->
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -150,9 +191,9 @@
   &lt;test thread-count=&quot;2&quot; name=&quot;chrome Tests&quot; parallel=&quot;methods&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;web&quot;/&gt;
-    &lt;parameter name=&quot;URL&quot; value=&quot;CO&quot;/&gt;
+    &lt;parameter name=&quot;URL&quot; value=&quot;COD&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.SelectAllAccessWrkspaceTest&quot;/&gt;
+      &lt;class name=&quot;sanity.WebMyAccountTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- chrome Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
@@ -177,10 +218,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">CO</span>
+              <span class="test-group-name">OD</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">test01_SelectAllAccessInPune</span>
+                <span class="method-in-group-name">test07_creditBundle</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -202,14 +243,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test01_SelectAllAccessInPune')
-data.setCell(0, 2, 'sanity.SelectAllAccessWrkspaceTest')
-data.setCell(0, 3, 48238);
+data.setCell(0, 1, 'test07_creditBundle')
+data.setCell(0, 2, 'sanity.WebMyAccountTest')
+data.setCell(0, 3, 82078);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 48 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -235,22 +276,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.SelectAllAccessWrkspaceTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.WebMyAccountTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">startSession(web, Chrome, CO)</span>
+                <span class="method-name">startSession(web, Chrome, COD)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)</span>
-                <span class="method-start">17322 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test07_creditBundle</span>
+                <span class="method-start">18262 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">65613 ms</span>
+                <span class="method-start">100410 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">65781 ms</span>
+                <span class="method-start">100760 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
