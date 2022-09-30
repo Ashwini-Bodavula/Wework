@@ -168,7 +168,7 @@ public class MyAccount extends CommonOps
 	public static void credits_Bundle() throws InterruptedException
 	{
 	
-		String title;
+		String title, crumb;
 		click(WebLoading.accountDropdown);
     	click(MyAcc.MyAccount);
     	click(MyAcc.ondemand);
@@ -176,6 +176,20 @@ public class MyAccount extends CommonOps
     	title=MyAcc.pagetitle.getText();
         Assert.assertEquals(title,"Credits");
         click(MyAcc.buyBundle);
+        loadTime(2);
+        List <WebElement> page=MyAcc.bread_crumb;
+        crumb=page.get(3).getText();
+        System.out.println(crumb);
+        if(crumb.contains("BUNDLES"))
+        {
+        //	scrollToElement(Bundles.selectlocation("WeWork The Pavilion"));
+        	Bundles.selectlocation("WeWork The Pavilion");
+        	scrollToElement(Bundles.Booknow(3));
+        	click(Bundles.Booknow(3));
+        	click(Bundles.pay);
+        	System.out.println("Bundle");
+        	WebFlows.proceedWithPayment();
+        }
         
 	}
 	

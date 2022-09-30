@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.support.PageFactory;
 
+import pageObjects.web.Bundle;
 import pageObjects.web.Bundles_OD;
 import pageObjects.web.CareersPage;
 import pageObjects.web.ConferenceroomPage;
@@ -50,7 +51,7 @@ public class ManagePages extends Base {
         Careers = PageFactory.initElements(driver, CareersPage.class);
         ODAdminUser = PageFactory.initElements(driver, ODAdminUsersPage.class);
         
-         
+         Bundles= PageFactory.initElements(driver, Bundle.class);
 
         //OD pages
         WebODLogin = PageFactory.initElements(driver, LoginODPage.class);
