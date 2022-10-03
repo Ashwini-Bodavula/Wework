@@ -24,23 +24,23 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
-      <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Web_Suite">
-              <span class="suite-name border-passed">Web Suite</span>
+            <a href="#" panel-name="suite-Web_Suite" class="navigator-link">
+              <span class="suite-name border-failed">Web Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Web_Suite">
-                    <span>TestngCO.xml</span>
+                  <a href="#" panel-name="test-xml-Web_Suite" class="navigator-link ">
+                    <span>TestngWeb.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Web_Suite">
+                  <a href="#" panel-name="testlist-Web_Suite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Web_Suite">
+                  <a href="#" panel-name="group-Web_Suite" class="navigator-link ">
                     <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Web_Suite">
+                  <a href="#" panel-name="times-Web_Suite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Web_Suite">
+                  <a href="#" panel-name="reporter-Web_Suite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Web_Suite">
+                  <a href="#" panel-name="ignored-methods-Web_Suite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Web_Suite">
+                  <a href="#" panel-name="chronological-Web_Suite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods passed suite-Web_Suite"> (hide)</a> <!-- hide-methods passed suite-Web_Suite -->
-                      <a href="#" panel-name="suite-Web_Suite" class="show-methods passed suite-Web_Suite"> (show)</a> <!-- show-methods passed suite-Web_Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Web_Suite" class="hide-methods failed suite-Web_Suite"> (hide)</a> <!-- hide-methods failed suite-Web_Suite -->
+                      <a href="#" panel-name="suite-Web_Suite" class="show-methods failed suite-Web_Suite"> (show)</a> <!-- show-methods failed suite-Web_Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Web_Suite">
+                    <div class="method-list-content failed suite-Web_Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Web_Suite" title="sanity.SelectAllAccessWrkspaceTest" hash-for-method="test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)">test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Web_Suite" title="sanity.WebODBookingsTest" class="method navigator-link" hash-for-method="test01_RescheduleBooking">test01_RescheduleBooking</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Web_Suite -->
+                    </div> <!-- method-list-content failed suite-Web_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,42 +119,59 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Web_Suite" class="panel Web_Suite">
-          <div class="suite-Web_Suite-class-passed">
+          <div class="suite-Web_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">sanity.SelectAllAccessWrkspaceTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">sanity.WebODBookingsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)">
-                  </a> <!-- test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center) -->
-                  <span class="method-name">test01_SelectAllAccessInPune</span>
-                  <span class="parameters">(Pune, Kharadi, World Trade Center)</span>
+                  <a name="test01_RescheduleBooking">
+                  </a> <!-- test01_RescheduleBooking -->
+                  <span class="method-name">test01_RescheduleBooking</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on MAC (1253a8520ada024f21d47908ea52b8cb)] -&gt; xpath: //button[contains(text(),&apos;Confirm&apos;)]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Sukanya-J-B224s-MacBook-Pro.local&apos;, ip: &apos;192.168.1.6&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.3&apos;, java.version: &apos;17.0.3&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.125, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: /var/folders/l3/xm0kp0x17bj...}, goog:chromeOptions: {debuggerAddress: localhost:62144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1253a8520ada024f21d47908ea52b8cb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at extensions.UIActions.click(UIActions.java:22)
+	at workflows.MyAccount.Daypass(MyAccount.java:220)
+	at sanity.WebODBookingsTest.test01_RescheduleBooking(WebODBookingsTest.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
                   <em>
-(Test01 - Verify User is able to select all access in Pune. (Scroll down in home page and select workspaces))                  </em>
+(Test01 - Verify Reschedule Day Pass booking of Daypass)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Web_Suite-class-passed -->
+          </div> <!-- suite-Web_Suite-class-failed -->
         </div> <!-- panel Web_Suite -->
         <div panel-name="test-xml-Web_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/ashwinibodavula/Documents/GitHub/wework_automation/TestngCO.xml</span>
+            <span class="header-content">/Users/sahusoft/git/Wework/TestngWeb.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Web Suite&quot; parallel=&quot;methods&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; name=&quot;chrome Tests&quot; parallel=&quot;methods&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Web Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Web Tests&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
     &lt;parameter name=&quot;platformName&quot; value=&quot;web&quot;/&gt;
-    &lt;parameter name=&quot;URL&quot; value=&quot;CO&quot;/&gt;
+    &lt;parameter name=&quot;URL&quot; value=&quot;COD&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;sanity.SelectAllAccessWrkspaceTest&quot;/&gt;
+      &lt;class name=&quot;sanity.WebODBookingsTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- chrome Tests --&gt;
+  &lt;/test&gt; &lt;!-- Web Tests --&gt;
 &lt;/suite&gt; &lt;!-- Web Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -166,7 +183,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">chrome Tests (1 class)</span>
+                <span class="test-name">Web Tests (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -180,7 +197,7 @@
               <span class="test-group-name">CO</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">test01_SelectAllAccessInPune</span>
+                <span class="method-in-group-name">test01_RescheduleBooking</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -202,14 +219,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test01_SelectAllAccessInPune')
-data.setCell(0, 2, 'sanity.SelectAllAccessWrkspaceTest')
-data.setCell(0, 3, 48238);
+data.setCell(0, 1, 'test01_RescheduleBooking')
+data.setCell(0, 2, 'sanity.WebODBookingsTest')
+data.setCell(0, 3, 77424);
 window.suiteTableData['Web_Suite']= { tableData: data, tableDiv: 'times-div-Web_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 48 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Web_Suite">
               </div> <!-- times-div-Web_Suite -->
             </div> <!-- times-div -->
@@ -235,22 +252,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">sanity.SelectAllAccessWrkspaceTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">sanity.WebODBookingsTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">startSession(web, Chrome, CO)</span>
+                <span class="method-name">startSession(web, Chrome, COD)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">test01_SelectAllAccessInPune(Pune, Kharadi, World Trade Center)</span>
-                <span class="method-start">17322 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">test01_RescheduleBooking</span>
+                <span class="method-start">7476 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">65613 ms</span>
+                <span class="method-start">84922 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeSession</span>
-                <span class="method-start">65781 ms</span>
+                <span class="method-start">85227 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

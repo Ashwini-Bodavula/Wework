@@ -2,13 +2,19 @@ package workflows;
 
 import static extensions.UIActions.*;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 
@@ -178,6 +184,67 @@ public class MyAccount extends CommonOps
         click(MyAcc.buyBundle);
         
 	}
+	@Step("Verify Reschedule Daypass Bookings")
+	public static void Daypass() throws InterruptedException
+	{
+		String title;
+		click(WebLoading.accountDropdown);
+    	click(MyAcc.MyAccount);
+    	click(MyAcc.ondemand);
+    	click(Daypass.Bookings);
+    	Thread.sleep(2000);
+    	title=Daypass.pagename.getText();
+    	Assert.assertEquals(title, "Bookings");
+    	
+ 	    Thread.sleep(10000);
+
+    	List<WebElement> elements = driver.findElements(By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft MuiTableCell-sizeMedium sc-dwnOUR kTgicL css-q34dxg'][6]"));
+		int count = elements.size();
+		for (int j = 0; j < count; j++)
+		{
+			WebElement text = elements.get(j);
+		    if (text.isEnabled()){
+		    	JavascriptExecutor executor = (JavascriptExecutor)driver;
+		    	executor.executeScript("arguments[0].click()",text);
+		        } 
+		    
+		    else {
+	  
+		    	Assert.assertTrue(false, "Reschedule button is disabled");
+	       }
+		}
+		Thread.sleep(10000);
+    	 click(Daypass.Selectdatefield);
+    	WebFlows.selectDate("November", "9");
+    	click(Daypass.Applybutton);
+    	click(Daypass.confirm);
+    	
+    	String textmsg = "Rescheduled successfully, please refresh after 10";
+        // getPageSource() to get page source
+    	
+        if ( driver.getPageSource().contains("Rescheduled successfully")){
+        	
+        	  System.out.println("Text: " + textmsg + " is present. ");
+        } 
+        else {
+           System.out.println("Text: " + textmsg + " is not present. ");
+        }
+
+		Thread.sleep(10000);
+
+        driver.navigate().refresh();
+        click(MyAcc.ondemand);
+    	click(Daypass.Bookings);
+		Thread.sleep(3000);
+        click(Daypass.orderdetails);
+		Thread.sleep(3000);
+        String Viewpage = Daypass.viewpagedetails.getText();
+		Thread.sleep(3000);
+    	Assert.assertEquals(Viewpage, "Day pass booking");
+    	System.out.println("Day pass booking");
+	
+	}
+	
 	
 	
 }

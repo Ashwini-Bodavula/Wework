@@ -19,3 +19,4 @@ bin-release/
 
 /allure-results/
 /.DS_Store/
+/target/

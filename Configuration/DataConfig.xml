@@ -63,12 +63,13 @@
     <conferenceRoomSize>6</conferenceRoomSize>
     <creditsSize>4</creditsSize>
     <TS>https://wework.co.in/terms-and-conditions/</TS>
+
     <!-- CO -->
     <!-- Web -->
     <BrowserName>chrome</BrowserName>
-    <CO>https://wework.co.in/</CO>
      <COD>http://dev-wework-co-in-dot-wework-staging.el.r.appspot.com/</COD>
      <COS>https://wework-co-in-dot-wework-staging.el.r.appspot.com/</COS>>
+             <CO>https://wework.co.in/</CO>
     <ImageRepo>System.getProperty("user.dir")
         + "\\src\\test\\resources\\"</ImageRepo>
 

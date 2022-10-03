@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.support.PageFactory;
 
+import pageObjects.web.BookingsDaypass;
 import pageObjects.web.Bundles_OD;
 import pageObjects.web.CareersPage;
 import pageObjects.web.ConferenceroomPage;
@@ -58,6 +59,8 @@ public class ManagePages extends Base {
         BundlesOD= PageFactory.initElements(driver, Bundles_OD.class);
         ODconference= PageFactory.initElements(driver, conferenceOD.class);
         MyAcc= PageFactory.initElements(driver, MyAccPage.class);
+        Daypass= PageFactory.initElements(driver, BookingsDaypass.class);
+        
         
         //ODE pages
         ODElogin = PageFactory.initElements(driver,LoginODE.class);

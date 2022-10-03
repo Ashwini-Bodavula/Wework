@@ -48,6 +48,9 @@ public class Base {
     protected static pageObjects.web.Bundles_OD BundlesOD;
     protected static pageObjects.web.conferenceOD ODconference;
     protected static pageObjects.web.MyAccPage MyAcc;
+    protected static pageObjects.web.BookingsDaypass Daypass;
+
+    
 
     //ODE
     protected static pageObjects.web.LoginODE ODElogin;
