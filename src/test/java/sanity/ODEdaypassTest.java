@@ -24,15 +24,14 @@ import workflows.WebFlows;
 @Listeners(utilities.Listeners.class)
 public class ODEdaypassTest extends Daypass_OD {
 
-	 @Test(description = "Test01 - Verify admin is able to book a daypass", dataProvider = "PuneDayPassWorkspaces")
+	 @Test(description = "Test01 - Verify admin is able to book a daypass", dataProvider = "BengaluruDayPassWorkspaces")
 	   // @Description("This test verifies that User is able to book a daypass")
 	    public void Test01_OD_daypasspune(String city, String location, String Building) throws InterruptedException{
 		
 		    ODEflows.loginToODE();
 		    ODEflows.selection(city, location, Building);
-		 //   ODEflows.Daypass_Myself();
-		    ODEflows.selectDate(getData("month"),getData("date"));
-		    ODEflows.Daypass_submission();
+		    ODEflows.selectDate(getData("ODEmonth"),getData("ODEdate"));
+		    ODEflows.Daypass_Others();
 		    ODEflows.logoutODE();
 	    }
 	 
@@ -126,7 +125,7 @@ public class ODEdaypassTest extends Daypass_OD {
 //				{"Bengaluru","Hebbal","RMZ Latitude Commercial, Hebbal"},
 //				{"Bengaluru","Hebbal","WeWork Manyata NXT"},
 //				{"Bengaluru","Old Madras Road"," " },
-				{"Bengaluru","Bannerghatta Main Rd"," "}	
+//				{"Bengaluru","Bannerghatta Main Rd"," "}	
 			};
 		}
 	 @DataProvider(name="HyderabadDayPassWorkspaces")
