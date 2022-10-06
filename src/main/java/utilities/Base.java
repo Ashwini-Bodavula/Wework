@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.web.WifiPage;
+
 
 public class Base {
     //Abstract objects - init via CommonOps
@@ -49,6 +51,9 @@ public class Base {
     protected static pageObjects.web.conferenceOD ODconference;
     protected static pageObjects.web.MyAccPage MyAcc;
     protected static pageObjects.web.BookingsDaypass Daypass;
+    protected static pageObjects.web.WifiPage Wifi;
+
+    
 
     
 

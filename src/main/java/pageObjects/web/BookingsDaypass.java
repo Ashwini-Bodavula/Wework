@@ -34,6 +34,10 @@ public class BookingsDaypass {
 	@FindBy(how = How.XPATH, using ="//tbody/tr[1]/td[1]")
     public WebElement Ordernum;
 	
+	@FindBy(how = How.XPATH, using ="(//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej'])[3]")
+    public WebElement Ordernumlist;
+	
+	
 	@FindBy(how = How.XPATH, using ="//tr[@class='MuiTableRow-root tableRow css-1gqug66'][1]")
     public WebElement Row1;
 	
@@ -43,6 +47,8 @@ public class BookingsDaypass {
 	@FindBy(how = How.XPATH, using ="//h3[contains(text(),'Day pass booking')]")
     public WebElement viewpagedetails;
 	
+	@FindBy(how = How.XPATH, using ="//tbody/tr/td[1]")
+    public WebElement completeclm;
 	
 	
 	

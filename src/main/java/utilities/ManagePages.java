@@ -24,6 +24,7 @@ import pageObjects.web.PaymentPage;
 import pageObjects.web.ReferralsPage;
 import pageObjects.web.VirtualOfficePage;
 import pageObjects.web.WBSPage;
+import pageObjects.web.WifiPage;
 import pageObjects.web.conferenceOD;
 import pageObjects.web.webLoading;
 
@@ -60,6 +61,9 @@ public class ManagePages extends Base {
         ODconference= PageFactory.initElements(driver, conferenceOD.class);
         MyAcc= PageFactory.initElements(driver, MyAccPage.class);
         Daypass= PageFactory.initElements(driver, BookingsDaypass.class);
+        Wifi= PageFactory.initElements(driver, WifiPage.class);
+
+        
         
         
         //ODE pages

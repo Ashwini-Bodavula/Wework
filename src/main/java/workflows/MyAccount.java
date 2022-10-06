@@ -197,25 +197,34 @@ public class MyAccount extends CommonOps
     	Assert.assertEquals(title, "Bookings");
     	
  	    Thread.sleep(10000);
+ 	  
 
-    	List<WebElement> elements = driver.findElements(By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft MuiTableCell-sizeMedium sc-dwnOUR kTgicL css-q34dxg'][6]"));
+// 	   String orderno=Daypass.Ordernum.getText();
+//   	 Assert.assertEquals(orderno, "ordernumber");
+   	 
+   	List <WebElement> ordernumber = driver.findElements(By.xpath ("//tbody/tr/td[1]"));
+    System.out.println(ordernumber.size());
+
+        String order = ordernumber.get(1).getText();
+        System.out.println(order);
+
+        List<WebElement> elements = driver.findElements(By.xpath("//tbody/tr/td[6]"));
 		int count = elements.size();
-		for (int j = 0; j < count; j++)
-		{
-			WebElement text = elements.get(j);
+			WebElement text = elements.get(1);
+	
 		    if (text.isEnabled()){
 		    	JavascriptExecutor executor = (JavascriptExecutor)driver;
 		    	executor.executeScript("arguments[0].click()",text);
 		        } 
 		    
 		    else {
-	  
-		    	Assert.assertTrue(false, "Reschedule button is disabled");
+		          
+               Assert.assertTrue(false, "Reschedule button is disabled");
 	       }
-		}
+		
 		Thread.sleep(10000);
     	 click(Daypass.Selectdatefield);
-    	WebFlows.selectDate("November", "9");
+    	WebFlows.selectDate("November", "11");
     	click(Daypass.Applybutton);
     	click(Daypass.confirm);
     	
@@ -242,9 +251,50 @@ public class MyAccount extends CommonOps
 		Thread.sleep(3000);
     	Assert.assertEquals(Viewpage, "Day pass booking");
     	System.out.println("Day pass booking");
+    }
 	
+	
+	
+	   @Step("Verify Connect to WIFI Reset credentials")
+	   public static void wifi() throws InterruptedException
+	{
+		   String title;
+			click(WebLoading.accountDropdown);
+	    	click(MyAcc.MyAccount);
+	    	Thread.sleep(3000);
+	    	click(Wifi.WIFI);
+	    	Thread.sleep(3000);
+	    	title=Wifi.pagetitle.getText();
+	        Assert.assertEquals(title,"Connect to WiFi");
+	    	Thread.sleep(3000);
+	        click(Wifi.copypswd);
+	    	Thread.sleep(3000);
+	        click(Wifi.Resetcredentials);
+	        String uname = Wifi.username1.getText();
+	        
+	        String Username = Wifi.username.getText();
+	        
+	        if(uname.equals(Username)) {
+	        	Assert.assertTrue(true, "Username is equal");
+
+	    	}
+	    	else
+	    	{
+	    		Assert.assertTrue(false, " Username is not equal");
+
+	    	}
+	        
+	        String textmsg = "WiFI credentials reset successful";
+	        if ( driver.getPageSource().contains("WiFI credentials")){
+	        	System.out.println("Text: " + textmsg + " is present. ");
+	        }
+	        else {
+	            System.out.println("Text: " + textmsg + " is not present. ");
+	         }
+	    	
+	      
 	}
 	
 	
-	
+		
 }
