@@ -4,8 +4,8 @@
     <Timeout>30</Timeout>
 
     <!-- Authorization -->
-   <Username>testers@geekyants.com</Username>
-    <Password>Orchids@9</Password>
+   <Username>ashwinib@geekyants.com</Username>
+    <Password>Vadhulae@12</Password>
     <user>Rohini</user>
     <name>Varsha</name>
     <newName>VarshaR</newName>
@@ -74,7 +74,7 @@
 
    <!-- OD -->
 
-  <Name>tester2</Name>
+  <Name>tester</Name>
     <Email>tester@gmail.com</Email>
     <Phone>8905641237</Phone>
     <BrowserName>chrome</BrowserName>
@@ -89,9 +89,9 @@
     <Eadmin>radhika@1stmain.co</Eadmin>
     <pwd>admin@123</pwd>
     <manager>manager1@1stmain.co</manager>
-    <emp>employee1@1stmain.com</emp>
-    <date>15</date>
-    <month>September</month>
+    <emp>employee1@1stmain.co</emp>
+    <ODEdate>17</ODEdate>
+    <ODEmonth>October 2022</ODEmonth>
     
     
     <!-- VO -->

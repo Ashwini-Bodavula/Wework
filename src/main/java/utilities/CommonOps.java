@@ -142,7 +142,7 @@ public class CommonOps extends Base {
 
         ChromeOptions options = new ChromeOptions();
    
-        //options.setHeadless(true);
+        options.setHeadless(true);
        	options.addArguments("disable-dev-shm-usage"); 
        	options.addArguments("no-sandbox");
         options.addArguments("--disable-gpu");

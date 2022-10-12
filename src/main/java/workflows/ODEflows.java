@@ -102,7 +102,8 @@ public class ODEflows extends CommonOps
    @Step ("Select date in Calander UI")
    public static void selectDate(String month, String date) throws InterruptedException
    {
-    	while (!day_ODE.monthName.getText().contains(month))
+	   loadTime(5);
+    	while (!day_ODE.monthName.getText().equals(month))
 		{
    		  click(day_ODE.nxt_month);
    		loadTime(1);
@@ -193,6 +194,7 @@ public class ODEflows extends CommonOps
        	     if(sel.contains("164")) 
        	      {
        		  click(day_ODE.others); 
+       		  sel=day_ODE.others.getCssValue("Color");
        	      Assert.assertEquals(sel, "rgb(0, 0, 255)");      	          	                     	        
 	            if(day_ODE.Continue.isEnabled()) 
 				  	{
@@ -202,12 +204,14 @@ public class ODEflows extends CommonOps
 					Assert.assertEquals(checked, false);
 					if(!day_ODE.otherssel.isSelected())
 					{
-						click(day_ODE.otherssel);
+						mouseHover(day_ODE.otherssel);
+						//click(day_ODE.otherssel);
 						click(day_ODE.Continue);
 					}
 					click(day_ODE.skipPay);
 					click(day_ODE.finish);
 					loadTime(7);
+					Verifications.elementIsVisible(day_ODE.msg);
 					String success_msg=day_ODE.msg.getText();
 					Assert.assertEquals(success_msg, "You have successfully booked a daypass at a WeWork.");
 					click(day_ODE.msg_close);

@@ -78,22 +78,19 @@ public class WebMyAccountTest extends CommonOps {
 	    	MyAccount.remove_TeamMember();
 	        WebFlows.logoutOfApplication();
 	    		    	
-	     }	
+	     }	*/
 
     	@Test(description = "Test07 - Verify User profile details", groups= {"OD"})
 	    @Description("This test verifies that User details are as given")
 
     	 public void test07_removeTeamMemberMultiple() throws InterruptedException
     	 {
-    		WebFlows.loginToApplication();         	
-	    	MyAccount.add_TeamMember();
-	    	MyAccount.add_TeamMember();
-	    	MyAccount.add_TeamMember();
-	        WebFlows.logoutOfApplication();
-	    		    	
-	     }*/
+    		WebFlows.loginToApplication();    		
+	    	 MyAccount.add_TeamMember(20);	    		        
+    		 WebFlows.logoutOfApplication();	    	
+	     }
     	
-    	@Test(description = "Test08 - Verify User profile details", groups= {"OD"})
+    /*	@Test(description = "Test08 - Verify User profile details", groups= {"OD"})
 	    @Description("This test verifies that User details are as given")
 
     	 public void test07_creditBundle() throws InterruptedException
@@ -102,5 +99,5 @@ public class WebMyAccountTest extends CommonOps {
 	    	MyAccount.credits_Bundle();
 	        WebFlows.logoutOfApplication();
 	    		    	
-	     }
+	     }*/
 }

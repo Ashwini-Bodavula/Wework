@@ -108,25 +108,28 @@ public class MyAccount extends CommonOps
 	}
 	
 	@Step("verify adding team member")
-	public static void add_TeamMember() throws InterruptedException
+	public static void add_TeamMember(int n) throws InterruptedException
 	{
-		String title, email, add;
+		String title, email, add, name;
 		click(WebLoading.accountDropdown);
     	click(MyAcc.MyAccount);
     	click(MyAcc.ondemand);
     	click(MyAcc.Team);
     	title=MyAcc.pagetitle.getText();
         Assert.assertEquals(title,"Team");
-    	updateText(MyAcc.Name, getData("Name"));
-    	String generatedString = RandomStringUtils.randomAlphabetic(10);
-    	email= generatedString+"@gmail.com";    	
+        for(int i=0;i<n;i++) {
+    	String generatedString = RandomStringUtils.randomAlphabetic(7);
+    	name=generatedString;
+    	email= generatedString+"@gmail.com";  
+    	updateText(MyAcc.Name, name);
     	updateText(MyAcc.MemberEmail, email);
     	click(MyAcc.save);
-    	loadTime(2);
-       //click(MyAcc.Name);
+    	loadTime(3); 
     	Verifications.elementIsVisible(MyAcc.save_msg);
         add=MyAcc.save_msg.getText();
         Assert.assertEquals(add,"Added member successfully");
+        loadTime(5);
+        }
     	    	
 	}
 	
@@ -134,7 +137,7 @@ public class MyAccount extends CommonOps
 	public static void remove_TeamMember() throws InterruptedException
 	{
 		String  remove;
-		add_TeamMember();
+		add_TeamMember(1);
         driver.navigate().refresh();
         click(MyAcc.ondemand);
     	click(MyAcc.Team);

@@ -3,7 +3,7 @@
 <suite name="Web Suite" parallel="false">
     <test name="Web Tests">
         <parameter name="platformName" value="web" />
-            <parameter name="browser" value="firefox"></parameter>        
+            <parameter name="browser" value="chrome"></parameter>        
           <parameter name="URL" value="ODED"></parameter>
         <classes>                
   <!--        <class name="sanity.ODEMyAccountTest"/>
